@@ -1,0 +1,385 @@
+/* Common in top page 
+--------------------------- */
+.top_page { // body
+	position: relative;
+	.row {
+		max-width: 1000px;
+	}
+}
+.section_in_top { // common to all sections in top page
+	padding: 40px 0;
+	@media screen and #{breakpoint(medium)} {
+		padding: 60px 0;
+	}
+}
+.section_title { // common to all section title
+	margin-bottom: 30px;
+	text-align: center;
+	@include fts(32,32);
+	@include letter-spacing(300);
+	@media screen and #{breakpoint(medium)} {
+		@include fts(40,40);
+	}
+}
+
+/* Each section */
+
+/* Main 
+--------------------------- */
+.section_main {
+	.row {
+		max-width: 100%;
+	}
+	.image_wrap {
+		.main_image {
+			height: 0;
+			background-size: cover;
+			background-position: center center;
+			padding-top: 55%;
+		}
+	}
+	.inpage_menu {
+		display: block;
+		width: 100%;
+		margin: 0;
+		text-align: center;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		li {
+			display: inline-block;
+			margin: 0 10px;
+			@include fts(12,12);
+			.fa {margin-left: 5px;}
+		}
+	}
+	&--inner {
+		padding: 0;
+		position: relative;
+	}
+	@media screen and #{breakpoint(medium)} {
+		.inpage_menu {
+			li {
+				margin: 0 15px;
+				@include fts(14,14);
+				.fa {margin-left: 10px;}
+			}
+		}
+		&--inner {
+			position: relative;
+		}
+	}
+}
+.banner_charity {
+	display: inline-block;
+	padding: 8px;
+	background-color: rgba(255,255,255,.6);
+	border: 1px solid #fff;
+	color: $body-background;
+	font-weight: bold;
+	position: absolute;
+	right: 10px;
+	bottom: 40px;
+	@include clearfix;
+	&--image {
+		width: 28px;
+		height: auto;
+		margin: 2px 3px 0 0;
+		float: left;
+	}
+	&--texts {
+		float: left;
+		font-weight: normal;
+		text-align: left;
+		.text_en {
+			display: block;
+			margin: 0;
+			@include fts(20,24);
+			@include letter-spacing(120);
+		}
+		.text_ja {
+			display: block;
+			margin: 0 0 0 2px;
+			@include fts(10,12);
+		}
+	}
+	&:hover {
+		color: $body-background;
+	}
+	@media screen and #{breakpoint(medium)} {
+		padding: 12px;
+		right: 20px;
+		bottom: 20px;
+		&--image {
+			margin: 2px 6px 0 0;
+			width: 41px;
+		}
+		&--texts {
+			.text_en {
+				margin: 0 0 6px 0;
+				@include fts(30,30);
+				@include letter-spacing(160);
+			}
+			.text_ja {
+				@include fts(15,15);
+			}
+		}
+	}
+}
+
+/* NEWS 
+--------------------------- */
+.section_news {
+	background-color: rgba($body-background,1);
+	.button {
+		display: block;
+		width: 260px;
+		margin: 30px auto 0;
+		@include fts(15);
+		@include letter-spacing(200);
+		.fa {margin-left: 10px;}
+	}
+}
+.news_panel {
+	margin-bottom: 10px;
+	&:last-child {margin-bottom: 0;}
+	&--link_box {
+		display: block;
+		margin: 0 5px;
+		border: 1px solid $body-background;
+		transition: all .3s;
+		&--inner {
+			padding: 10px;
+			background-color: rgba($color-theme-key,.2);
+			border: 1px solid $color-theme-key;
+			color: #fff;
+			position: relative;
+			transition: all .3s;
+			&::after { // small triangle
+				content: "";
+				display: block;
+				width: 0;
+				height: 0;
+				border: 10px solid transparent;
+	    		border-left-color: $color-theme-key;
+	    		@include rotate(45deg);
+
+				position: absolute;
+				bottom: -6px;
+				right: -6px;
+			}
+		}
+
+		&:hover {
+			border: 1px solid $color-theme-key;
+			background-color: rgba($color-theme-key,.2);
+			.news_panel--link_box--inner {
+				margin: -10px -10px 10px 10px;
+				border-color: #fff;
+				&::after { // small triangle
+	    			border-left-color: #fff;
+				}
+			}
+		}
+		&--date {
+
+		}
+		&--title {
+
+		}
+		&--text {
+
+		}
+	}
+	@media screen and #{breakpoint(medium)} {
+		margin-bottom: 0;
+	}
+}
+
+/* ABOUT 
+--------------------------- */
+.section_about {
+	background-color: $color-theme-key;
+	.section_title {
+		color: $body-background;
+	}
+
+}
+.about_list {
+	margin-bottom: 30px;
+	border: 0;
+	text-align: center;
+	&--tab {
+		display: inline-block;
+		margin: 0 2px;
+		float: none;
+		position: relative;
+		border: none;
+		@include border-radius(100%);
+		vertical-align: top;
+		&--link {
+			display: block;
+			padding: 0;
+			@include border-radius(100%);
+			overflow: hidden;
+			border: 1px solid #fff;
+			position: relative;
+			&::after {
+				content: "";
+				display: block;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0,0,0,.5);
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 0;
+			}
+		}
+		&--image {
+			width: 90px;
+			height: 90px;
+			background-color: $body-background;
+			border: none;
+		}
+		&--title {
+			width: 100%;
+			margin: -11px 0 0;
+			@include fts(15);
+			@include letter-spacing(10);
+			color: #fff;
+			text-align: center;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			z-index: 1;
+		}
+	}
+
+	.is-active {
+		&::before { // vertical line
+			content: "";
+			display: block;
+			width: 1px;
+			height: 30px;
+			background-color: #fff;
+			position: absolute;
+			bottom: -30px;
+			left: 50%;
+		}
+		.about_list--tab--link::after {
+			background-color: rgba(0,0,0,0);
+		}
+		.about_list--tab--title {
+			display: none;
+		}
+
+	}
+	// reset foundation
+	.tabs-title > a {padding: 0;}
+
+	 @media screen and #{breakpoint(medium)} {
+
+		&--tab {
+			margin: 0 20px;
+			&--link {
+			}
+			&--image {
+				width: 200px;
+				height: 200px;
+			}
+			&--title {
+				margin: -21px 0 0;
+				@include fts(28);
+				@include letter-spacing(100);
+			}
+		}
+	 }
+}
+
+.about_content {
+	background-color: transparent;
+	border: none;
+	&--panel {
+		padding: 1rem;
+		text-align: center;
+		background-color: rgba($body-background,.3);
+		border: 1px solid #fff;
+		h4 {
+			margin-bottom: 20px;
+			@include fts(32,48);
+			@include letter-spacing(200);
+			position: relative;
+			&::after {
+				content: "";
+				display: block;
+				width: 40px;
+				height: 2px;
+				margin-left: -20px;
+				background-color: #fff;
+				position: absolute;
+				bottom: -5px;
+				left: 50%;
+			}
+		}
+		&--description {
+			text-align: left;
+			@include fts(15);
+			.name_holder {margin: 10px 0;}
+			.name {
+				display: inline-block;
+				margin-right: 20px;
+				font-weight: bold;
+				@include fts(28);
+			}
+			.name_en {
+				display: inline-block;
+				font-weight: bold;
+				@include fts(20);
+				color: $color-lightBlue;
+			}
+			.profile_items {
+				dt {
+					color: $color-lightBlue;
+				}
+				dt,dd {
+					display: inline-block;
+				}
+				&_list {
+					dt {
+						width: 30%;
+					}
+					dd {
+						width: 70%;
+					}
+				}
+				&_biography {
+
+				}
+			}
+
+		}
+	}
+
+	 @media screen and #{breakpoint(medium)} {
+		&--panel {
+			padding: 2rem;
+		}
+	 }
+}
+
+/* SPONSOR 
+--------------------------- */
+.section_sponsor {
+	text-align: center;
+	background-color: #f2f2f2;
+	.section_title {
+		color: $body-background;
+	}
+	.sponsor {
+		display: inline-block;
+		&--link {
+			
+		}
+	}
+}

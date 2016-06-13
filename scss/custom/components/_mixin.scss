@@ -1,0 +1,25 @@
+@mixin fts($fts, $lin: 24) {
+  $rem: $fts / 10;
+  $linS: $lin / $fts;
+  font-size: #{$fts}px;
+  font-size: #{$rem}rem;
+  line-height: $linS;
+}
+@mixin letter-spacing($letterspacing) {
+    letter-spacing: $letterspacing/1000 + rem;
+}
+
+@mixin rotate( $val: -2deg ) {
+  -webkit-transform: rotate($val);
+  -moz-transform: rotate($val);
+  -ms-transform: rotate($val);
+  -o-transform: rotate($val);
+  transform: rotate($val);
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
