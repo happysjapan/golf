@@ -130,6 +130,7 @@
 /* NEWS
 --------------------------- */
 .section_news {
+	overflow: hidden;
 	background-color: rgba($body-background,1);
 	.button {
 		display: block;

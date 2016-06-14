@@ -2,13 +2,27 @@
 ** Site Header
 */
 .top_header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
   width: 100%;
   color: $color-white;
   background-color: rgba($body-background,0.3);
+  @include setTransition();
+
+  &.hidden {
+    top: -71px;
+    @include setTransition();
+
+    @media screen and #{breakpoint(medium)} {
+      top: -150px;
+    }
+  }
+
+  &.shown {
+    background-color: rgba($body-background,0.8);
+  }
 
   &--inner {
     position: relative;
@@ -52,6 +66,10 @@
   &--image {
     display: inline-block;
     width: 200px;
+
+    .shown & {
+      display: none;
+    }
   }
 
   &--subline {
@@ -60,6 +78,10 @@
     margin: 1rem 0 0;
     @include fts(12,12);
     @include letter-spacing(.2);
+
+    .shown & {
+        margin: 0 0 1.4rem;
+    }
   }
 
   @media screen and #{breakpoint(medium)} {
