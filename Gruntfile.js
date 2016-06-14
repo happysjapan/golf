@@ -87,7 +87,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: 'src/',
-          src: ['css/*.css', 'images/svg/*.svg', 'images/common/favicon.ico', 'js/*.js', 'bower_components/*/dist/*', 'images/*.mp4'],
+          src: ['css/*.css', 'images/svg/*.svg', 'images/common/favicon.ico', 'js/*.js', 'fonts/*', 'bower_components/*/dist/*', 'images/*.mp4'],
           dest: 'dist/',
         }]
       }
@@ -191,26 +191,26 @@ module.exports = function(grunt) {
       }
     },
     rsync: {
-      options: {
-        recursive: true,
-        args: ["--verbose"],
-        exclude: [".git*", "**/movie/**", "wordpress/**"],
-        host: "the-concrete",
-      },
-      stage: {
-        options: {
-          src: "dist/js dist/images dist/css dist/bower_components",
-          dest: "/home/the-concrete/www/chiiki-kouken/wp-content/themes/chiiki-kouken",
-          delete: true,
-        }
-      },
-      themes: {
-        options: {
-          src: "wp/wp-content/themes/chiiki-kouken/",
-          exclude: "**/js/** **/images/** **/css/**",
-          dest: "/home/the-concrete/www/chiiki-kouken/wp-content/themes/chiiki-kouken",
-        }
-      },
+      // options: {
+      //   recursive: true,
+      //   args: ["--verbose"],
+      //   exclude: [".git*", "**/movie/**", "wordpress/**"],
+      //   host: "the-concrete",
+      // },
+      // stage: {
+      //   options: {
+      //     src: "dist/js dist/images dist/css dist/bower_components",
+      //     dest: "/home/the-concrete/www/golf/wp-content/themes/golf",
+      //     delete: true,
+      //   }
+      // },
+      // themes: {
+      //   options: {
+      //     src: "wp/wp-content/themes/golf/",
+      //     exclude: "**/js/** **/images/** **/css/**",
+      //     dest: "/home/the-concrete/www/golf/wp-content/themes/golf",
+      //   }
+      // },
     },
     watch: {
       gruntfile: {
