@@ -1,114 +1,25 @@
+/*
+** Site Header
+*/
 .top_header {
-  width: 100%;
-  color: #fff;
-  background-color: rgba($body-background,.2);
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 1000;
+  width: 100%;
+  color: $color-white;
+  background-color: rgba($body-background,0.3);
+
   &--inner {
-    margin-bottom: 15px;
-    @include clearfix;
     position: relative;
-  }
-
-  .site_title_holder {
-  }
-  .menu_button_wrap {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-
-  @media screen and #{breakpoint(medium)} {
-    &--inner {
-    }
+    margin-top: 0.6rem;
   }
 }
 
-.site_title_holder {
-  padding-top: 10px;
-  text-align: center;
-  &--logo {
-    margin-bottom: 10px;
-    img {
-      width: 200px;
-    }
-  }
-  &--description {
-      margin: 12px 0 0;
-      @include fts(12,12);
-      @include letter-spacing(.2);
-  }
-  @media screen and #{breakpoint(medium)} {
-    text-align: center;
-    &--logo {
-      img {
-        width: 325px;
-      }
-    }
-    &--description {
-      margin: 20px 0 0;
-      @include fts(14,14);
-    }
-  }
 
-}
-.top-bar, .top-bar ul {
-  background-color: transparent;
-}
-.menu {
-  @include clearfix;
-  li {
-    display: block;
-    width: 50%;
-    float: left;
-    a {
-      color: #fff;
-      @include fts(14,14);
-      @include letter-spacing(.2);
-      &:hover {
-        color: $color-theme-key;
-      }
-    }
-  }
-  @media screen and #{breakpoint(medium)} {
-    li {
-      display: inline-block;
-      width: auto;
-      float: none;
-    }
-  }
-}
-.top-bar-left { // Main menu
-  float: none;
-  @media screen and #{breakpoint(medium)} {
-    text-align: center;
-  }
-}
-.top-bar-right { // SIGN UP / SIGN IN
-  float: none;
-  @media screen and #{breakpoint(medium)} {
-    position: absolute;
-    top: 10px;
-    right:10px;
-  }
-}
-.menu-icon.dark::after {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 2px;
-    background: #fff;
-    top: 0;
-    left: 0;
-    box-shadow: 0 7px 0 #fff, 0 14px 0 #fff;
-}
-.menu-icon.dark:hover::after {
-    background: #f2f2f2;
-    box-shadow: 0 7px 0 #f2f2f2, 0 14px 0 #f2f2f2;
-}
+
+
+
 
 // top navigation during scrolling
 .navfix {
@@ -122,9 +33,44 @@
   }
 
 }
+
 .fixed {
   position: fixed;
   display: block;
   top: 0;
   left: 0;
+}
+
+
+
+
+// logo
+.logo {
+  padding-top: 10px;
+  text-align: center;
+
+  &--image {
+    display: inline-block;
+    width: 200px;
+  }
+
+  &--subline {
+    display: block;
+    font-weight: normal;
+    margin: 1rem 0 0;
+    @include fts(12,12);
+    @include letter-spacing(.2);
+  }
+
+  @media screen and #{breakpoint(medium)} {
+
+    &--image {
+      width: 325px;
+    }
+
+    &--subline {
+      margin: 1.6rem 0 0;
+      @include fts(14,14);
+    }
+  }
 }
