@@ -1,0 +1,13 @@
+.button {
+	background-color: rgba($color-theme-key,.2);
+	color: $color-theme-key;
+	border: 1px solid $color-theme-key;
+	p {
+		display: inline-block;
+		margin-bottom: 0;
+	}
+	&:hover {
+		background-color: rgba($color-theme-key,.5);
+		border: 1px solid #fff;
+	}
+}

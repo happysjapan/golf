@@ -1,0 +1,23 @@
+
+// Too remove
+html {
+	font-size: 62.5%;
+}
+
+
+body {
+	@include fts(14,20);
+	color: #fff;
+}
+
+ul li {
+	list-style: none;
+}
+
+a {
+	color: $color-theme-key;
+
+	&:hover, &:active, &:focus {
+		color: $color-theme-key-dark;
+	}
+}
