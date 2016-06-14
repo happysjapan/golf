@@ -132,14 +132,6 @@
 .section_news {
 	overflow: hidden;
 	background-color: rgba($body-background,1);
-	.button {
-		display: block;
-		width: 260px;
-		margin: 30px auto 0;
-		@include fts(15);
-		@include letter-spacing(200);
-		.fa {margin-left: 10px;}
-	}
 }
 
 
