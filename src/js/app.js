@@ -6,11 +6,13 @@ $(window).scroll(function(event){
    if (st > lastScrollTop && st > 150){
        if( !$('#top_header').hasClass('hidden') ){
          $('#top_header').addClass('hidden');
+         $('#top_header').addClass('logo_hidden');
        }
        $('#top_header').removeClass('shown');
    }
    else if (st <= 150){
      $('#top_header').removeClass('hidden');
+     $('#top_header').removeClass('logo_hidden');
      $('#top_header').removeClass('shown');
    }
    else {
