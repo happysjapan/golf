@@ -6,8 +6,18 @@
 		display: inline-block;
 		margin-bottom: 0;
 	}
-	&:hover {
+	&:hover,&:focus,&:active {
 		background-color: rgba($color-theme-key,.5);
-		border: 1px solid #fff;
+		border: 1px solid $color-white;
+		color: $color-white;
+	}
+
+	.section_news & {
+		display: block;
+		width: 260px;
+		margin: 30px auto 0;
+		@include fts(15);
+		@include letter-spacing(200);
+		.fa {margin-left: 10px;}
 	}
 }
