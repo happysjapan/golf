@@ -84,19 +84,19 @@ get_header(); ?>
 
       <ul class="about_list tabs row align-center" data-tabs id="about-tabs">
         <li class="about_list--tab is-active tabs-title columns shrink small-4" role="presentation">
-          <a href="#panel1" aria-selected="true" class="about_list--tab--link">
+          <a href="#panel1" aria-selected="true" class="about_list--tab--link no_anim">
             <img src="<?php echo get_template_directory_uri(); ?>/images/top/about_profile.png" alt="堀川未来夢 プロフィール" class="about_list--tab--image" />
             <h4 class="about_list--tab--title">PROFILE</h4>
           </a>
         </li>
         <li class="about_list--tab tabs-title columns shrink small-4" role="presentation">
-          <a href="#panel2" class="about_list--tab--link">
+          <a href="#panel2" class="about_list--tab--link no_anim">
             <img src="<?php echo get_template_directory_uri(); ?>/images/top/about_message.png" alt="堀川未来夢 メッセージ" class="about_list--tab--image" />
             <h4 class="about_list--tab--title">MESSAGE</h4>
           </a>
         </li>
         <li class="about_list--tab tabs-title columns shrink small-4" role="presentation">
-          <a href="#panel3" class="about_list--tab--link">
+          <a href="#panel3" class="about_list--tab--link no_anim">
             <img src="<?php echo get_template_directory_uri(); ?>/images/top/about_bag.png" alt="堀川未来夢 バッグの中" class="about_list--tab--image" />
             <h4 class="about_list--tab--title">IN THE BAG</h4>
           </a>
