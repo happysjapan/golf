@@ -173,5 +173,26 @@ get_header(); ?>
 </section>
 <!-- /SPONSOR Section -->
 
+<!-- INSTAGRAM Section -->
+<section id="instagram" class="section_instagram section_in_top">
+  <div class="row">
+    <div class="large-12 columns">
+      <h3 class="section_title">SPONSOR</h3>
+    </div>
+  </div>
+</section>
+<!-- INSTAGRAM Section -->
+
+<!-- SNS Section -->
+<section id="sns" class="section_sns section_in_top">
+  <div class="row">
+    <div class="large-12 columns">
+      <h3 class="section_title">SNS</h3>
+    </div>
+  </div>
+</section>
+<!-- SNS Section -->
+
+
 
 <?php get_footer();
