@@ -1,0 +1,23 @@
+/*
+** Gallery
+*/
+.gallery {
+  margin: 3rem 0;
+
+  &--item {
+    width: calc(50% - 10px);
+    margin: 5px;
+    height: 150px;
+    color: black;
+    background-color: #ececec;
+
+    @media screen and #{breakpoint(medium)} {
+      width: calc(25% - 10px);
+    }
+
+    @media screen and #{breakpoint(large)} {
+      width: calc(20% - 10px);
+    }
+
+  }
+}

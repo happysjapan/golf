@@ -1,8 +1,7 @@
 @mixin fts($fts, $lin: 24) {
-  $rem: $fts / 10;
   $linS: $lin / $fts;
   font-size: #{$fts}px;
-  font-size: #{$rem}rem;
+  font-size: rem-calc($fts);
   line-height: $linS;
 }
 @mixin letter-spacing($letterspacing) {

@@ -1,12 +1,8 @@
 
 // Too remove
-html {
-	font-size: 62.5%; // 1rem = 10px
-}
-
-
 body {
 	@include fts(14,20);
+
 	color: #fff;
 }
 
@@ -20,4 +16,9 @@ a {
 	&:hover, &:active, &:focus {
 		color: $color-theme-key-dark;
 	}
+}
+
+.page_wrapper {
+	margin-top: 15rem;
+	margin-bottom: 5rem;
 }
