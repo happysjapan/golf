@@ -35,7 +35,6 @@ module.exports = function(grunt) {
       },
       files: [
         'src/js/**/common.js',
-        // '!src/js/**/extras/**'
       ],
     },
     // concat: {
@@ -87,7 +86,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: 'src/',
-          src: ['css/*.css', 'images/svg/*.svg', 'images/common/favicon.ico', 'js/*.js', 'fonts/*', 'bower_components/*/dist/*', 'images/*.mp4'],
+          src: ['css/*.css', 'images/*', 'js/*.js', 'bower_components/*/dist/*'],
           dest: 'dist/',
         }]
       }
@@ -190,7 +189,7 @@ module.exports = function(grunt) {
         }]
       }
     },
-    rsync: {
+    // rsync: {
       // options: {
       //   recursive: true,
       //   args: ["--verbose"],
@@ -211,7 +210,7 @@ module.exports = function(grunt) {
       //     dest: "/home/the-concrete/www/golf/wp-content/themes/golf",
       //   }
       // },
-    },
+    // },
     watch: {
       gruntfile: {
         files: '<%= jshint.gruntfile.src %>',
