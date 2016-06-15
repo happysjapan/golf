@@ -1,0 +1,183 @@
+/*
+** About Section
+*/
+
+// Section
+.section_about {
+	background-color: $color-theme-key;
+	.section_title {
+		color: $body-background;
+	}
+}
+
+// List
+.about_list {
+	margin-bottom: 30px;
+	border: 0;
+	text-align: center;
+  background: transparent;
+
+  // tab
+	&--tab {
+    position: relative;
+
+    // link
+		&--link {
+			display: block;
+			padding: 0;
+			@include border-radius(100%);
+			overflow: hidden;
+			border: 1px solid #fff;
+			position: relative;
+      width: 90px;
+      height: 90px;
+      margin: 0 auto;
+
+			&::after {
+				content: "";
+				display: block;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0,0,0,.5);
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 0;
+			}
+		}
+
+    // image
+		&--image {
+      width: 100%;
+      height: auto;
+			background-color: $body-background;
+			border: none;
+		}
+
+    // title
+		&--title {
+			width: 100%;
+			margin: -11px 0 0;
+			@include fts(15);
+			@include letter-spacing(10);
+			color: #fff;
+			text-align: center;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			z-index: 1;
+		}
+	}
+
+	.is-active {
+		&::before { // vertical line
+			content: "";
+			display: block;
+			width: 1px;
+			height: 30px;
+			background-color: #fff;
+			position: absolute;
+			bottom: -30px;
+			left: 50%;
+		}
+		.about_list--tab--link::after {
+			background-color: rgba(0,0,0,0);
+		}
+		.about_list--tab--title {
+			display: none;
+		}
+
+	}
+
+	 @media screen and #{breakpoint(medium)} {
+
+		&--tab {
+
+			&--link {
+        width: 200px;
+        height: 200px;
+			}
+			&--title {
+				@include fts(28);
+				@include letter-spacing(100);
+			}
+		}
+	 }
+}
+
+// reset foundation
+.tabs-title > a {padding: 0;}
+
+
+
+// Content
+.about_content {
+	background-color: transparent;
+	border: none;
+	&--panel {
+		padding: 1rem;
+		text-align: center;
+		background-color: rgba($body-background,.3);
+		border: 1px solid #fff;
+		h4 {
+			margin-bottom: 20px;
+			@include fts(32,48);
+			@include letter-spacing(200);
+			position: relative;
+			&::after {
+				content: "";
+				display: block;
+				width: 40px;
+				height: 2px;
+				margin-left: -20px;
+				background-color: #fff;
+				position: absolute;
+				bottom: -5px;
+				left: 50%;
+			}
+		}
+		&--description {
+			text-align: left;
+			@include fts(15);
+			.name_holder {margin: 10px 0;}
+			.name {
+				display: inline-block;
+				margin-right: 20px;
+				font-weight: bold;
+				@include fts(28);
+			}
+			.name_en {
+				display: inline-block;
+				font-weight: bold;
+				@include fts(20);
+				color: $color-lightBlue;
+			}
+			.profile_items {
+				dt {
+					color: $color-lightBlue;
+				}
+				dt,dd {
+					display: inline-block;
+				}
+				&_list {
+					dt {
+						width: 30%;
+					}
+					dd {
+						width: 70%;
+					}
+				}
+				&_biography {
+
+				}
+			}
+
+		}
+	}
+
+	 @media screen and #{breakpoint(medium)} {
+		&--panel {
+			padding: 2rem;
+		}
+	 }
+}

@@ -86,7 +86,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: 'src/',
-          src: ['css/*.css', 'images/*', 'js/*.js', 'bower_components/*/dist/*'],
+          src: ['css/*.css', 'images/*', 'js/*.js', 'fonts/*', 'bower_components/*/dist/*'],
           dest: 'dist/',
         }]
       }

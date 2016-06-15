@@ -9,11 +9,11 @@ get_header(); ?>
   <div class="row">
     <div class="large-12 columns section_main--inner">
       <div class="image_wrap">
-          <div class="main_image" style="background-image: url('images/top/main1.jpg');"></div>
+          <div class="main_image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/top/main1.jpg');"></div>
       </div>
 
       <a href="" class="banner_charity button" title="チャリティー活動">
-        <img src="images/top/charity_ribbon.png" alt="チャリティー活動" width="41" height="50" class="banner_charity--image" />
+        <img src="<?php echo get_template_directory_uri(); ?>/images/top/charity_ribbon.png" alt="チャリティー活動" width="41" height="50" class="banner_charity--image" />
         <div class="banner_charity--texts">
           <p class="text_en">CHARITY</p>
           <p class="text_ja">チャリティー活動</p>
@@ -67,13 +67,13 @@ get_header(); ?>
         </li>
       </ul>
 
-
       <a href="" title="View All" class="button"><p>View All</p><i class="fa fa-angle-right" aria-hidden="true"></i></a>
 
     </div>
   </div>
 </section>
 <!-- / NEWS Section -->
+
 
 <!-- ABOUT Section -->
 <a name="about" href="#about"></a>
@@ -82,23 +82,23 @@ get_header(); ?>
     <div class="large-12 columns">
       <h3 class="section_title">ABOUT</h3>
 
-      <ul class="tabs about_list" data-tabs id="about-tabs">
-        <li class="tabs-title about_list--tab is-active" role="presentation">
+      <ul class="about_list tabs row" data-tabs id="about-tabs">
+        <li class="about_list--tab is-active tabs-title columns small-4" role="presentation">
           <a href="#panel1" aria-selected="true" class="about_list--tab--link">
-            <img src="images/top/about_profile.png" alt="堀川未来夢 プロフィール" class="about_list--tab--image" />
-            <p class="about_list--tab--title">PROFILE</p>
+            <img src="<?php echo get_template_directory_uri(); ?>/images/top/about_profile.png" alt="堀川未来夢 プロフィール" class="about_list--tab--image" />
+            <h4 class="about_list--tab--title">PROFILE</h4>
           </a>
         </li>
-        <li class="tabs-title about_list--tab" role="presentation">
+        <li class="about_list--tab tabs-title columns small-4" role="presentation">
           <a href="#panel2" class="about_list--tab--link">
-            <img src="images/top/about_message.png" alt="堀川未来夢 メッセージ" class="about_list--tab--image" />
-            <p class="about_list--tab--title">MESSAGE</p>
+            <img src="<?php echo get_template_directory_uri(); ?>/images/top/about_message.png" alt="堀川未来夢 メッセージ" class="about_list--tab--image" />
+            <h4 class="about_list--tab--title">MESSAGE</h4>
           </a>
         </li>
-        <li class="tabs-title about_list--tab" role="presentation">
+        <li class="about_list--tab tabs-title columns small-4" role="presentation">
           <a href="#panel3" class="about_list--tab--link">
-            <img src="images/top/about_bag.png" alt="堀川未来夢 バッグの中" class="about_list--tab--image" />
-            <p class="about_list--tab--title">IN THE BAG</p>
+            <img src="<?php echo get_template_directory_uri(); ?>/images/top/about_bag.png" alt="堀川未来夢 バッグの中" class="about_list--tab--image" />
+            <h4 class="about_list--tab--title">IN THE BAG</h4>
           </a>
         </li>
       </ul>
