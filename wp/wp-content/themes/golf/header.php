@@ -49,22 +49,7 @@
 
           <div class="row">
             <div class="columns small-12">
-              <nav id="nav" class="nav">
-                <ul class="nav--menu menu">
-                  <li class="nav--item" role="menuitem"><a class="nav--link" href="#">HOME</a></li>
-                  <li class="nav--item" role="menuitem"><a class="nav--link" href="#">TOURNAMENTS</a></li>
-                  <li class="nav--item" role="menuitem"><a class="nav--link" href="#">GALLERY</a></li>
-                  <li class="nav--item" role="menuitem"><a class="nav--link" href="#">MEDIA</a></li>
-                  <li class="nav--item" role="menuitem"><a class="nav--link" href="#">BLOG</a></li>
-                </ul>
-
-                <div class="sign_menu columns">
-                  <ul class="dropdown menu sign_menu--menu align-center">
-                    <li class="sign_menu--item" role="menuitem"><a class="sign_menu--link" href="#">SIGN UP</a></li>
-                    <li class="sign_menu--item" role="menuitem"><a class="sign_menu--link" href="#">SIGN IN</a></li>
-                  </ul>
-                </div>
-              </nav>
+              <?php get_template_part( 'includes/template', 'navigation' ); ?>
             </div>
           </div>
 

@@ -6,24 +6,27 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
 
+  // Menu level 1
   &--menu {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-  }
 
-  &--item {
-    width: 50%;
-  }
+    &--item {
+      text-transform: uppercase;
+      width: 50%;
+    }
 
-  &--link {
-    color: #fff;
-    @include fts(14,14);
-    @include letter-spacing(0.2);
+    &--link {
+      color: #fff;
+      @include fts(14,14);
+      @include letter-spacing(0.2);
 
-    &:hover, &:active, &:focus {
-      color: $color-theme-key;
+      &:hover, &:active, &:focus {
+        color: $color-theme-key;
+      }
     }
   }
+
 
   // Button menu
   &--button {
@@ -60,16 +63,19 @@
   @media screen and #{breakpoint(medium)} {
     position: initial;
 
+    // Menu level 1
     &--menu {
       -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
       -ms-flex-pack: center;
       justify-content: center;
+
+      &--item {
+        width: auto;
+      }
     }
 
-    &--item {
-      width: auto;
-    }
+
   }
 }
 
