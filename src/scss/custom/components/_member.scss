@@ -1,0 +1,47 @@
+/*
+** Form signup
+*/
+
+#swpm-registration-form {
+
+  & .swpm-registration-membership-level-row {
+    display: none;
+  }
+
+  & table tbody tr:nth-child(even) {
+    background-color: $color-light-grey;
+  }
+
+  & table thead, & table tbody, & table tfoot {
+    border-color: $color-light-grey;
+  }
+  // input
+  & [type='text'], & [type='password'], & [type='date'], & [type='datetime'], & [type='datetime-local'],
+  & [type='month'], & [type='week'], & [type='email'], & [type='number'], & [type='search'], & [type='tel'],
+  & [type='time'], & [type='url'], & [type='color'], & textarea {
+    margin: 0;
+  }
+
+  // button
+  & input[type="submit"] {
+    display: inline-block;
+    text-align: center;
+    line-height: 1;
+    cursor: pointer;
+    -webkit-appearance: none;
+    transition: background-color 0.25s ease-out, color 0.25s ease-out;
+    vertical-align: middle;
+    border: none;
+    border-radius: 0;
+    padding: 0.85rem 1.4rem;
+    margin: 0 0 1rem 0;
+    font-size: 0.9rem;
+    background-color: $color-theme-key-dark;
+    color: #fefefe;
+
+  	&:hover,&:focus,&:active {
+  		background-color: $color-theme-key;
+  		color: $color-white;
+  	}
+  }
+}
