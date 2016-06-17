@@ -13,16 +13,13 @@ $color-theme-key-dark: darken($color-theme-key, 10);
 $color-main-link: #4171bf;
 $color-main-link-hover: #ee2f01;
 
-$color-term-category: #418bca;
-$color-term-tag: #d9544f;
 
 // 色
 $color-blue: #4171bf;
 $color-lightBlue: #6bd4ff;
-$color-lightGreen: #6dbf41;
-$color-green: #016d3b;
 $color-red: #ce0004;
 $color-light-grey: #f8f8f8;
+$color-greyish-purple: #6e6e8e;
 $color-soft-grey: #eee;
 $color-grey: #999;
 $color-darkGrey: #666;
@@ -35,7 +32,7 @@ $color-white: #fff;
 $font-header-tel: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
 
 /* For mikumu */
-$navy: #0B0B32;
-$body-background: $navy;
+$color-navy: #0B0B32;
+$body-background: $color-navy;
 
 $tab-background: transparent;
