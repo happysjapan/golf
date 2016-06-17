@@ -1,8 +1,8 @@
 <!-- Footer Section -->
 <footer class="footer">
-  <div class="footer--inner row">
-    <p>運営会社 contact</p>
-    <p>Copyright © 株式会社ハッピーズ All Rights Reserved.</p>
+  <div class="footer--inner row text-center">
+    <p class="columns align-center small-12">運営会社 contact</p>
+    <p class="columns align-center small-12">Copyright © 株式会社ハッピーズ All Rights Reserved.</p>
     <div class="scroll_top">
       <a href="#top" class="button"><i class="fa fa-angle-up"></i></a>
     </div>
