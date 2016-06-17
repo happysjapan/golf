@@ -31,6 +31,7 @@
 		max-width: 100%;
 	}
 	.image_wrap {
+		height: 900px;
 		.main_image {
 			height: 0;
 			background-size: cover;
@@ -139,6 +140,7 @@
 /* SPONSOR
 --------------------------- */
 .section_sponsor {
+	margin-top: 500px;
 	text-align: center;
 	background-color: #f2f2f2;
 	.section_title {
@@ -150,4 +152,18 @@
 
 		}
 	}
+}
+
+/* INSTAGRAM
+--------------------------- */
+.section_instagram {
+	background-color: rgba($body-background,1);
+}
+
+
+/* SNS
+--------------------------- */
+.section_sns {
+	background-color: rgba($body-background,1);
+	border-top: 1px solid $color-greyish-purple;
 }
