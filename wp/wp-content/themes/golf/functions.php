@@ -90,6 +90,150 @@ function golf_gallery_create_post_type() {
  );
 }
 
+/*-------------------------------------------*/
+/*	Custom post type _ add blog
+/*-------------------------------------------*/
+add_post_type_support( 'blog', 'front-end-editor' );
+
+add_action( 'init', 'golf_blog_create_post_type', 0 );
+function golf_blog_create_post_type() {
+ $blogLabelName = 'Blog';
+ register_post_type( 'blog', /* post-type */
+ array(
+   'labels' => array(
+   'name' => $blogLabelName,
+   'singular_name' => $blogLabelName
+ ),
+ 'public' => true,
+ 'menu_position' =>5,
+ 'has_archive' => true,
+ 'supports' => array('title','editor','excerpt','thumbnail','author')
+ )
+ );
+ // Add information category
+ register_taxonomy(
+   'blog-cat',
+   'blog',
+   array(
+     'hierarchical' => true,
+     'update_count_callback' => '_update_post_term_count',
+     'label' => $blogLabelName._x(' category','admin menu'),
+     'singular_label' => $blogLabelName._x(' category','admin menu'),
+     'public' => true,
+     'show_ui' => true,
+   )
+ );
+}
+
+/*-------------------------------------------*/
+/*	Custom post type _ add schedule
+/*-------------------------------------------*/
+add_post_type_support( 'schedule', 'front-end-editor' );
+
+add_action( 'init', 'golf_schedule_create_post_type', 0 );
+function golf_schedule_create_post_type() {
+ $scheduleLabelName = 'Schedule';
+ register_post_type( 'schedule', /* post-type */
+ array(
+   'labels' => array(
+   'name' => $scheduleLabelName,
+   'singular_name' => $scheduleLabelName
+ ),
+ 'public' => true,
+ 'menu_position' =>5,
+ 'has_archive' => true,
+ 'supports' => array('title','editor','excerpt','thumbnail','author')
+ )
+ );
+ // Add information category
+ register_taxonomy(
+   'schedule-cat',
+   'schedule',
+   array(
+     'hierarchical' => true,
+     'update_count_callback' => '_update_post_term_count',
+     'label' => $scheduleLabelName._x(' category','admin menu'),
+     'singular_label' => $scheduleLabelName._x(' category','admin menu'),
+     'public' => true,
+     'show_ui' => true,
+   )
+ );
+}
+
+/*-------------------------------------------*/
+/*	Custom post type _ add result_ranking
+/*-------------------------------------------*/
+add_post_type_support( 'result_ranking', 'front-end-editor' );
+
+add_action( 'init', 'golf_result_ranking_create_post_type', 0 );
+function golf_result_ranking_create_post_type() {
+ $result_rankingLabelName = 'Result ranking';
+ register_post_type( 'result_ranking', /* post-type */
+ array(
+   'labels' => array(
+   'name' => $result_rankingLabelName,
+   'singular_name' => $result_rankingLabelName
+ ),
+ 'public' => true,
+ 'menu_position' =>5,
+ 'has_archive' => true,
+ 'supports' => array('title','editor','excerpt','thumbnail','author')
+ )
+ );
+ // Add information category
+ register_taxonomy(
+   'result_ranking-cat',
+   'result_ranking',
+   array(
+     'hierarchical' => true,
+     'update_count_callback' => '_update_post_term_count',
+     'label' => $result_rankingLabelName._x(' category','admin menu'),
+     'singular_label' => $result_rankingLabelName._x(' category','admin menu'),
+     'public' => true,
+     'show_ui' => true,
+   )
+ );
+}
+
+/*-------------------------------------------*/
+/*	Custom post type _ add media
+/*-------------------------------------------*/
+add_post_type_support( 'media', 'front-end-editor' );
+
+add_action( 'init', 'golf_media_create_post_type', 0 );
+function golf_media_create_post_type() {
+ $mediaLabelName = 'Media';
+ register_post_type( 'media', /* post-type */
+ array(
+   'labels' => array(
+   'name' => $mediaLabelName,
+   'singular_name' => $mediaLabelName
+ ),
+ 'public' => true,
+ 'menu_position' =>5,
+ 'has_archive' => true,
+ 'supports' => array('title','editor','excerpt','thumbnail','author')
+ )
+ );
+ // Add information category
+ register_taxonomy(
+   'media-cat',
+   'media',
+   array(
+     'hierarchical' => true,
+     'update_count_callback' => '_update_post_term_count',
+     'label' => $mediaLabelName._x(' category','admin menu'),
+     'singular_label' => $mediaLabelName._x(' category','admin menu'),
+     'public' => true,
+     'show_ui' => true,
+   )
+ );
+}
+
+
+
+
+
 
 
  /*-------------------------------------------*/
