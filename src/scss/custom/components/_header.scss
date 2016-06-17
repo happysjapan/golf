@@ -20,8 +20,12 @@
     top: -71px;
     @include setTransition();
 
+    & + .page_wrapper {
+      margin-top: 180px;
+    }
+
     @media screen and #{breakpoint(medium)} {
-      top: -150px;
+      top: -151px;
     }
   }
 
@@ -31,6 +35,10 @@
 
   &.logo_hidden {
     position: fixed;
+
+    & + .page_wrapper {
+      margin-top: 180px;
+    }
   }
 
   &--inner {
@@ -41,8 +49,6 @@
     }
   }
 }
-
-
 
 
 
