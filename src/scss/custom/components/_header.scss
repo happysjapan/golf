@@ -2,14 +2,19 @@
 ** Site Header
 */
 .top_header {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   z-index: 1000;
   width: 100%;
   color: $color-white;
-  background-color: rgba($body-background,0.3);
+  background-color: $body-background;
   @include setTransition();
+
+  &.fixed {
+    position: fixed;
+    background-color: rgba($body-background,0.3);
+  }
 
   &.hidden {
     top: -71px;
@@ -24,9 +29,16 @@
     background-color: rgba($body-background,0.8);
   }
 
+  &.logo_hidden {
+    position: fixed;
+  }
+
   &--inner {
     position: relative;
-    margin-top: 0.6rem;
+
+    .fixed & {
+      margin-top: 0.6rem;
+    }
   }
 }
 
@@ -76,6 +88,7 @@
     display: block;
     font-weight: normal;
     margin: 1rem 0 0;
+    color: $color-white;
     @include fts(12,12);
     @include letter-spacing(.2);
 

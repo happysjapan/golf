@@ -54,6 +54,43 @@ if ( function_exists('register_sidebar') ) {
 
 
 
+/*-------------------------------------------*/
+/*	Custom post type _ add gallery
+/*-------------------------------------------*/
+
+add_post_type_support( 'gallery', 'front-end-editor' );
+
+add_action( 'init', 'golf_gallery_create_post_type', 0 );
+function golf_gallery_create_post_type() {
+ $galleryLabelName = 'Gallery';
+ register_post_type( 'gallery', /* post-type */
+ array(
+   'labels' => array(
+   'name' => $galleryLabelName,
+   'singular_name' => $galleryLabelName
+ ),
+ 'public' => true,
+ 'menu_position' =>5,
+ 'has_archive' => true,
+ 'supports' => array('title','editor','excerpt','thumbnail','author')
+ )
+ );
+ // Add information category
+ register_taxonomy(
+   'gallery-cat',
+   'gallery',
+   array(
+     'hierarchical' => true,
+     'update_count_callback' => '_update_post_term_count',
+     'label' => $galleryLabelName._x(' category','admin menu'),
+     'singular_label' => $galleryLabelName._x(' category','admin menu'),
+     'public' => true,
+     'show_ui' => true,
+   )
+ );
+}
+
+
 
  /*-------------------------------------------*/
  /*	Get CSS / JS assets
