@@ -9,7 +9,7 @@ get_template_part( 'includes/template', 'front-header' ); ?>
   <div class="row">
     <div class="large-12 columns section_main--inner">
       <div class="image_wrap">
-          <div class="main_image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/top/main1.jpg');"></div>
+          <!-- <div class="main_image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/top/main1.jpg');"></div> -->
       </div>
 
       <a href="" class="banner_charity button" title="チャリティー活動">
@@ -37,19 +37,19 @@ get_template_part( 'includes/template', 'front-header' ); ?>
   <div class="row">
     <div class="large-12 columns">
       <h3 class="section_title">NEWS</h3>
-      <ul class="row" class="news_wrap">
+      <ul class="row" class="news_wrap" data-equalizer>
         <li class="small-12 medium-4 columns news_panel">
           <a href="" title="" class="news_panel--link_box">
-            <div class="news_panel--link_box--inner">
+            <div class="news_panel--link_box--inner" data-equalizer-watch>
               <p class="news_panel--date">2016.05.20</p>
               <p class="news_panel--title">News title</p>
-              <p class="news_panel--text">Display news detail  Display news detail</p>
+              <p class="news_panel--text">Display news detail Display news detail Display news detail</p>
             </div>
           </a>
         </li>
         <li class="small-12 medium-4 columns news_panel">
           <a href="" title="" class="news_panel--link_box">
-            <div class="news_panel--link_box--inner">
+            <div class="news_panel--link_box--inner" data-equalizer-watch>
               <p class="news_panel--date">2016.05.20</p>
               <p class="news_panel--title">News title</p>
               <p class="news_panel--text">Display news detail</p>
@@ -58,7 +58,7 @@ get_template_part( 'includes/template', 'front-header' ); ?>
         </li>
         <li class="small-12 medium-4 columns news_panel">
           <a href="" title="" class="news_panel--link_box">
-            <div class="news_panel--link_box--inner">
+            <div class="news_panel--link_box--inner" data-equalizer-watch>
               <p class="news_panel--date">2016.05.20</p>
               <p class="news_panel--title">News title</p>
               <p class="news_panel--text">Display news detail</p>
@@ -177,7 +177,7 @@ get_template_part( 'includes/template', 'front-header' ); ?>
 <section id="instagram" class="section_instagram section_in_top">
   <div class="row">
     <div class="large-12 columns">
-      <h3 class="section_title">SPONSOR</h3>
+      <h3 class="section_title">INSTAGRAM</h3>
     </div>
   </div>
 </section>
