@@ -32,7 +32,7 @@
   <body>
 
     <!-- Header Section -->
-    <header id="top_header" class="top_header">
+    <header id="top_header" class="top_header fixed">
       <div class="row top_header--inner">
         <div class="column">
 

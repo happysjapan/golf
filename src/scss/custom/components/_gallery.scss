@@ -2,7 +2,7 @@
 ** Gallery
 */
 .gallery {
-  margin: 3rem 0;
+  margin: 0;
   padding: 0;
 
   &--item {
@@ -116,10 +116,17 @@
 
       &--inner {
         position: absolute;
-        bottom: -100%;
+        bottom: 0;
         width: 100%;
-        padding: rem-calc(20px) rem-calc(10px);
-        @include setTransition();
+        padding: rem-calc(10px) rem-calc(10px);
+        background-color: rgba(0, 0, 0, 0.5);
+
+        @media screen and #{breakpoint(medium)} {
+          bottom: -100%;
+          padding: rem-calc(20px) rem-calc(10px);
+          background-color: transparent;
+          @include setTransition();
+        }
       }
     }
 

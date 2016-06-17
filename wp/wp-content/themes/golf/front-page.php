@@ -2,7 +2,7 @@
 /*
   Template Name: Front page
 */
-get_header(); ?>
+get_template_part( 'includes/template', 'front-header' ); ?>
 
 <!-- Main Section -->
 <section class="section_main">
