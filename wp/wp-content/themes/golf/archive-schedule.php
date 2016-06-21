@@ -2,7 +2,7 @@
 get_header(); ?>
 
 <div class="page_wrapper no_margin">
-  <div class="section_default section_news">
+  <div class="section_default section_schedule">
 
 
     <section id="news" class="section_news section_in_top" data-magellan-destination="news">
@@ -16,7 +16,7 @@ get_header(); ?>
               if ( have_posts() ) {
               	while ( have_posts() ) {
               		the_post(); ?>
-                    <?php get_template_part( 'includes/news', 'panel' ); ?>
+                    <?php get_template_part( 'includes/schedule', 'panel' ); ?>
                 <?php } // end while
               } // end if ?>
           </ul>
