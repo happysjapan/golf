@@ -1,5 +1,8 @@
 <?php
-get_header(); ?>
+get_header();
+global $post;
+$access_ctrl = SwpmAccessControl::get_instance();
+?>
 
 <div class="page_wrapper">
   <div class="row">
@@ -9,7 +12,7 @@ get_header(); ?>
         <h2 class="section_default--title"><?php the_title(); ?></h2>
       </section>
 
-      <?php if( have_rows('gallery_slider') ){ ?>
+      <?php if( have_rows('gallery_slider') && $access_ctrl->can_i_read_post($post) ){ ?>
         <div class="section_slider section_gallery">
           <div class="gallery_orbit orbit" role="region" aria-label="Favorite Cat Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
             <button class="no_anim orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>

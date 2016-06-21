@@ -106,6 +106,14 @@
           }
         }
       }
+
+      // Member only
+      &.member_only {
+        background-image: url(../images/gallery/memberonly_image.jpg);
+        background-position: center center;
+        background-color: $color-full-black;
+      }
+
     }
 
     // info block

@@ -11,12 +11,11 @@ get_header(); ?>
           <?php
           $custom_args = array(
             'post_type' => 'gallery',
-            'post_status' => 'publish',
             'orderby' => 'date',
             'order'			     => 'DESC',
             'posts_per_page' => -1
           );
-          $post_array = get_post( $custom_args );
+          $post_array = get_posts( $custom_args );
 
           $lenght = count($post_array);
           $k = 0;
@@ -32,25 +31,31 @@ get_header(); ?>
                   $grid_width = get_field("gallery_grid_width", get_the_id());
                   $grid_height = get_field("gallery_grid_height", get_the_id());
                   $description = get_field("gallery_description", get_the_id());
+
+                  $access_ctrl = SwpmAccessControl::get_instance();
                 ?>
 
                 <li class="gallery--item grid-item grid-item--width-<?php echo $grid_width; ?> grid-item--height-<?php echo $grid_height; ?>">
 
-                  <?php if( $i < 10 ){ ?>
-                    <a href="<?php the_permalink(); ?>" class="gallery--item--link" style="background-image:url('<?php echo $clip_image['url']; ?>');">
-                  <?php } else { ?>
-                    <a href="#" class="lazy gallery--item--link" data-src="<?php echo $clip_image['url']; ?>">
-                  <?php } ?>
+                  <?php if ($access_ctrl->can_i_read_post($post)){ ?>
+                    <?php if( $i < 10 ){ ?>
+                      <a href="<?php the_permalink(); ?>" class="gallery--item--link" style="background-image:url('<?php echo $clip_image['url']; ?>');">
+                    <?php } else { ?>
+                      <a href="#" class="lazy gallery--item--link" data-src="<?php echo $clip_image['url']; ?>">
+                    <?php } ?>
 
-                  <div class="gallery--item--info">
-                    <div class="gallery--item--info--inner">
-                      <h3 class="gallery--item--title"><?php the_title(); ?></h3>
-                      <p class="gallery--item--description">
-                        <?php echo $description; ?>
-                      </p>
+                    <div class="gallery--item--info">
+                      <div class="gallery--item--info--inner">
+                        <h3 class="gallery--item--title"><?php the_title(); ?></h3>
+                        <p class="gallery--item--description">
+                          <?php echo $description; ?>
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </a>
+                  </a>
+                  <?php } else { ?>
+                    <div class="gallery--item--link member_only"></div>
+                  <?php } ?>
               </li>
               <?php $i++; $k++; } // end while
             } // end if ?>

@@ -2,7 +2,9 @@
 /*
   Template Name: Front page
 */
-get_template_part( 'includes/template', 'front-header' ); ?>
+get_template_part( 'includes/template', 'front-header' );
+global $post;
+?>
 
 <!-- Main Section -->
 <section class="section_main">
@@ -36,38 +38,23 @@ get_template_part( 'includes/template', 'front-header' ); ?>
 <section id="news" class="section_news section_in_top" data-magellan-destination="news">
   <div class="row">
     <div class="large-12 columns">
+      <?php
+      $custom_args = array(
+        'post_type' => 'news',
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'posts_per_page' => 3
+      );
+      $post_array = get_posts( $custom_args ); ?>
       <h3 class="section_title">NEWS</h3>
       <ul class="row" class="news_wrap" data-equalizer>
-        <li class="small-12 medium-4 columns news_panel">
-          <a href="" title="" class="news_panel--link_box">
-            <div class="news_panel--link_box--inner" data-equalizer-watch>
-              <p class="news_panel--date">2016.05.20</p>
-              <p class="news_panel--title">News title</p>
-              <p class="news_panel--text">Display news detail Display news detail Display news detail</p>
-            </div>
-          </a>
-        </li>
-        <li class="small-12 medium-4 columns news_panel">
-          <a href="" title="" class="news_panel--link_box">
-            <div class="news_panel--link_box--inner" data-equalizer-watch>
-              <p class="news_panel--date">2016.05.20</p>
-              <p class="news_panel--title">News title</p>
-              <p class="news_panel--text">Display news detail</p>
-            </div>
-          </a>
-        </li>
-        <li class="small-12 medium-4 columns news_panel">
-          <a href="" title="" class="news_panel--link_box">
-            <div class="news_panel--link_box--inner" data-equalizer-watch>
-              <p class="news_panel--date">2016.05.20</p>
-              <p class="news_panel--title">News title</p>
-              <p class="news_panel--text">Display news detail</p>
-            </div>
-          </a>
-        </li>
+        <?php foreach ($post_array as $post) {
+          setup_postdata( $post );
+          get_template_part( 'includes/news', 'panel' );
+        } wp_reset_postdata(); ?>
       </ul>
 
-      <a href="" title="View All" class="button"><p>View All</p><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+      <a href="<?php echo get_post_type_archive_link( 'news' ); ?>" title="View All" class="button"><p>View All</p><i class="fa fa-angle-right" aria-hidden="true"></i></a>
 
     </div>
   </div>

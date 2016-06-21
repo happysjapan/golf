@@ -12,6 +12,15 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 
 
+// show admin bar only for admins
+if (!current_user_can('manage_options')) {
+	add_filter('show_admin_bar', '__return_false');
+}
+// show admin bar only for admins and editors
+if (!current_user_can('edit_posts')) {
+	add_filter('show_admin_bar', '__return_false');
+}
+
 
 
  /*-------------------------------------------*/
@@ -91,18 +100,18 @@ function golf_gallery_create_post_type() {
 }
 
 /*-------------------------------------------*/
-/*	Custom post type _ add blog
+/*	Custom post type _ add news
 /*-------------------------------------------*/
-add_post_type_support( 'blog', 'front-end-editor' );
+add_post_type_support( 'news', 'front-end-editor' );
 
-add_action( 'init', 'golf_blog_create_post_type', 0 );
-function golf_blog_create_post_type() {
- $blogLabelName = 'Blog';
- register_post_type( 'blog', /* post-type */
+add_action( 'init', 'golf_news_create_post_type', 0 );
+function golf_news_create_post_type() {
+ $newsLabelName = 'News';
+ register_post_type( 'news', /* post-type */
  array(
    'labels' => array(
-   'name' => $blogLabelName,
-   'singular_name' => $blogLabelName
+   'name' => $newsLabelName,
+   'singular_name' => $newsLabelName
  ),
  'public' => true,
  'menu_position' =>5,
@@ -112,13 +121,13 @@ function golf_blog_create_post_type() {
  );
  // Add information category
  register_taxonomy(
-   'blog-cat',
-   'blog',
+   'news-cat',
+   'news',
    array(
      'hierarchical' => true,
      'update_count_callback' => '_update_post_term_count',
-     'label' => $blogLabelName._x(' category','admin menu'),
-     'singular_label' => $blogLabelName._x(' category','admin menu'),
+     'label' => $newsLabelName._x(' category','admin menu'),
+     'singular_label' => $newsLabelName._x(' category','admin menu'),
      'public' => true,
      'show_ui' => true,
    )

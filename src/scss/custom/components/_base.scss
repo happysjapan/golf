@@ -21,4 +21,8 @@ a {
 .page_wrapper {
 	margin-top: 2rem;
 	margin-bottom: 5rem;
+
+	&.news {
+		margin: 0;
+	}
 }
