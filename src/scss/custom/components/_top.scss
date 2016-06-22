@@ -60,6 +60,8 @@
 	}
 	@media screen and #{breakpoint(medium)} {
 		.inpage_menu {
+			padding-top: 20px;
+   			background-image: linear-gradient(rgba($body-background,0),rgba($body-background,0.5));
 			li {
 				margin: 0 15px;
 				@include fts(14,14);
@@ -74,14 +76,19 @@
 .banner_charity {
 	display: inline-block;
 	padding: 8px;
-	background-color: rgba(255,255,255,.6);
-	border: 1px solid #fff;
-	color: $body-background;
 	font-weight: bold;
 	position: absolute;
 	right: 10px;
 	bottom: 40px;
 	@include clearfix;
+	&.button {
+		background-color: rgba(255,255,255,.6);
+		border: 1px solid #fff;
+		color: $body-background;
+		&:hover,&:focus,&:active {
+			color: $body-background;
+		}
+	}
 	&--image {
 		width: 28px;
 		height: auto;
