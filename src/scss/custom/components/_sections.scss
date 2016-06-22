@@ -4,6 +4,24 @@
 */
 .section_default {
   color: $color-theme-key;
+
+  // title
+  &--archive_title {
+    @include fts(46,46);
+    font-weight: normal;
+    margin-bottom: 2rem;
+    padding-bottom: 0.8rem;
+    text-transform: uppercase;
+    color: $color-white;
+
+    & strong {
+      position: relative;
+      left: 1rem;
+      @include fts(14,14);
+      text-transform: capitalize;
+      color: $color-theme-key;
+    }
+  }
 }
 
 
@@ -26,23 +44,6 @@
     margin-bottom: 0;
     padding-bottom: 1rem;
     color: $color-theme-key;
-  }
-
-  &--archive_title {
-    @include fts(46,46);
-    font-weight: normal;
-    margin-bottom: 2rem;
-    padding-bottom: 0.8rem;
-    text-transform: uppercase;
-    color: $color-white;
-
-    & strong {
-      position: relative;
-      left: 1rem;
-      @include fts(14,14);
-      text-transform: capitalize;
-      color: $color-theme-key;
-    }
   }
 
   // date
