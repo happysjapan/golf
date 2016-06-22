@@ -2,6 +2,28 @@ $(document).foundation();
 
 $(function(){
 
+// Slider height
+var height = $( window ).height();
+$('#front_orbit').height(height);
+
+$( window ).resize(function() {
+  var height = $( window ).height();
+  $('#front_orbit').height(height);
+});
+
+  // Smooth scroll menu
+  $('a').click(function(){
+    var speed = 800;
+    $('#js_next').attr('href', '#cast');
+
+    var href= $(this).attr("href");
+    var target = $(href == "#" || href == "" ? 'html' : href);
+    var position = (target.offset().top);
+    $("html, body").animate({scrollTop:position}, speed, "swing");
+    return false;
+  });
+
+
   var lastScrollTop = 0;
   $(window).scroll(function(event){
      var st = $(this).scrollTop();

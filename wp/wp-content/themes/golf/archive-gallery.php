@@ -2,9 +2,11 @@
 get_header(); ?>
 
 <div class="page_wrapper">
-  <div class="section_gallery">
+  <div class="section_gallery section_default">
     <div class="row">
       <div class="columns large-12">
+
+        <h2 class="section_default--archive_title">Gallery<strong>Mikumu Horikawa 公式サイト</strong></h2>
 
         <ul id="listing" class="gallery grid" data-masonry='{ "itemSelector": ".grid-item" }'>
 
@@ -31,6 +33,7 @@ get_header(); ?>
                   $grid_width = get_field("gallery_grid_width", get_the_id());
                   $grid_height = get_field("gallery_grid_height", get_the_id());
                   $description = get_field("gallery_description", get_the_id());
+                  $gallery_video_media = get_field("gallery_video_media", get_the_id());
 
                   $access_ctrl = SwpmAccessControl::get_instance();
                 ?>
@@ -42,6 +45,10 @@ get_header(); ?>
                       <a href="<?php the_permalink(); ?>" class="gallery--item--link" style="background-image:url('<?php echo $clip_image['url']; ?>');">
                     <?php } else { ?>
                       <a href="#" class="lazy gallery--item--link" data-src="<?php echo $clip_image['url']; ?>">
+                    <?php } ?>
+
+                    <?php if( $gallery_video_media ){ ?>
+                      <span class="gallery--video_overlay"></span>
                     <?php } ?>
 
                     <div class="gallery--item--info">
