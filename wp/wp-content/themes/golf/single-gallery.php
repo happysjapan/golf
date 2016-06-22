@@ -23,8 +23,7 @@ $gallery_description = get_field("gallery_description");
               <button class="no_anim orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
 
               <ul class="orbit-container">
-                <?php
-                while ( have_rows('gallery_slider') ) : the_row(); ?>
+                <?php while ( have_rows('gallery_slider') ) : the_row(); ?>
                   <li class="orbit-slide">
                     <img class="orbit-image" src="<?php echo get_sub_field('gallery_slider_image')['url']; ?>" alt="Space">
                   </li>

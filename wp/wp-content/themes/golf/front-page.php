@@ -10,46 +10,8 @@ global $post;
 <section class="section_main">
   <div class="row">
     <div class="large-12 columns section_main--inner">
-      <div class="image_wrap">
-      
-          <!--
-          
-          It seems hard to make background image sider with foundation slider.
-          Because foudation slider is made for image(html) slider.
-          I tried to make it with the code below.But I couldn't comlete it.
 
-          -->
-          <!-- <div class="main_image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/top/main1.jpg');"></div> -->
-
-          <!-- <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
-            <ul class="orbit-container">
-              <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-              <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-              <li class="is-active orbit-slide">
-                <div class="main_image orbit-image" style="background-image: url('http://localhost:8888/HAPPYS/golf/wp/wp-content/uploads/2016/06/main1.jpg');"></div>
-
-                <figcaption class="orbit-caption">Space, the final frontier.</figcaption>
-              </li>
-              <li class="is-active orbit-slide">
-                <div class="main_image orbit-image" style="background-image: url('http://localhost:8888/HAPPYS/golf/wp/wp-content/uploads/2016/06/main2.jpg');"></div>
-
-                <figcaption class="orbit-caption">Space, the final frontier.</figcaption>
-              </li>
-
-              <li class="is-active orbit-slide">
-                <div class="main_image orbit-image" style="background-image: url('http://localhost:8888/HAPPYS/golf/wp/wp-content/uploads/2016/06/main3.jpg');"></div>
-
-                <figcaption class="orbit-caption">Space, the final frontier.</figcaption>
-              </li>
-            </ul>
-            <nav class="orbit-bullets">
-              <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
-              <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
-              <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
-              <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
-            </nav>
-          </div> -->
-      </div>
+      <?php get_template_part( 'includes/front', 'slider' ); ?>
 
       <a href="" class="banner_charity button" title="チャリティー活動">
         <img src="<?php echo get_template_directory_uri(); ?>/images/top/charity_ribbon.png" alt="チャリティー活動" width="41" height="50" class="banner_charity--image" />
