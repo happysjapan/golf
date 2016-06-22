@@ -9,7 +9,6 @@ get_template_part( 'includes/template', 'front-header' ); ?>
   <div class="row">
     <div class="large-12 columns section_main--inner">
       <div class="image_wrap">
-          <!-- <div class="main_image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/top/main1.jpg');"></div> -->
       </div>
 
       <a href="" class="banner_charity button" title="チャリティー活動">
@@ -110,12 +109,12 @@ get_template_part( 'includes/template', 'front-header' ); ?>
               <h5 class="name_holder"><p class="name">堀川未来夢</p><p class="name_en">Mikumu Horikawa</p></h5>
               <div class="row">
                 <dl class="small-12 medium-4 columns profile_items profile_items_list">
-                  <dt>生年月日</dt><dd>1992.12.16</dd>
-                  <dt>国籍</dt><dd>日本</dd>
-                  <dt>出身地</dt><dd>神奈川県</dd>
-                  <dt>出身校</dt><dd>日本大学</dd>
+                  <dt>生年月日</dt><dd><?php echo get_field('profile_birthday'); ?></dd>
+                  <dt>出身地</dt><dd><?php echo get_field('profile_birthplace'); ?>神奈川県</dd>
+                  <dt>血液型</dt><dd>A型</dd>
                   <dt>身長</dt><dd>176.0cm</dd>
                   <dt>体重</dt><dd>78.0kg</dd>
+                  <dt>経歴</dt><dd>テキストテキストテキストテキストテキストテキストテキストテキスト</dd>
                 </dl>
                 <dl class="small-12 medium-8 columns profile_items profile_items_biography">
                   <dt>バイオグラフィー</dt>
@@ -136,6 +135,11 @@ get_template_part( 'includes/template', 'front-header' ); ?>
         <div class="tabs-panel about_content--panel" id="panel3">
           <h4 classs="about_content--panel--text">IN THE BAG</h4>
           <div class="about_content--panel--description">
+              <div class="row">
+                <dl class="small-12 columns profile_items profile_items_list">
+                  <dt>番手</dt><dd>aaaa</dd>
+                </dl>
+              </div>
           </div>
         </div>
       </div>
@@ -152,7 +156,7 @@ get_template_part( 'includes/template', 'front-header' ); ?>
       <h3 class="section_title">SPONSOR</h3>
 
       <ul class="sponsor-list">
-        <li class="sponsor">
+        <!--  <li class="sponsor">
           <a href="" title="" class="sponsor--link">
             <img src="" width="160" height="80" alt="" class="sponsor--image" />
           </a>
@@ -166,7 +170,14 @@ get_template_part( 'includes/template', 'front-header' ); ?>
           <a href="" title="" class="sponsor--link">
             <img src="" width="160" height="80" alt="" class="sponsor--image" />
           </a>
-        </li>
+        </li> -->
+
+        <?php while(have_rows('sponsor')): the_row(); ?>
+          <li>
+            <a href="<?php the_sub_field('sponsor_url'); ?>" target="blank"><img src="<?php the_sub_field('sponsor_image'); ?>" alt="<?php the_sub_field('sponsor_name'); ?>" width="160" class="sponsor--image"/></a>
+          </li>
+        <?php endwhile; ?>
+
       </ul>
     </div>
   </div>
@@ -178,6 +189,7 @@ get_template_part( 'includes/template', 'front-header' ); ?>
   <div class="row">
     <div class="large-12 columns">
       <h3 class="section_title">INSTAGRAM</h3>
+      [instagram-feed]
     </div>
   </div>
 </section>
