@@ -20,4 +20,29 @@
 		@include letter-spacing(200);
 		.fa {margin-left: 10px;}
 	}
+
+
+	&.button_form {
+		display: inline-block;
+		text-align: center;
+		line-height: 1;
+		cursor: pointer;
+		-webkit-appearance: none;
+		transition: background-color 0.25s ease-out, color 0.25s ease-out;
+		vertical-align: middle;
+		border: none;
+		border-radius: 0;
+		padding: 0.85rem 1.4rem;
+		margin: 0 0 1rem 0;
+		font-size: 0.9rem;
+		background-color: $color-theme-key-dark;
+		color: #fefefe;
+
+		&:hover,&:focus,&:active {
+			background-color: $color-theme-key;
+			color: $color-white;
+		}
+	}
+
+
 }

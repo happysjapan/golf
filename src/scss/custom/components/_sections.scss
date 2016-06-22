@@ -3,4 +3,23 @@
 */
 .section_default {
   color: $color-black;
+
+  &--title {
+    @include fts(26,26);
+    font-weight: bold;
+    border-bottom: 3px solid $color-black;
+    margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
+  }
+}
+
+
+/*
+** Section news
+*/
+.section_news {
+
+  & .news {
+    margin-bottom: 1rem;
+  }
 }

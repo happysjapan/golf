@@ -2,7 +2,7 @@
 ** News panels
 */
 .news_panel {
-	margin-bottom: 10px;
+	margin-bottom: 1rem;
 	&:last-child {margin-bottom: 0;}
 	&--link_box {
 		display: block;
@@ -13,7 +13,7 @@
 			padding: 10px;
 			background-color: rgba($color-theme-key,.2);
 			border: 1px solid $color-theme-key;
-			color: #fff;
+			color: $color-white;
 			position: relative;
 			transition: all .3s;
 			&::after { // small triangle
@@ -36,9 +36,9 @@
 			background-color: rgba($color-theme-key,.2);
 			.news_panel--link_box--inner {
 				margin: -10px -10px 10px 10px;
-				border-color: #fff;
+				border-color: $color-white;
 				&::after { // small triangle
-	    			border-left-color: #fff;
+	    			border-left-color: $color-white;
 				}
 			}
 		}
@@ -51,8 +51,5 @@
 		&--text {
 
 		}
-	}
-	@media screen and #{breakpoint(medium)} {
-		margin-bottom: 0;
 	}
 }

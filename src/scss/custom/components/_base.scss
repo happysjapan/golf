@@ -19,6 +19,11 @@ a {
 }
 
 .page_wrapper {
-	margin-top: 2rem;
-	margin-bottom: 5rem;
+	padding-top: 2rem;
+	padding-bottom: 5rem;
+  background-color: $color-navy;
+
+	&.no_margin {
+		margin: 0;
+	}
 }
