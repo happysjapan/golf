@@ -1,21 +1,88 @@
 /*
 ** Section default
+** Define default styling for a section and its elements
 */
 .section_default {
-  color: $color-black;
+  color: $color-theme-key;
+}
 
-  &--title {
-    @include fts(26,26);
-    font-weight: bold;
-    border-bottom: 3px solid $color-black;
+
+/*
+** Section article
+** Define default styling for a section and its elements
+*/
+.section_article {
+  color: $color-theme-key;
+
+  &--header {
     margin-bottom: 1rem;
+  }
+
+  // title
+  &--title {
+    @include fts(22,22);
+    font-weight: bold;
+    border-bottom: 2px solid $color-theme-key;
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+    color: $color-theme-key;
+  }
+
+  &--archive_title {
+    @include fts(46,46);
+    font-weight: normal;
+    margin-bottom: 2rem;
     padding-bottom: 0.8rem;
+    text-transform: uppercase;
+    color: $color-white;
+
+    & strong {
+      position: relative;
+      left: 1rem;
+      @include fts(14,14);
+      text-transform: capitalize;
+      color: $color-theme-key;
+    }
+  }
+
+  // date
+  &--date {
+    display: block;
+    @include fts(11,11);
+    margin-top: 1rem;
+  }
+
+  // description
+  &--description {
+    display: inline-block;
+    @include fts(14,14);
+    color: $color-white;
+    border-bottom: 1px solid $color-white;
+    margin-bottom: 1.6rem;
+    padding-bottom: 1.6rem;
+  }
+
+  // content
+  &--content {
+    @include fts(14,14);
+    color: $color-white;
   }
 }
 
 
 /*
+** Section media
+** Define positioning for media section
+*/
+.section_media {
+  margin-bottom: 2rem;
+}
+
+
+
+/*
 ** Section news
+** Define styling for news section and its elements
 */
 .section_news {
 
