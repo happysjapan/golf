@@ -17,7 +17,6 @@
 	border: 0;
 	text-align: center;
   	background: transparent;
-
   	// tab
 	&--tab {
     position: relative;
@@ -116,13 +115,13 @@
 	background-color: transparent;
 	border: none;
 	&--panel {
-		padding: 1rem;
+		padding: 1rem 1rem 1.5rem;
 		text-align: center;
 		background-color: rgba($body-background,.4);
 		border: 1px solid #fff;
-		h4 {
-			margin-bottom: 20px;
-			@include fts(32,48);
+		&--title {
+			margin-bottom: 30px;
+			@include fts(28,36);
 			@include letter-spacing(200);
 			position: relative;
 			&::after {
@@ -142,6 +141,9 @@
 			margin: 0 auto;
 			text-align: left;
 			@include fts(13);
+		  	.in_the_bag & {
+				max-width: 640px;
+		  	}
 			.name_holder {margin: 10px 0;}
 			.name {
 				display: inline-block;
@@ -176,6 +178,8 @@
 					display: inline-block;
 				}
 				&_list {
+					margin-bottom: 1.5rem;
+					border-bottom: 1px solid $color-lightBlue;
 					dt {
 						width: 36%;
 					}
@@ -191,6 +195,7 @@
 					dd {
 						display: block;
 						margin-bottom: 25px;
+						&:last-child {margin-bottom: 0;}
 					}
 				}
 			}
@@ -199,19 +204,30 @@
 	}
 
 	 @media screen and #{breakpoint(medium)} {
-	 		&--panel {
-				padding: 2rem;
-				&--description {
-					@include fts(15);
-					.name {
-						margin-right: 20px;
-						@include fts(28);
-					}
-					.name_en {
-						@include fts(20);
-					}
+ 		&--panel {
+			padding: 2rem 2rem 2.5rem;
+			&--title {
+				@include fts(32,48);
+			}
+			&--description {
+				@include fts(15);
+				.profile_items_list {
+					margin-bottom: 0;
+					border-bottom: none;
+				}
+				.profile_items_biography {
+					padding-left: 3rem;
+					border-left: 1px solid $color-lightBlue;
+				}
+				.name {
+					margin-right: 20px;
+					@include fts(28);
+				}
+				.name_en {
+					@include fts(20);
 				}
 			}
+		}
 	 }
 }
 
