@@ -2,6 +2,7 @@
 get_header();
 
 if( isset($_GET['y']) && $_GET['y'] != '' ) {
+  $displayed_year = htmlspecialchars($_GET['y']).'年';
   function filter_where($where = '') {
     $year = htmlspecialchars($_GET['y']);
     $year = str_replace('/', '', $year);
@@ -12,6 +13,7 @@ if( isset($_GET['y']) && $_GET['y'] != '' ) {
   }
 }
 else {
+  $displayed_year = date("Y").'年';
   function filter_where($where = '') {
     $year = date("Y");
     $year_start = $year.'0101';
@@ -36,8 +38,8 @@ $wp_query = new WP_Query($custom_args);
   <div class="section_default section_tournament">
     <section class="section_default">
       <div class="row align-top">
-        <h2 class="section_default--archive_title columns small-12">Tournaments<strong>Mikumu Horikawa 公式サイト</strong></h2>
-        <div class="section_default--main small-12 medium-8 columns">
+        <h2 class="section_default--archive_title columns small-12">Tournaments<strong><?php echo $displayed_year; ?></strong></h2>
+        <div class="section_default--main small-12 medium-9 columns">
           <ul class="tournament row">
             <?php
             $i = 0;
@@ -52,7 +54,7 @@ $wp_query = new WP_Query($custom_args);
           </ul>
         </div>
 
-        <aside class="aside small-12 medium-4 columns">
+        <aside class="aside small-12 medium-3 columns">
           <?php
           $query = "
           SELECT DISTINCT YEAR(post_date)

@@ -95,15 +95,51 @@
 	// Tournament panels
 	.tournament_panel & {
 		&--date {
-			text-align: center;
+			text-align: left;
+			display: block;
+			@include fts(11,11);
+			margin-bottom: rem-calc(14px);
+		}
 
-			&--year {
-				display: block;
-			}
+		&--place {
+			width: 100%;
+			margin-bottom: 0;
+			@include fts(12,12);
+			margin-bottom: rem-calc(14px);
 		}
 
 		&--details {
 			margin-left: 0;
+		}
+
+		&--info {
+			margin-bottom: rem-calc(4px);
+			@include fts(12,12);
+			line-height: rem-calc(14px);
+
+			& .separator {
+				border: none;
+
+				@media screen and #{breakpoint(medium)} {
+					border-right: 1px solid $color-white;
+				}
+
+			}
+
+			& strong {
+				font-weight: bold;
+				@include fts(14,14);
+			}
+		}
+
+		&--score {
+			-ms-flex: 0 0 100%;
+			flex: 0 0 100%;
+
+			@media screen and #{breakpoint(medium)} {
+				-ms-flex: 1 1 0px;
+				flex: 1 1 0px;
+			}
 		}
 
 	}
