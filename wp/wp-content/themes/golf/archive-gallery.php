@@ -6,7 +6,12 @@ get_header(); ?>
     <div class="row">
       <div class="columns large-12">
 
-        <h2 class="section_default--archive_title">Gallery<strong>Mikumu Horikawa 公式サイト</strong></h2>
+        <h2 class="section_default--archive_title row align-bottom">
+          <div class="columns shrink">
+            Gallery
+          </div>
+          <strong class="columns shrink">Mikumu Horikawa 公式サイト</strong>
+        </h2>
 
         <ul id="listing" class="gallery grid" data-masonry='{ "itemSelector": ".grid-item" }'>
 
