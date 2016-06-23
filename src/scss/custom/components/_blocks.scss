@@ -29,28 +29,64 @@
 		    height: 90px;
 		    margin: 0 auto;
 			padding: 0;
-			@include border-radius(100%);
-			overflow: hidden;
-			border: 1px solid #fff;
 			position: relative;
+			.inner {
+				@include border-radius(100%);
+				border: 1px solid #fff;
+				position: relative;
+				overflow: hidden;
+				z-index: 1;
+				&::before {  // black opaque cover
+	 				@extend %bfaf;
+					width: 100%;
+					height: 100%;
+					@include border-radius(100%);
+					background-color: rgba(0,0,0,.5);
+					top: 0;
+					left: 0;
+					z-index: 0;
+				}
+			}
 
-			&::after {
-				content: "";
-				display: block;
-				width: 100%;
-				height: 100%;
-				background-color: rgba(0,0,0,.5);
+			&::after {  // bottom shadow
+ 				@extend %bfaf;
+				@include border-radius(100%);
+				background-color: rgba($body-background,.2);
+				border: 1px solid #fff;
 				position: absolute;
-				top: 0;
-				left: 0;
+				top: 0px;
+				left: 0px;
+				right: 0px;
+				bottom: 0px;
 				z-index: 0;
+			}
+
+			&:hover {
+				background: transparent;
+				.inner {
+					&::before {  // black opaque cover
+						background-color: rgba(#fff,.1);
+						@include setTransition();
+					}
+					.about_list--tab--title {
+						@include fts(32);
+						@include setTransition();
+					}
+				}
+				&::after {  // bottom shadow
+					right: -10px;
+					bottom: -10px;
+					top: -10px;
+					left: -10px;
+					@include setTransition();
+				}
 			}
 		}
 
     // image
 		&--image {
-      width: 100%;
-      height: auto;
+		    width: 100%;
+		    height: auto;
 			background-color: $body-background;
 			border: none;
 		}
@@ -81,11 +117,20 @@
 			bottom: -30px;
 			left: 50%;
 		}
-		.about_list--tab--link::after {
-			background-color: rgba(0,0,0,0);
-		}
-		.about_list--tab--title {
-			display: none;
+		.about_list--tab {
+			background-color: transparent;
+			&--link {
+				background-color: transparent;
+				.inner {
+					&::before { background-color: transparent; }
+				}
+				&::after {
+					display: none;
+				}
+			}
+			&--title {
+				display: none;
+			}
 		}
 
 	}
