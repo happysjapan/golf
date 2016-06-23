@@ -11,27 +11,29 @@
 }
 
 // List
-.about_list {
-	margin-bottom: 30px;
+.row .about_list {
+	max-width: 1000px;
+	margin: 0 auto 30px;
 	border: 0;
 	text-align: center;
-  background: transparent;
+  	background: transparent;
 
-  // tab
+  	// tab
 	&--tab {
     position: relative;
+    padding: 0 5px;
 
     // link
 		&--link {
 			display: block;
+		    width: 90px;
+		    height: 90px;
+		    margin: 0 auto;
 			padding: 0;
 			@include border-radius(100%);
 			overflow: hidden;
 			border: 1px solid #fff;
 			position: relative;
-      width: 90px;
-      height: 90px;
-      margin: 0 auto;
 
 			&::after {
 				content: "";
@@ -92,10 +94,9 @@
 	 @media screen and #{breakpoint(medium)} {
 
 		&--tab {
-
 			&--link {
-        width: 200px;
-        height: 200px;
+		        width: 200px;
+		        height: 200px;
 			}
 			&--title {
 				@include fts(28);
@@ -117,7 +118,7 @@
 	&--panel {
 		padding: 1rem;
 		text-align: center;
-		background-color: rgba($body-background,.3);
+		background-color: rgba($body-background,.4);
 		border: 1px solid #fff;
 		h4 {
 			margin-bottom: 20px;
@@ -137,38 +138,60 @@
 			}
 		}
 		&--description {
+			max-width: 1000px;
+			margin: 0 auto;
 			text-align: left;
-			@include fts(15);
+			@include fts(13);
 			.name_holder {margin: 10px 0;}
 			.name {
 				display: inline-block;
-				margin-right: 20px;
+				margin-right: 10px;
 				font-weight: bold;
-				@include fts(28);
+				@include fts(22);
 			}
 			.name_en {
 				display: inline-block;
 				font-weight: bold;
-				@include fts(20);
+				@include fts(16);
 				color: $color-lightBlue;
 			}
 			.profile_items {
+				margin-bottom: 0;
 				dt {
+					padding-left: 12px;
 					color: $color-lightBlue;
+					position: relative;
+					&::before {
+						content: "";
+						display: block;
+						width: 6px;
+						height: 6px;
+						background-color: $color-lightBlue;
+						position: absolute;
+						top: 9px;
+						left: 0;
+					}
 				}
 				dt,dd {
 					display: inline-block;
 				}
 				&_list {
 					dt {
-						width: 30%;
+						width: 36%;
 					}
 					dd {
-						width: 70%;
+						width: 64%;
+						margin-bottom: 20px;
 					}
 				}
 				&_biography {
-
+					dt {
+						display: block;
+					}
+					dd {
+						display: block;
+						margin-bottom: 25px;
+					}
 				}
 			}
 
@@ -178,6 +201,16 @@
 	 @media screen and #{breakpoint(medium)} {
 	 		&--panel {
 				padding: 2rem;
+				&--description {
+					@include fts(15);
+					.name {
+						margin-right: 20px;
+						@include fts(28);
+					}
+					.name_en {
+						@include fts(20);
+					}
+				}
 			}
 	 }
 }

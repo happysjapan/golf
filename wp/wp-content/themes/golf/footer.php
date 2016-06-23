@@ -4,7 +4,7 @@
     <p class="columns align-center small-12">運営会社 contact</p>
     <p class="columns align-center small-12">Copyright © 株式会社ハッピーズ All Rights Reserved.</p>
     <div class="scroll_top">
-      <a href="#top" class="button"><i class="fa fa-angle-up"></i></a>
+      <a href="" class="button" id="scroll_top"><i class="fa fa-angle-up"></i></a>
     </div>
   </div>
 </footer>

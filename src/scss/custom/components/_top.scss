@@ -51,6 +51,8 @@
 	}
 	@media screen and #{breakpoint(medium)} {
 		.inpage_menu {
+			padding-top: 20px;
+   			background-image: linear-gradient(rgba($body-background,0),rgba($body-background,0.5));
 			li {
 				margin: 0 15px;
 				@include fts(14,14);
@@ -65,14 +67,19 @@
 .banner_charity {
 	display: inline-block;
 	padding: 8px;
-	background-color: rgba(255,255,255,.6);
-	border: 1px solid #fff;
-	color: $body-background;
 	font-weight: bold;
 	position: absolute;
 	right: 10px;
 	bottom: 40px;
 	@include clearfix;
+	&.button {
+		background-color: rgba(255,255,255,.6);
+		border: 1px solid #fff;
+		color: $body-background;
+		&:hover,&:focus,&:active {
+			color: $body-background;
+		}
+	}
 	&--image {
 		width: 28px;
 		height: auto;
@@ -131,16 +138,35 @@
 /* SPONSOR
 --------------------------- */
 .section_sponsor {
-	margin-top: 500px;
+	padding-bottom: 40px;
 	text-align: center;
 	background-color: #f2f2f2;
 	.section_title {
 		color: $body-background;
 	}
-	.sponsor {
-		display: inline-block;
+	.sponsor_list {
+		margin: 0;
+		text-align: center;
+		&--item {
+			display: inline-block;
+			margin: 0 4px 10px;
+		}
 		&--link {
-
+			display: block;
+		}
+		&--image {
+			width: 80px;
+			height: auto;
+		}
+		@media screen and #{breakpoint(medium)} {
+			&--item {
+				margin: 0 10px 20px;
+			}
+			&--link {
+			}
+			&--image {
+				width: 150px;
+			}
 		}
 	}
 }
