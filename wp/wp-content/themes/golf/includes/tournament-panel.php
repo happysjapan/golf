@@ -1,10 +1,10 @@
 <?php
-if( isset($_GET['y']) && $_GET['y'] != '' ) {
-  $displayed_year = htmlspecialchars($_GET['y']).'年';
-}
-else {
-  $displayed_year = date("Y").'年';
-}
+  if( isset($_GET['y']) && $_GET['y'] != '' ) {
+    $displayed_year = htmlspecialchars($_GET['y']).'年';
+  }
+  else {
+    $displayed_year = date("Y").'年';
+  }
 
   $tournament_description = get_field('tournament_description', get_the_ID());
   $tournament_place = get_field('tournament_place', get_the_ID());
@@ -15,10 +15,8 @@ else {
 
   $tournament_has_result = get_field('tournament_has_result', get_the_ID());
   $tournament_thumbnail = get_field('tournament_thumbnail', get_the_ID())["sizes"]["thumbnail"];
-
-  // echo "<pre>";
-  // var_dump($tournament_thumbnail);
-
+  $tournament_rank = get_field('tournament_rank', get_the_ID());
+  $tournament_score = get_field('tournament_score', get_the_ID());
 ?>
 <li class="small-12 columns article_panel tournament_panel">
   <?php if( $tournament_has_result ){ ?>
@@ -31,13 +29,24 @@ else {
           </div>
           <div class="columns">
             <div class="article_panel--details row">
-              <h3 class="article_panel--title"><?php the_title(); ?></h3>
-              <div class="row align-middle">
-                <time class="separator article_panel--date columns shrink">
+              <div class="columns small-12">
+                <time class="article_panel--date">
                   <?php echo $displayed_year; ?>
                   <?php echo $tournament_start_date.'～'.$tournament_end_date; ?>
                 </time>
-                <div class="article_panel--text columns"><?php echo $tournament_place; ?></div>
+                <h3 class="article_panel--title"><?php the_title(); ?></h3>
+                <p class="article_panel--place"><?php echo $tournament_place; ?></p>
+              </div>
+
+              <div class="columns">
+                <div class="row article_panel--info--holder">
+                  <div class="columns shrink separator">
+                    <p class="article_panel--info"><strong>Position:</strong> <?php echo $tournament_rank; ?></p>
+                  </div>
+                  <div class="columns article_panel--score">
+                    <p class="article_panel--info"><strong>Score:</strong> <?php echo $tournament_score; ?></p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
