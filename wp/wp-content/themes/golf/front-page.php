@@ -89,7 +89,7 @@ global $post;
 
       <div class="tabs-content about_content" data-tabs-content="about-tabs">
         <div class="tabs-panel is-active about_content--panel" id="panel1">
-            <h4 classs="about_content--panel--text">PROFILE</h4>
+            <h4 class="about_content--panel--title">PROFILE</h4>
             <div class="about_content--panel--description">
               <h5 class="name_holder"><p class="name">堀川未来夢</p><p class="name_en">Mikumu Horikawa</p></h5>
               <div class="row">
@@ -115,22 +115,23 @@ global $post;
             </div>
         </div>
         <div class="tabs-panel about_content--panel" id="panel2">
-          <h4 classs="about_content--panel--text">MESSAGE</h4>
+          <h4 class="about_content--panel--title">MESSAGE</h4>
           <div class="about_content--panel--description">
             <p><?php echo get_field('message'); ?></p>
           </div>
         </div>
-        <div class="tabs-panel about_content--panel" id="panel3">
-          <h4 classs="about_content--panel--text">IN THE BAG</h4>
+        <div class="tabs-panel about_content--panel in_the_bag" id="panel3">
+          <h4 class="about_content--panel--title">IN THE BAG</h4>
           <div class="about_content--panel--description">
               <div class="row">
-                <dl class="small-12aaaa columns profile_items profile_items_list">
-                  <dt>番手</dt><dd><?php echo get_field('bag_number'); ?><dd>
-                  <dt>モデル</dt><dd><?php echo get_field('bag_model'); ?><dd>
-                  <dt>シャフト</dt><dd><?php echo get_field('bag_shaft'); ?><dd>
-                  <dt>ロフト</dt><dd><?php echo get_field('bag_loft'); ?><dd>
-                  <dt>長さ</dt><dd><?php echo get_field('bag_length'); ?><dd>
-                  <dt>フレックス</dt><dd><?php echo get_field('bag_flex'); ?><dd>
+                <dl class="small-12 columns profile_items profile_items_list">
+                  <dt>番手</dt><dd><?php echo get_field('bag_number'); ?></dd>
+                  <dt>モデル</dt><dd><?php echo get_field('bag_model'); ?></dd>
+                  <dt>シャフト</dt><dd><?php echo get_field('bag_shaft'); ?></dd>
+                  <dt>ロフト</dt><dd><?php echo get_field('bag_loft'); ?></dd>
+                  <dt>長さ</dt><dd><?php echo get_field('bag_length'); ?></dd>
+                  <dt>フレックス</dt><dd><?php echo get_field('bag_flex'); ?></dd>
+                </dl>
               </div>
           </div>
         </div>
