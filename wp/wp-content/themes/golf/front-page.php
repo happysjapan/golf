@@ -21,11 +21,11 @@ global $post;
         </div>
       </a>
 
-      <ul class="inpage_menu" data-magellan-expedition="fixed">
-        <li data-magellan-arrival="news"><a href="#news" title="NEWS"><p>NEWS<i class="fa fa-angle-down" aria-hidden="true"></i></p></a></li>
-        <li data-magellan-arrival="about"><a href="#about" title="ABOUT"><p>ABOUT<i class="fa fa-angle-down" aria-hidden="true"></i></p></a></li>
-        <li><a href="#sponsors" title="SPONSORS"><p>SPONSORS<i class="fa fa-angle-down" aria-hidden="true"></i></p></a></li>
-        <li><a href="#sns" title="SNS"><p>SNS<i class="fa fa-angle-down" aria-hidden="true"></i></p></a></li>
+      <ul class="inpage_menu">
+        <li><a href="#news" title="NEWS"><p>NEWS<i class="fa fa-angle-down" aria-hidden="true"></i></p></a></li>
+        <li><a href="#about" title="ABOUT"><p>ABOUT<i class="fa fa-angle-down" aria-hidden="true"></i></p></a></li>
+        <li><a href="#sponsor" title="SPONSOR"><p>SPONSOR<i class="fa fa-angle-down" aria-hidden="true"></i></p></a></li>
+        <li><a href="#instagram" title="instagram"><p>INSTAGRAM<i class="fa fa-angle-down" aria-hidden="true"></i></p></a></li>
       </ul>
     </div>
   </div>
@@ -33,8 +33,7 @@ global $post;
 <!-- / Main Section -->
 
 <!-- NEWS Section -->
-<a name="news"></a>
-<section id="news" class="section_news section_in_top" data-magellan-destination="news">
+<section id="news" class="section_news section_in_top">
   <div class="row">
     <div class="large-12 columns">
       <?php
@@ -62,26 +61,25 @@ global $post;
 
 
 <!-- ABOUT Section -->
-<a name="about" href="#about"></a>
-<section id="about" class="section_about section_in_top" data-magellan-destination="about">
+<section id="about" class="section_about section_in_top">
   <div class="row">
     <div class="large-12 columns">
       <h3 class="section_title">ABOUT</h3>
 
       <ul class="about_list tabs row align-center" data-tabs id="about-tabs">
-        <li class="about_list--tab is-active tabs-title columns shrink small-4" role="presentation">
+        <li class="about_list--tab is-active tabs-title columns small-4" role="presentation">
           <a href="#panel1" aria-selected="true" class="about_list--tab--link no_anim">
             <img src="<?php echo get_template_directory_uri(); ?>/images/top/about_profile.png" alt="堀川未来夢 プロフィール" class="about_list--tab--image" />
             <h4 class="about_list--tab--title">PROFILE</h4>
           </a>
         </li>
-        <li class="about_list--tab tabs-title columns shrink small-4" role="presentation">
+        <li class="about_list--tab tabs-title columns small-4" role="presentation">
           <a href="#panel2" class="about_list--tab--link no_anim">
             <img src="<?php echo get_template_directory_uri(); ?>/images/top/about_message.png" alt="堀川未来夢 メッセージ" class="about_list--tab--image" />
             <h4 class="about_list--tab--title">MESSAGE</h4>
           </a>
         </li>
-        <li class="about_list--tab tabs-title columns shrink small-4" role="presentation">
+        <li class="about_list--tab tabs-title columns small-4" role="presentation">
           <a href="#panel3" class="about_list--tab--link no_anim">
             <img src="<?php echo get_template_directory_uri(); ?>/images/top/about_bag.png" alt="堀川未来夢 バッグの中" class="about_list--tab--image" />
             <h4 class="about_list--tab--title">IN THE BAG</h4>
@@ -143,7 +141,6 @@ global $post;
 <!-- / ABOUT Section -->
 
 <!-- SPONSOR Section -->
-<a name="sponsor" href="#sponsor"></a>
 <section id="sponsor" class="section_sponsor section_in_top">
   <div class="row">
     <div class="large-12 columns">

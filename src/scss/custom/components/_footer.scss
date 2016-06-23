@@ -9,20 +9,6 @@
 		background-color: rgba($body-background,1);
 	}
 }
-// .scroll_top {
-// 	position: absolute;
-// 	top: 30px;
-// 	right: 30px;
-// 	border: 1px solid $color-theme-key;
-// 	background-color: rgba($body-background,1);
-// 	@include border-radius(100%);
-// 	a {
-// 		display: block;
-// 		width: 40px;
-// 		height: 40px;
-// 		@include fts(30,36);
-// 	}
-// }
 .scroll_top {
 	position: absolute;
 	top: -32px;
@@ -36,17 +22,17 @@
 		margin: 0;
 		padding: 0;
 		@include fts(30,30);
-		color: $body-background;
-		border: 1px solid $body-background;
+		color: #fff;
+		border: 1px solid #fff;
 		border-bottom: 0px;
 		background-color: transparent;
-	}
-
-	&:hover {
-		.button {
+		&:hover,&:focus {
 			background-color: rgba(#fff,.3);
 			color: #fff;
 			border-bottom: 0px;
+		}
+		&:focus {
+			background-color: rgba(#fff,0);
 		}
 	}
 }

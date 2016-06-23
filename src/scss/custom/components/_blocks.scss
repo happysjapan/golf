@@ -11,13 +11,14 @@
 }
 
 // List
-.about_list {
-	margin-bottom: 30px;
+.row .about_list {
+	max-width: 1000px;
+	margin: 0 auto 30px;
 	border: 0;
 	text-align: center;
-  background: transparent;
+  	background: transparent;
 
-  // tab
+  	// tab
 	&--tab {
     position: relative;
     padding: 0 5px;
@@ -93,7 +94,6 @@
 	 @media screen and #{breakpoint(medium)} {
 
 		&--tab {
-			padding: 0 20px;
 			&--link {
 		        width: 200px;
 		        height: 200px;

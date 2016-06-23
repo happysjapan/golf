@@ -12,7 +12,7 @@ $( window ).resize(function() {
 });
 
   // Smooth scroll menu
-  $('a').click(function(){
+  $('#scroll_top').click(function(){
     var speed = 800;
     $('#js_next').attr('href', '#cast');
 
@@ -66,6 +66,7 @@ $( window ).resize(function() {
        return false;
      }
    });
+
 });
 
 
