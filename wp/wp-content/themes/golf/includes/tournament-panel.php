@@ -33,10 +33,10 @@ else {
             <div class="article_panel--details row">
               <h3 class="article_panel--title"><?php the_title(); ?></h3>
               <div class="row align-middle">
-                <div class="separator article_panel--date columns shrink">
+                <time class="separator article_panel--date columns shrink">
                   <?php echo $displayed_year; ?>
                   <?php echo $tournament_start_date.'～'.$tournament_end_date; ?>
-                </div>
+                </time>
                 <div class="article_panel--text columns"><?php echo $tournament_place; ?></div>
               </div>
             </div>

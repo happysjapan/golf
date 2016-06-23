@@ -40,7 +40,6 @@
   &--title {
     @include fts(22,22);
     font-weight: bold;
-    border-bottom: 2px solid $color-theme-key;
     margin-bottom: 0;
     padding-bottom: 1rem;
     color: $color-theme-key;
