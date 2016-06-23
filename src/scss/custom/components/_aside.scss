@@ -3,8 +3,11 @@
 */
 .aside {
   color: $color-theme-key;
-  border-left: 1px solid $color-theme-key;
   padding: 1rem 0 1rem 2rem;
+
+  @media screen and #{breakpoint(medium)} {
+    border-left: 1px solid $color-theme-key;
+  }
 
   // title
   &--title {

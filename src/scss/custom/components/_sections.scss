@@ -13,13 +13,21 @@
     padding-bottom: 0.8rem;
     text-transform: uppercase;
     color: $color-white;
+    -ms-flex-pack: center;
+    justify-content: center;
 
     & strong {
-      position: relative;
-      left: 1rem;
+      display: inline-block;
+      white-space: nowrap;
       @include fts(14,14);
       text-transform: capitalize;
       color: $color-theme-key;
+    }
+
+    @media screen and #{breakpoint(medium)} {
+      -ms-flex-pack: flex-start;
+      justify-content: flex-start;
+
     }
   }
 }
@@ -40,6 +48,7 @@
   &--title {
     @include fts(22,22);
     font-weight: bold;
+    border-bottom: 2px solid $color-theme-key;
     margin-bottom: 0;
     padding-bottom: 1rem;
     color: $color-theme-key;

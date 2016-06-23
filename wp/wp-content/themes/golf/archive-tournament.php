@@ -38,7 +38,14 @@ $wp_query = new WP_Query($custom_args);
   <div class="section_default section_tournament">
     <section class="section_default">
       <div class="row align-top">
-        <h2 class="section_default--archive_title columns small-12">Tournaments<strong><?php echo $displayed_year; ?></strong></h2>
+        <div class="columns small-12">
+          <h2 class="section_default--archive_title row align-bottom">
+            <div class="columns shrink">
+              Tournaments
+            </div>
+            <strong class="columns shrink"><?php echo $displayed_year; ?></strong>
+          </h2>
+        </div>
         <div class="section_default--main small-12 medium-9 columns">
           <ul class="tournament row">
             <?php
