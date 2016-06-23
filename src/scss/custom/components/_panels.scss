@@ -1,14 +1,34 @@
 /*
-** News panels
+** Default panels
 */
-.news_panel {
+.article_panel {
 	margin-bottom: 1rem;
+
 	&:last-child {margin-bottom: 0;}
+
+	// title
+	&--title {
+		display: block;
+		width: 100%;
+    @include fts(22,22);
+		font-weight: bold;
+	}
+
+	// thumbnail
+	&--thumbnail {
+
+		&--holder {
+			border-right: 1px solid $color-white;
+		}
+	}
+
+
+	// link box
 	&--link_box {
 		display: block;
-		margin: 0 5px;
 		border: 1px solid $body-background;
-		transition: all .3s;
+		transition: all 0.3s;
+
 		&--inner {
 			padding: 10px;
 			background-color: rgba($color-theme-key,.2);
@@ -16,6 +36,7 @@
 			color: $color-white;
 			position: relative;
 			transition: all .3s;
+
 			&::after { // small triangle
 				content: "";
 				display: block;
@@ -34,7 +55,7 @@
 		&:hover {
 			border: 1px solid $color-theme-key;
 			background-color: rgba($color-theme-key,.2);
-			.news_panel--link_box--inner {
+			.article_panel--link_box--inner {
 				margin: -10px -10px 10px 10px;
 				border-color: $color-white;
 				&::after { // small triangle
@@ -42,14 +63,48 @@
 				}
 			}
 		}
+
+		& .separator {
+			border-right: 1px solid $color-white;
+		}
+	}
+	// End of link box
+
+	// box
+	&--box {
+		display: block;
+		border: 1px solid $color-black;
+		transition: all 0.3s;
+
+		&--inner {
+			padding: 10px;
+			background-color: $color-white;
+			color: $color-navy;
+			position: relative;
+			transition: all 0.3s;
+			padding: 1.2rem;
+		}
+
+		& .separator {
+			border-right: 1px solid $color-navy;
+		}
+	}
+	// End of box
+
+
+	// Tournament panels
+	.tournament_panel & {
 		&--date {
+			text-align: center;
 
+			&--year {
+				display: block;
+			}
 		}
-		&--title {
 
+		&--details {
+			margin-left: 0;
 		}
-		&--text {
 
-		}
 	}
 }

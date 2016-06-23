@@ -16,7 +16,7 @@ get_header();
         <?php endwhile; } ?>
       </div>
 
-      <div class="section_default section_schedule section_navigation">
+      <div class="section_default section_tournament section_navigation">
         <div class="post_nav row">
           <div class="columns small-6 post_nav--prev">
             <?php previous_post_link( '%link', '<< %title' ); ?>

@@ -1,0 +1,62 @@
+/*
+** Default aside
+*/
+.aside {
+  color: $color-theme-key;
+  border-left: 1px solid $color-theme-key;
+
+  // title
+  &--title {
+    @include fts(26,26);
+    font-weight: normal;
+    margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
+    text-transform: uppercase;
+    color: $color-white;
+
+    & strong {
+      position: relative;
+      left: 1rem;
+      @include fts(14,14);
+      text-transform: capitalize;
+      color: $color-theme-key;
+    }
+  }
+
+
+  // list
+  &--list {
+    margin: 0;
+  }
+
+
+  // links
+	&--link {
+    display: block;
+    padding: 0.4rem 1rem;
+    @include setTransition();
+
+		&:before {
+			content: '';
+      display: inline-block;
+      margin-right: 0.8rem;
+			width: 0;
+			height: 0;
+			border: inset 5px;
+			border-color: transparent transparent transparent $color-theme-key;
+			border-left-style: solid;
+			border-right-width: 0;
+      @include setTransition();
+		}
+
+    &:hover {
+      @include setTransition();
+
+      &:before {
+  			border-color: transparent transparent transparent $color-theme-key-dark;
+        @include setTransition();
+  		}
+
+    }
+	}
+}

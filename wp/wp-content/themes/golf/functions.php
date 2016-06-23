@@ -135,18 +135,18 @@ function golf_news_create_post_type() {
 }
 
 /*-------------------------------------------*/
-/*	Custom post type _ add schedule
+/*	Custom post type _ add tournament
 /*-------------------------------------------*/
-add_post_type_support( 'schedule', 'front-end-editor' );
+add_post_type_support( 'tournament', 'front-end-editor' );
 
-add_action( 'init', 'golf_schedule_create_post_type', 0 );
-function golf_schedule_create_post_type() {
- $scheduleLabelName = 'Schedule';
- register_post_type( 'schedule', /* post-type */
+add_action( 'init', 'golf_tournament_create_post_type', 0 );
+function golf_tournament_create_post_type() {
+ $tournamentLabelName = 'Tournament';
+ register_post_type( 'tournament', /* post-type */
  array(
    'labels' => array(
-   'name' => $scheduleLabelName,
-   'singular_name' => $scheduleLabelName
+   'name' => $tournamentLabelName,
+   'singular_name' => $tournamentLabelName
  ),
  'public' => true,
  'menu_position' =>5,
@@ -156,53 +156,19 @@ function golf_schedule_create_post_type() {
  );
  // Add information category
  register_taxonomy(
-   'schedule-cat',
-   'schedule',
+   'tournament-cat',
+   'tournament',
    array(
      'hierarchical' => true,
      'update_count_callback' => '_update_post_term_count',
-     'label' => $scheduleLabelName._x(' category','admin menu'),
-     'singular_label' => $scheduleLabelName._x(' category','admin menu'),
+     'label' => $tournamentLabelName._x(' category','admin menu'),
+     'singular_label' => $tournamentLabelName._x(' category','admin menu'),
      'public' => true,
      'show_ui' => true,
    )
  );
 }
 
-/*-------------------------------------------*/
-/*	Custom post type _ add result_ranking
-/*-------------------------------------------*/
-add_post_type_support( 'result_ranking', 'front-end-editor' );
-
-add_action( 'init', 'golf_result_ranking_create_post_type', 0 );
-function golf_result_ranking_create_post_type() {
- $result_rankingLabelName = 'Result ranking';
- register_post_type( 'result_ranking', /* post-type */
- array(
-   'labels' => array(
-   'name' => $result_rankingLabelName,
-   'singular_name' => $result_rankingLabelName
- ),
- 'public' => true,
- 'menu_position' =>5,
- 'has_archive' => true,
- 'supports' => array('title','editor','excerpt','thumbnail','author')
- )
- );
- // Add information category
- register_taxonomy(
-   'result_ranking-cat',
-   'result_ranking',
-   array(
-     'hierarchical' => true,
-     'update_count_callback' => '_update_post_term_count',
-     'label' => $result_rankingLabelName._x(' category','admin menu'),
-     'singular_label' => $result_rankingLabelName._x(' category','admin menu'),
-     'public' => true,
-     'show_ui' => true,
-   )
- );
-}
 
 /*-------------------------------------------*/
 /*	Custom post type _ add media
@@ -624,6 +590,17 @@ function custom_pagination($max_num_pages = '', $range = 1) {
  /*-------------------------------------------*/
  /* Custom functions
  /*-------------------------------------------*/
+ /*
+  * Event date
+  */
+ function happys_get_custom_date($date) {
+   $date = strtotime($date);
+   $month = date('m', $date);
+   $day = date('d', $date);
+   $day_text = date('D', $date);
+   $pfx_date = $month.'月'.$day.'日';
+   return $pfx_date;
+ }
  /*
   * Get Japanese days
   */
