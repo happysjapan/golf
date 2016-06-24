@@ -99,3 +99,28 @@
     margin-bottom: 1rem;
   }
 }
+
+
+/*
+** Section edition
+*/
+.section_edition {
+
+  // list
+  & ul {
+
+    & li {
+      list-style: disc;
+    }
+
+  }
+  // image
+  & img {
+
+    &.alignright {
+      width: auto;
+      float: right;
+      padding-left: 1rem;
+    }
+  }
+}

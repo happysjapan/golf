@@ -6,11 +6,11 @@ get_header();
   <div class="row">
     <div class="columns small-12 medium-8 medium-offset-2">
 
-      <section class="section_default section_news">
-        <h2 class="section_default--title"><?php the_title(); ?></h2>
+      <section class="section_default section_article">
+        <h2 class="section_article--title"><?php the_title(); ?></h2>
       </section>
 
-      <div class="section_default section_news">
+      <div class="section_default section_article section_edition">
         <?php if ( have_posts() ) { while ( have_posts() ) : the_post(); ?>
           <?php the_content(); ?>
         <?php endwhile; } ?>
