@@ -105,6 +105,35 @@
 ** Section edition
 */
 .section_edition {
+  margin-top: 2rem;
+  color: $color-light-white;
+
+  // titles
+  & h3 {
+    background-color: $color-theme-key;
+    padding: 0 0.6rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+
+  & h4 {
+    padding-left: 1rem;
+    border-left: 3px solid $color-theme-key;
+    margin-bottom: 1.5rem;
+  }
+
+  & h5 {
+    font-weight: bold;
+    @include fts(14,14);
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid $color-white;
+    margin-bottom: 1rem;
+  }
+
+  & h6 {
+    font-weight: bold;
+  }
+
 
   // list
   & ul {
@@ -121,6 +150,12 @@
       width: auto;
       float: right;
       padding-left: 1rem;
+    }
+
+    &.alignleft {
+      width: auto;
+      float: left;
+      padding-right: 1rem;
     }
   }
 }
