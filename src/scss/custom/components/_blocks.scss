@@ -30,6 +30,8 @@
 		    margin: 0 auto;
 			padding: 0;
 			position: relative;
+			@include setTransition();
+			
 			.inner {
 				@include border-radius(100%);
 				border: 1px solid #fff;
@@ -45,6 +47,10 @@
 					top: 0;
 					left: 0;
 					z-index: 0;
+					@include setTransition();
+				}
+				.about_list--tab--title {
+					@include setTransition();
 				}
 			}
 
@@ -59,6 +65,7 @@
 				right: 0px;
 				bottom: 0px;
 				z-index: 0;
+				@include setTransition();
 			}
 
 			&:hover {
