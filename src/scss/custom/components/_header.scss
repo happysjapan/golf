@@ -9,7 +9,6 @@
   width: 100%;
   color: $color-white;
   background-color: $body-background;
-  @include setTransition();
 
   &.fixed {
     position: fixed;
@@ -18,26 +17,36 @@
 
   &.hidden {
     top: -71px;
-    @include setTransition();
 
     & + .page_wrapper {
-      margin-top: 180px;
+      margin-top: 71px;
     }
 
     @media screen and #{breakpoint(medium)} {
       top: -151px;
+
+      & + .page_wrapper {
+        margin-top: 151px;
+      }
     }
   }
 
   &.shown {
     background-color: rgba($body-background,0.8);
+    @include setTransition();
   }
 
   &.logo_hidden {
     position: fixed;
 
     & + .page_wrapper {
-      margin-top: 180px;
+      margin-top: 71px;
+    }
+
+    @media screen and #{breakpoint(medium)} {
+      & + .page_wrapper {
+        margin-top: 151px;
+      }
     }
   }
 

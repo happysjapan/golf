@@ -26,4 +26,9 @@ a {
 	&.no_margin {
 		margin: 0;
 	}
+
+	&.section_member {
+		background-color: $color-white;
+		color: $color-navy;
+	}
 }
