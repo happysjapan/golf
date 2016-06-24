@@ -26,7 +26,7 @@
 	// link box
 	&--link_box {
 		display: block;
-		border: 1px solid $body-background;
+		// border: 1px solid $body-background;
 		transition: all 0.3s;
 
 		&--inner {
@@ -73,12 +73,13 @@
 	// box
 	&--box {
 		display: block;
-		border: 1px solid $color-black;
+		// border: 1px solid $color-black;
 		transition: all 0.3s;
 
 		&--inner {
 			padding: 10px;
-			background-color: $color-white;
+			background-color: rgba($color-theme-key,.75);
+			border: 1px solid $color-theme-key;
 			color: $color-navy;
 			position: relative;
 			transition: all 0.3s;
