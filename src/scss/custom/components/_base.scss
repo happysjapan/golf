@@ -2,8 +2,9 @@
 // Too remove
 body {
 	@include fts(14,20);
-
 	color: #fff;
+	height: 100%;
+  	background-color: $color-navy;
 }
 
 ul li {
@@ -21,7 +22,7 @@ a {
 .page_wrapper {
 	padding-top: 2rem;
 	padding-bottom: 5rem;
-  background-color: $color-navy;
+  	background-color: $color-navy;
 
 	&.no_margin {
 		margin: 0;
