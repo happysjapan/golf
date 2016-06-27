@@ -53,7 +53,7 @@ $gallery_description = get_field("gallery_description");
       <section class="section_article section_gallery">
         <h3 class="section_article--description"><?php echo $gallery_description ?></h3>
 
-        <div class="section_article--content row">
+        <div class="section_edition section_article--content row">
           <div class="columns">
             <?php if ( have_posts() ) { while ( have_posts() ) : the_post(); ?>
               <?php the_content(); ?>

@@ -1,47 +1,34 @@
 <?php
-get_header();
-
-if( isset($_GET['y']) && $_GET['y'] != '' ) {
-  $displayed_year = htmlspecialchars($_GET['y']).'年';
-}
-else {
-  $displayed_year = date("Y").'年';
-}
-
-$custom_args = array(
-  'posts_per_page' => -1,
-  'post_type' => 'post',
-  'post_status' => 'publish',
-  'order' => 'DESC',
-);
-$wp_query = new WP_Query($custom_args);
-?>
+get_header(); ?>
 
 <div class="page_wrapper no_margin">
-  <div class="section_default section_blog">
-    <section class="section_default">
+  <div class="section_default section_media">
+    <section id="media" class="section_media section_in_top" data-magellan-destination="media">
       <div class="row align-top">
+
         <div class="columns small-12">
           <h2 class="section_default--archive_title row align-bottom">
             <div class="columns shrink">
-              Blog
+              Media
             </div>
-            <strong class="columns shrink"><?php echo $displayed_year; ?></strong>
+            <strong class="columns shrink">Mikumu Horikawa 公式サイト</strong>
           </h2>
         </div>
         <div class="section_default--main small-12 medium-9 columns">
-          <ul class="blog row">
+          </h2>
+
+          <ul class="media row">
             <?php
             $i = 0;
 
-              if ( $wp_query->have_posts() ) {
-              	while ( $wp_query->have_posts() ) {
+              if ( have_posts() ) {
+              	while ( have_posts() ) {
               		the_post(); ?>
-                    <?php get_template_part( 'includes/blog', 'panel' ); ?>
+                    <?php get_template_part( 'includes/media', 'panel' ); ?>
                 <?php } // end while
-                wp_reset_postdata();
               } // end if ?>
           </ul>
+
         </div>
 
         <aside class="aside small-12 medium-3 columns">
@@ -61,6 +48,7 @@ $wp_query = new WP_Query($custom_args);
           <?php endforeach; ?>
           </ul>
         </aside>
+
       </div>
     </section>
   </div>
