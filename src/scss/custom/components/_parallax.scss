@@ -1,0 +1,83 @@
+/*
+** Parallax
+*/
+.cd-background-wrapper {
+	overflow: hidden;
+	position: absolute;
+  height: 100%;
+  width: 100%;
+
+	-webkit-perspective: 4000px;
+	-moz-perspective: 4000px;
+	perspective: 4000px;
+
+	&::before {
+		/* never visible - this is used in jQuery to check the device type */
+		content: 'web';
+		display: none;
+	}
+
+	.touch &::before {
+		/* never visible - this is used in jQuery to check the device type */
+		content: 'mobile';
+	}
+}
+
+.cd-floating-background {
+	position: relative;
+  width: 100% !important;
+	top: 0;
+	left: 0;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	@include translateZ(0);
+
+	img {
+		position: absolute;
+		display: block;
+		width: 30%;
+		-webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+		/* fixes a Firefox bug - images not correctly rendered*/
+		background-color: rgba(#FFF, .01);
+
+		&:first-child {
+			@include translateZ(200px);
+			top: 5%;
+			left: -10%;
+		}
+
+		&:nth-child(2) {
+			bottom: 10%;
+			right: 0;
+			width: 20%;
+			float: right;
+			@include translateZ(500px);
+		}
+	}
+
+	&.is-absolute {
+		position: absolute;
+		top: 0;
+		height: 90%;
+	}
+	.no-touch.no-preserve-3d & {
+		/* we target browsers that don't support preserve-3d and show just a standard image - no effect visible */
+		position: relative;
+	}
+}
+
+
+.parallax {
+	&--image {
+		opacity: 0;
+
+		&.show {
+			opacity: 1;
+			@include setTransition();
+		}
+	}
+}

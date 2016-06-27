@@ -6,6 +6,9 @@ get_template_part( 'includes/template', 'front-header' );
 global $post;
 ?>
 
+<div class="cd-parallax">
+
+
 <!-- Main Section -->
 <section class="section_main">
   <div class="row">
@@ -62,11 +65,19 @@ global $post;
 
 <!-- ABOUT Section -->
 <section id="about" class="section_about section_in_top">
+  <div class="cd-background-wrapper">
+    <figure class="cd-floating-background">
+  		<img class="parallax--image" src="<?php echo get_template_directory_uri(); ?>/images/ball_white.png" alt="ball white">
+      <img class="parallax--image" src="<?php echo get_template_directory_uri(); ?>/images/ball_white.png" alt="ball white 2">
+  	</figure>
+  </div>
+
+
   <div class="row">
     <div class="large-12 columns">
       <h3 class="section_title">ABOUT</h3>
 
-      <ul class="about_list tabs row align-center" data-tabs id="about-tabs">
+      <ul class="parallax_trigger about_list tabs row align-center" data-tabs id="about-tabs">
         <li class="about_list--tab is-active tabs-title columns small-4" role="presentation">
           <a href="#panel1" aria-selected="true" class="about_list--tab--link no_anim">
             <div class="inner">
@@ -202,7 +213,7 @@ global $post;
   </div>
 </section>
 <!-- SNS Section -->
-
+</div>
 
 
 <?php get_footer();

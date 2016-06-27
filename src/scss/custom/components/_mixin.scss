@@ -37,6 +37,14 @@
   background: linear-gradient($direction, $color-stops);
 }
 
+@mixin translateZ($px) {
+  -webkit-transform: translateZ($px);
+  -moz-transform: translateZ($px);
+  -ms-transform: translateZ($px);
+  -o-transform: translateZ($px);
+  transform: translateZ($px);
+}
+
 
 %bfaf{
   position:absolute;

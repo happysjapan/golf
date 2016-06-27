@@ -34,6 +34,17 @@
 
 
 /*
+** Section about
+*/
+.section_about {
+   & .row {
+ 		position: relative;
+ 		z-index: 100;
+ 	}
+ }
+
+
+/*
 ** Section article
 ** Define default styling for a section and its elements
 */
