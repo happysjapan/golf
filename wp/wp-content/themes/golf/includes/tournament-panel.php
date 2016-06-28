@@ -56,7 +56,7 @@
     </a>
 
   <?php } else{ ?>
-    <div class="article_panel--box no_result">
+    <div class="article_panel--box">
       <div class="article_panel--box--inner" data-equalizer-watch>
         <div class="article_panel--info row align-middle">
           <div class="article_panel--thumbnail--holder columns shrink">
@@ -71,7 +71,7 @@
                 <?php echo $displayed_year; ?>
                 <?php echo $tournament_start_date.'～'.$tournament_end_date; ?>
               </time>
-              <div class="article_panel--text columns"><?php echo $tournament_place; ?></div>
+              <div class="article_panel--place columns"><?php echo $tournament_place; ?></div>
             </div>
           </div>
         </div>

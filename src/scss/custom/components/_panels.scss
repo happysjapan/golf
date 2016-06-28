@@ -84,14 +84,6 @@
 			position: relative;
 			transition: all 0.3s;
 			padding: 1.2rem;
-
-			.tournament_panel & .article_panel--date {
-				margin-bottom: 0;
-			}
-		}
-
-		.tournament_panel & .article_panel--info .separator {
-			border-right: 1px solid $color-navy;
 		}
 	}
 	// End of box
@@ -128,7 +120,6 @@
 				@media screen and #{breakpoint(medium)} {
 					border-right: 1px solid $color-white;
 				}
-
 			}
 
 			& strong {
@@ -147,6 +138,46 @@
 			}
 		}
 	}
+
+
+	// No result
+	&--box & {
+		&--title {
+			margin-bottom: rem-calc(14px);
+		}
+
+		&--date {
+			text-align: left;
+			display: block;
+			@include fts(11,11);
+			margin-bottom: rem-calc(14px);
+		}
+
+		&--place {
+			width: 100%;
+			margin-bottom: 0;
+			@include fts(12,12);
+			margin-bottom: rem-calc(14px);
+			-ms-flex: 0 0 100%;
+			flex: 0 0 100%;
+
+			@media screen and #{breakpoint(medium)} {
+				-ms-flex: 1 1 0px;
+				flex: 1 1 0px;
+			}
+		}
+
+		&--info {
+			& .separator {
+				border: none;
+
+				@media screen and #{breakpoint(medium)} {
+					border-right: 1px solid $color-navy;
+				}
+			}
+		}
+	}
+
 
 	&--soon {
 		margin: 0;
