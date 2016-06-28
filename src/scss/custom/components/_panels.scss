@@ -84,9 +84,13 @@
 			position: relative;
 			transition: all 0.3s;
 			padding: 1.2rem;
+
+			.tournament_panel & .article_panel--date {
+				margin-bottom: 0;
+			}
 		}
 
-		& .separator {
+		.tournament_panel & .article_panel--info .separator {
 			border-right: 1px solid $color-navy;
 		}
 	}
@@ -142,6 +146,13 @@
 				flex: 1 1 0px;
 			}
 		}
+	}
 
+	&--soon {
+		margin: 0;
+		text-align: center;
+		@include fts(18,18);
+		text-transform: uppercase;
+		color: $color-white;
 	}
 }
