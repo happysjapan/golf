@@ -11,18 +11,27 @@ global $post;
 
 <!-- Main Section -->
 <section class="section_main">
-  <div class="row">
-    <div class="large-12 columns section_main--inner">
+  <div class="section_main--inner row">
+    <div class="large-12 columns section_main--inner--columns">
 
       <?php get_template_part( 'includes/front', 'slider' ); ?>
 
-      <a href="" class="banner_charity button" title="チャリティー活動">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/top/charity_ribbon.png" alt="チャリティー活動" width="41" height="50" class="banner_charity--image" />
-        <div class="banner_charity--texts">
-          <p class="text_en">CHARITY</p>
-          <p class="text_ja">チャリティー活動</p>
+      <div class="parts_holder">
+        <div class="parts_holder--inner row">
+          <div class="sign_holder small-6 columns">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/top/sign.png" alt="Mikumu Horikawa サイン" width="360"  class="sign_holder--image"/>
+          </div>
+          <div class="small-6 columns text-right align-self-bottom">
+            <a href="" class="banner_charity button" title="チャリティー活動">
+              <img src="<?php echo get_template_directory_uri(); ?>/images/top/charity_ribbon.png" alt="チャリティー活動" width="41" height="50" class="banner_charity--image" />
+              <div class="banner_charity--texts">
+                <p class="text_en">CHARITY</p>
+                <p class="text_ja">チャリティー活動</p>
+              </div>
+            </a>
         </div>
-      </a>
+        </div>
+      </div>
 
       <ul class="inpage_menu">
         <li><a href="#news" title="NEWS"><p>NEWS<i class="fa fa-angle-down" aria-hidden="true"></i></p></a></li>
