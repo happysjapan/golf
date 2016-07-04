@@ -198,7 +198,7 @@ global $post;
   <div class="row">
     <div class="large-12 columns">
       <h3 class="section_title">INSTAGRAM</h3>
-      [instagram-feed]
+      <?php echo do_shortcode('[instagram-feed]'); ?>
     </div>
   </div>
 </section>

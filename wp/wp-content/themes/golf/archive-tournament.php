@@ -48,16 +48,14 @@ $wp_query = new WP_Query($custom_args);
         </div>
         <div class="section_default--main small-12 medium-9 columns">
           <ul class="tournament row">
-            <?php
-            $i = 0;
-
-              if ( $wp_query->have_posts() ) {
-              	while ( $wp_query->have_posts() ) {
-              		the_post(); ?>
-                    <?php get_template_part( 'includes/tournament', 'panel' ); ?>
-                <?php } // end while
-                wp_reset_postdata();
-              } // end if ?>
+            <?php $i = 0;
+            if ( $wp_query->have_posts() ) {
+            	while ( $wp_query->have_posts() ) {
+            		the_post(); ?>
+                  <?php get_template_part( 'includes/tournament', 'panel' ); ?>
+              <?php } // end while
+              wp_reset_postdata();
+            } // end if ?>
           </ul>
         </div>
 
