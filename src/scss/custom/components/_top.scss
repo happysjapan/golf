@@ -27,8 +27,12 @@
 /* Main
 --------------------------- */
 .section_main {
-	.row {
+	&--inner {
 		max-width: 100%;
+		&--columns {
+			padding: 0;
+			position: relative;
+		}
 	}
 	.inpage_menu {
 		display: block;
@@ -45,10 +49,6 @@
 			.fa {margin-left: 5px;}
 		}
 	}
-	&--inner {
-		padding: 0;
-		position: relative;
-	}
 	@media screen and #{breakpoint(medium)} {
 		.inpage_menu {
 			padding-top: 20px;
@@ -62,17 +62,37 @@
 		&--inner {
 			position: relative;
 		}
+	} 
+}
+.parts_holder {
+	width: 100%;
+	position: absolute;
+	bottom: 100px;
+	&--inner {
+		.section_main & {
+			max-width: 75rem;
+			margin: 0 auto;
+		}
+	}
+	@media screen and #{breakpoint(medium)} {
+		bottom: 140px;
+	}
+}
+.sign_holder {
+	&--image {
+		max-width: 156px;
+		height: auto;
+		@media screen and #{breakpoint(medium)} {
+			max-width: 360px;
+		}
 	}
 }
 .banner_charity {
 	display: inline-block;
-	padding: 8px;
+	padding: 6px 5px;
 	font-weight: bold;
-	position: absolute;
-	right: 10px;
-	bottom: 40px;
-	@include clearfix;
 	&.button {
+		margin: 0;
 		background-color: rgba(255,255,255,.6);
 		border: 1px solid #fff;
 		color: $body-background;
@@ -81,7 +101,7 @@
 		}
 	}
 	&--image {
-		width: 28px;
+		width: 22px;
 		height: auto;
 		margin: 2px 3px 0 0;
 		float: left;
@@ -93,7 +113,7 @@
 		.text_en {
 			display: block;
 			margin: 0;
-			@include fts(20,24);
+			@include fts(18,24);
 			@include letter-spacing(120);
 		}
 		.text_ja {
@@ -107,8 +127,6 @@
 	}
 	@media screen and #{breakpoint(medium)} {
 		padding: 12px;
-		right: 20px;
-		bottom: 20px;
 		&--image {
 			margin: 2px 6px 0 0;
 			width: 41px;
