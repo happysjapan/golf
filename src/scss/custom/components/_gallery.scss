@@ -5,14 +5,25 @@
   margin: 0;
   padding: 0;
 
+  &--categories {
+    margin: 0 auto;
+
+    @media screen and #{breakpoint(medium)} {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    & .button-group {
+      margin-bottom: 2rem;
+    }
+  }
+
   &--item {
     display: block;
     margin: 2px;
     height: auto;
     color: black;
     overflow: hidden;
-
-
 
     // Grid maker
     &.grid-item--width {
@@ -79,6 +90,19 @@
     // End Grid maker
 
 
+
+    // tag
+    &--tag {
+      display: inline-block;
+      color: $color-white;
+      font-style: italic;
+      margin-top: 10px;
+      @include fts(11,11);
+
+      & .fa {
+        margin-right: 5px;
+      }
+    }
 
 
     // link

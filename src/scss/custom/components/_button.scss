@@ -45,4 +45,13 @@
 		}
 	}
 
+	.button-group & {
+
+		.gallery--categories & {
+			& {
+				margin: 0 4px;
+			}
+		}
+	}
+
 }

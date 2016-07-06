@@ -14,25 +14,30 @@ $categories = get_terms( array(
   <div class="section_gallery section_default">
     <div class="row">
       <div class="columns large-12">
-
-        <h2 class="section_default--archive_title row align-bottom">
-          <div class="columns shrink">
-            Gallery
+        <div class="row align-middle">
+          <div class="columns">
+            <h2 class="section_default--archive_title row align-bottom">
+              <div class="columns shrink">
+                Gallery
+              </div>
+              <strong class="columns shrink">Mikumu Horikawa 公式サイト</strong>
+            </h2>
           </div>
-          <strong class="columns shrink">Mikumu Horikawa 公式サイト</strong>
-        </h2>
 
-        <div class="gallery--categories row">
-          <div class="columns button-group">
-            <a class="button" href="<?php echo get_post_type_archive_link( 'gallery' ); ?>">All</a>
-            <?php foreach ($categories as $category) {
-              if( $queried_object->term_id == $category->term_id ){
-                $active_class = 'active';
-              } else {
-                $active_class = '';
-              } ?>
-              <a class="button <?php echo $active_class; ?>" href="<?php echo get_term_link($category->term_id); ?>"><?php echo $category->name; ?></a>
-            <?php } ?>
+          <div class="gallery--categories columns shrink">
+            <div class="row">
+              <div class="columns button-group">
+                <a class="button" href="<?php echo get_post_type_archive_link( 'gallery' ); ?>">All</a>
+                <?php foreach ($categories as $category) {
+                  if( $queried_object->term_id == $category->term_id ){
+                    $active_class = 'active';
+                  } else {
+                    $active_class = '';
+                  } ?>
+                  <a class="button <?php echo $active_class; ?>" href="<?php echo get_term_link($category->term_id); ?>"><?php echo $category->name; ?></a>
+                <?php } ?>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -85,6 +90,13 @@ $categories = get_terms( array(
                         <p class="gallery--item--description">
                           <?php echo $description; ?>
                         </p>
+
+                        <?php $post_cat = wp_get_post_terms( get_the_id() , 'gallery-cat');
+                        foreach ($post_cat as $tag) { ?>
+                            <span class="gallery--item--tag">
+                              <i class="fa fa-tag" aria-hidden="true"></i><?php echo $tag->name; ?>
+                            </span>
+                        <?php } ?>
                       </div>
                     </div>
                   </a>
