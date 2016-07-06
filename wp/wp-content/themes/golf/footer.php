@@ -12,11 +12,11 @@
 
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/foundation-sites/dist/foundation.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/masonry/dist/masonry.pkgd.min.js"></script>
-<!--
-<script src="<?php echo get_template_directory_uri(); ?>/js/min/app.js"></script>
--->
-<script src="http://localhost:8888/HAPPYS/golf/src/js/app.js"></script>
 
+<script src="<?php echo get_template_directory_uri(); ?>/js/min/app.js"></script>
+<!--
+<script src="http://localhost:8888/HAPPYS/golf/src/js/app.js"></script>
+-->
 
 <?php wp_footer(); ?>
 </body>
