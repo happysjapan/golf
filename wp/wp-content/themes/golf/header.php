@@ -9,7 +9,12 @@
       type="svg"
       href="<?php echo get_template_directory_uri(); ?>/images/favicon.png">
 
+    <!--
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/<?php echo golf_getCssAssets(); ?>">
+    -->
+    <link rel="stylesheet" href="http://localhost:8888/HAPPYS/golf/src/css/app.css">
+
+
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
 

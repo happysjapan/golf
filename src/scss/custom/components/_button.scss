@@ -6,7 +6,8 @@
 		display: inline-block;
 		margin-bottom: 0;
 	}
-	&:hover,&:focus,&:active {
+	&:hover,&:focus,&:active,
+	&.active {
 		background-color: rgba($color-theme-key,.5);
 		border: 1px solid $color-white;
 		color: $color-white;
@@ -43,6 +44,5 @@
 			color: $color-white;
 		}
 	}
-
 
 }

@@ -1,6 +1,9 @@
-<?php get_header(); ?>
+<?php
+get_header(); ?>
 
 <?php
+$queried_object = get_queried_object();
+
 $categories = get_terms( array(
   'taxonomy' => 'gallery-cat',
   'hide_empty' => false,
@@ -21,9 +24,14 @@ $categories = get_terms( array(
 
         <div class="gallery--categories row">
           <div class="columns button-group">
-            <a class="button active" href="<?php echo get_post_type_archive_link( 'gallery' ); ?>">All</a>
-            <?php foreach ($categories as $category) { ?>
-              <a class="button" href="<?php echo get_term_link($category->term_id); ?>"><?php echo $category->name; ?></a>
+            <a class="button" href="<?php echo get_post_type_archive_link( 'gallery' ); ?>">All</a>
+            <?php foreach ($categories as $category) {
+              if( $queried_object->term_id == $category->term_id ){
+                $active_class = 'active';
+              } else {
+                $active_class = '';
+              } ?>
+              <a class="button <?php echo $active_class; ?>" href="<?php echo get_term_link($category->term_id); ?>"><?php echo $category->name; ?></a>
             <?php } ?>
           </div>
         </div>
