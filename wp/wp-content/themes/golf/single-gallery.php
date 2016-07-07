@@ -4,6 +4,13 @@ global $post;
 $access_ctrl = SwpmAccessControl::get_instance();
 $gallery_video_media = get_field("gallery_video_media");
 $gallery_description = get_field("gallery_description");
+
+// $queried_object = get_queried_object();
+$post_cat = wp_get_post_terms( get_the_id() , 'gallery-cat');
+$categories = get_terms( array(
+  'taxonomy' => 'gallery-cat',
+  'hide_empty' => false,
+) );
 ?>
 
 <div class="page_wrapper">
@@ -11,7 +18,21 @@ $gallery_description = get_field("gallery_description");
     <div class="columns small-12 medium-10 medium-offset-1 large-8 large-offset-2">
 
       <header class="section_article--header">
-        <h2 class="section_article--title"><?php the_title(); ?></h2>
+        <h2 class="section_article--title row align-bottom">
+          <div class="columns">
+            <?php the_title(); ?>
+          </div>
+          <div class="section_article--buttons columns shrink">
+            <div class="row">
+              <div class="columns button-group">
+                <?php $post_cat = wp_get_post_terms( get_the_id() , 'gallery-cat');
+                foreach ($post_cat as $tag) { ?>
+                  <a class="button" href="<?php echo get_term_link($tag->term_id); ?>"><?php echo $tag->name; ?></a>
+                <?php } ?>
+              </div>
+            </div>
+          </div>
+        </h2>
         <time class="section_article--date"><?php echo get_the_date('Y-m-d'); ?></time>
       </header>
 

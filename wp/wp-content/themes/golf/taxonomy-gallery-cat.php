@@ -91,11 +91,11 @@ $categories = get_terms( array(
                           <?php echo $description; ?>
                         </p>
 
-                        <?php $post_cat = wp_get_post_terms( get_the_id() , 'gallery-cat');
+                        <?php $post_cat = wp_get_post_terms( get_the_id(), 'gallery-cat');
                         foreach ($post_cat as $tag) { ?>
-                            <span class="gallery--item--tag">
-                              <i class="fa fa-tag" aria-hidden="true"></i><?php echo $tag->name; ?>
-                            </span>
+                          <span class="gallery--item--tag">
+                            <i class="fa fa-tag" aria-hidden="true"></i><?php echo $tag->name; ?>
+                          </span>
                         <?php } ?>
                       </div>
                     </div>

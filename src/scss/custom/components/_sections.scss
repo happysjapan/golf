@@ -87,6 +87,12 @@
     @include fts(14,14);
     color: $color-white;
   }
+
+  &--buttons {
+    & .button-group {
+      margin: 0;
+    }
+  }
 }
 
 
