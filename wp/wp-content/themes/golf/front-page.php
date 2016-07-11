@@ -120,7 +120,10 @@ global $post;
               <h5 class="name_holder"><p class="name">堀川未来夢</p><p class="name_en">Mikumu Horikawa</p></h5>
               <div class="row">
                 <dl class="small-12 medium-3 columns profile_items profile_items_list">
-                  <dt>生年月日</dt><dd><?php echo get_field('profile_birthday'); ?></dd>
+                  <?php
+                  $birthday = strtotime(get_field('profile_birthday'));
+                  ?>
+                  <dt>生年月日</dt><dd><?php echo date('Y.m.d', $birthday); ?></dd>
                   <dt>出身地</dt><dd><?php echo get_field('profile_birthplace'); ?></dd>
                   <dt>血液型</dt><dd><?php echo get_field('profile_bloodtype'); ?></dd>
                   <dt>身長</dt><dd><?php echo get_field('profile_height'); ?></dd>
