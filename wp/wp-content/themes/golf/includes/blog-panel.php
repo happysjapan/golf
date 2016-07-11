@@ -11,7 +11,7 @@
 ?>
 <li class="small-12 columns article_panel blog_panel">
   <a href="<?php the_permalink(); ?>" title="" class="article_panel--link_box">
-    <div class="article_panel--link_box--inner" data-equalizer-watch>
+    <div class="article_panel--link_box--inner">
       <div class="article_panel--info row align-middle">
         <div class="article_panel--thumbnail--holder columns shrink">
           <img class="article_panel--thumbnail" src="<?php echo $blog_thumbnail; ?>" alt="<?php the_title(); ?>" />

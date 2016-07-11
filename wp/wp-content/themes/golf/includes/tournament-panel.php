@@ -22,7 +22,7 @@
   <?php if( $tournament_has_result ){ ?>
 
     <a href="<?php the_permalink(); ?>" title="" class="article_panel--link_box">
-      <div class="article_panel--link_box--inner" data-equalizer-watch>
+      <div class="article_panel--link_box--inner">
         <div class="article_panel--info row align-middle">
           <div class="article_panel--thumbnail--holder columns shrink">
             <img class="article_panel--thumbnail" src="<?php echo $tournament_thumbnail; ?>" alt="<?php the_title(); ?>" />
@@ -57,7 +57,7 @@
 
   <?php } else{ ?>
     <div class="article_panel--box">
-      <div class="article_panel--box--inner" data-equalizer-watch>
+      <div class="article_panel--box--inner">
         <div class="article_panel--info row align-middle">
           <div class="article_panel--thumbnail--holder columns shrink">
             <h4 class="article_panel--soon">

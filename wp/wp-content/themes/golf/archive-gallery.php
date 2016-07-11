@@ -60,6 +60,12 @@ $categories = get_terms( array(
                   $description = get_field("gallery_description", get_the_id());
                   $gallery_video_media = get_field("gallery_video_media", get_the_id());
 
+                  if( $grid_width == 2 ){
+                    $clip_image = $clip_image['sizes']['large'];
+                  } else {
+                    $clip_image = $clip_image['sizes']['medium'];
+                  }
+
                   $access_ctrl = SwpmAccessControl::get_instance();
                 ?>
 
@@ -67,9 +73,9 @@ $categories = get_terms( array(
 
                   <?php if ($access_ctrl->can_i_read_post($post)){ ?>
                     <?php if( $i < 10 ){ ?>
-                      <a href="<?php the_permalink(); ?>" class="gallery--item--link" style="background-image:url('<?php echo $clip_image['url']; ?>');">
+                      <a href="<?php the_permalink(); ?>" class="gallery--item--link" style="background-image:url('<?php echo $clip_image; ?>');">
                     <?php } else { ?>
-                      <a href="#" class="lazy gallery--item--link" data-src="<?php echo $clip_image['url']; ?>">
+                      <a href="#" class="lazy gallery--item--link" data-src="<?php echo $clip_image; ?>">
                     <?php } ?>
 
                     <?php if( $gallery_video_media ){ ?>

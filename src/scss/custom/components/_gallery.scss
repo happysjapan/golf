@@ -137,6 +137,8 @@
         background-image: url(../images/gallery/memberonly_image.jpg);
         background-position: center center;
         background-color: $color-full-black;
+        background-size: initial;
+        background-repeat: no-repeat;
       }
 
     }

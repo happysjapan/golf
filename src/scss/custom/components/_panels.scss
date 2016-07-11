@@ -10,8 +10,10 @@
 	&--title {
 		display: block;
 		width: 100%;
-    @include fts(22,22);
+    @include fts(24,24);
+		line-height: 1.7rem;
 		font-weight: bold;
+		margin-top: 0.5rem;
 	}
 
 	// thumbnail
