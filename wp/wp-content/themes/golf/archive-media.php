@@ -19,8 +19,6 @@ get_header(); ?>
 
           <ul class="media row">
             <?php
-            $i = 0;
-
               if ( have_posts() ) {
               	while ( have_posts() ) {
               		the_post(); ?>

@@ -1,5 +1,36 @@
 <?php
-get_header(); ?>
+get_header();
+
+if( isset($_GET['y']) && $_GET['y'] != '' ) {
+  $displayed_year = htmlspecialchars($_GET['y']).'年';
+  function filter_where($where = '') {
+    $year = htmlspecialchars($_GET['y']);
+    $year_start = $year.'-01-01';
+    $year_end = $year.'-12-31';
+    $where .= " AND post_date >= '$year_start' AND post_date <= '$year_end'";
+    return $where;
+  }
+}
+else {
+  $displayed_year = date("Y").'年';
+  function filter_where($where = '') {
+    $year = date("Y");
+    $year_start = $year.'-01-01';
+    $where .= " AND post_date >= '$year_start'";
+    return $where;
+  }
+}
+
+add_filter('posts_where', 'filter_where');
+$custom_args = array(
+  'posts_per_page' => -1,
+  'post_type' => 'news',
+  'post_status' => 'publish',
+  'order' => 'DESC',
+  'orderby' => 'date',
+);
+$wp_query = new WP_Query($custom_args);
+?>
 
 <div class="page_wrapper no_margin">
   <div class="section_default section_news">
@@ -21,8 +52,8 @@ get_header(); ?>
             <?php
             $i = 0;
 
-              if ( have_posts() ) {
-              	while ( have_posts() ) {
+              if ( $wp_query->have_posts() ) {
+              	while ( $wp_query->have_posts() ) {
               		the_post(); ?>
                     <?php get_template_part( 'includes/news', 'panel' ); ?>
                 <?php } // end while
@@ -36,7 +67,7 @@ get_header(); ?>
           $query = "
           SELECT DISTINCT YEAR(post_date)
           FROM $wpdb->posts
-          WHERE post_type = 'post' AND post_status = 'publish'
+          WHERE post_type = 'news' AND post_status = 'publish'
           ORDER BY post_date DESC
           ";
           $years = $wpdb->get_col($query);
@@ -44,7 +75,7 @@ get_header(); ?>
           <h3 class="aside--title">Archives</h3>
           <ul class="aside--list">
           <?php foreach($years as $year) : ?>
-            <li class="aside--list_item"><a href="<?php echo get_post_type_archive_link( 'post' ); ?>?y=<?php echo $year; ?>" class="aside--link"><?php echo $year; ?></a></li>
+            <li class="aside--list_item"><a href="<?php echo get_post_type_archive_link( 'news' ); ?>?y=<?php echo $year; ?>" class="aside--link"><?php echo $year; ?></a></li>
           <?php endforeach; ?>
           </ul>
         </aside>

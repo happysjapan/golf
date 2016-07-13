@@ -131,10 +131,16 @@ global $post;
                   <dt>経歴</dt><dd><?php echo get_field('profile_school'); ?></dd>
                 </dl>
                 <dl class="small-12 medium-9 columns profile_items profile_items_biography">
-                  <dt>ゴルフを始めた時期およびきっかけ</dt><dd><?php echo get_field('profile_trigger'); ?></dd>
-                  <dt>中学時代、高校、大学時代の成績</dt><dd><?php echo get_field('profile_result_student'); ?></dd>
-                  <dt>プロデビュー年およびルーキーイヤーの成績</dt><dd><?php echo get_field('profile_result_debut'); ?></dd>
-                  <dt>今年の成績（シーズンスタート）</dt><dd><?php echo get_field('profile_result_thisyear'); ?></dd>
+                  <dt>Biography</dt><dd><?php echo get_field('profile_trigger'); ?></dd>
+                  <?php if (get_field('profile_result_student')) { ?>
+                    <dt>中学時代、高校、大学時代の成績</dt><dd><?php echo get_field('profile_result_student'); ?></dd>
+                  <?php } ?>
+                  <?php if (get_field('profile_result_debut')) { ?>
+                    <dt>プロデビュー年およびルーキーイヤーの成績</dt><dd><?php echo get_field('profile_result_debut'); ?></dd>
+                  <?php } ?>
+                  <?php if (get_field('profile_result_thisyear')) { ?>
+                    <dt>今年の成績（シーズンスタート）</dt><dd><?php echo get_field('profile_result_thisyear'); ?></dd>
+                  <?php } ?>
                 </dl>
                 <!-- <dl class="small-12 medium-8 columns profile_items profile_items_biography">
                   <dt>バイオグラフィー</dt>
