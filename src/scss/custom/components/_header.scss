@@ -87,8 +87,8 @@
 
 // logo
 .logo {
-  padding-top: 10px;
   text-align: center;
+  font-size: 0;
 
   &--image {
     display: inline-block;
@@ -113,13 +113,14 @@
   }
 
   @media screen and #{breakpoint(medium)} {
+    margin-bottom: 0.5rem;
 
     &--image {
-      width: 325px;
+      width: 300px;
     }
 
     &--subline {
-      margin: 1rem 0 0;
+      margin: 0.5rem 0 0;
       @include fts(14,14);
     }
   }

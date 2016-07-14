@@ -10,7 +10,7 @@
 	&--title {
 		display: block;
 		width: 100%;
-    @include fts(24,24);
+    @include fts(16,16);
 		line-height: 1.7rem;
 		font-weight: bold;
 		margin-top: 0.5rem;
