@@ -4,7 +4,7 @@
     <ul class="orbit-container">
       <?php while ( have_rows('front_slider') ) : the_row(); ?>
         <li class="orbit-slide">
-          <i class="front_orbit--image orbit-image" style="background-image:url(<?php echo get_sub_field('front_slider_image')['url']; ?>)"></i>
+          <i class="front_orbit--image orbit-image" data-src-mobile="<?php echo get_sub_field('front_slider_image_mobile')['url']; ?>" data-src="<?php echo get_sub_field('front_slider_image')['url']; ?>"></i>
         </li>
       <?php endwhile; ?>
     </ul>

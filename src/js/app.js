@@ -2,14 +2,38 @@ $(document).foundation();
 
 $(function(){
 
-// Slider height
-var height = $( window ).height();
-$('#front_orbit').height(height);
+  // Responsie images slider
+  function setSliderImages(width) {
+    if( width < 640 ){
+      $('.front_orbit--image').each(function(){
+        $(this).css('background-image', 'url('+$(this).attr('data-src-mobile')+')');
+      });
+    } else {
+      console.log("plop");
+      $('.front_orbit--image').each(function(){
+        $(this).css('background-image', 'url('+$(this).attr('data-src')+')');
+      });
+    }
 
-$( window ).resize(function() {
+  }
+
+  var width = $( window ).width();
+  setSliderImages(width);
+
+  $( window ).resize(function() {
+    var width = $( window ).width();
+    setSliderImages(width);
+  });
+
+
+  // Slider height
   var height = $( window ).height();
   $('#front_orbit').height(height);
-});
+
+  $( window ).resize(function() {
+    var height = $( window ).height();
+    $('#front_orbit').height(height);
+  });
 
   // Smooth scroll menu
   $('#scroll_top').click(function(){
