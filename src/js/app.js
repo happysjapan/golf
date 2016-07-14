@@ -9,7 +9,6 @@ $(function(){
         $(this).css('background-image', 'url('+$(this).attr('data-src-mobile')+')');
       });
     } else {
-      console.log("plop");
       $('.front_orbit--image').each(function(){
         $(this).css('background-image', 'url('+$(this).attr('data-src')+')');
       });

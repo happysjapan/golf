@@ -45,7 +45,7 @@
 
     @media screen and #{breakpoint(medium)} {
       & + .page_wrapper {
-        margin-top: 151px;
+        margin-top: 121px;
       }
     }
   }
@@ -87,6 +87,7 @@
 
 // logo
 .logo {
+  padding-top: 10px;
   text-align: center;
   font-size: 0;
 
