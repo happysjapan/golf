@@ -13,7 +13,7 @@
     <!--
     <link rel="stylesheet" href="http://localhost:8888/HAPPYS/golf/src/css/app.css">
     -->
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic">
+    <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
 
     <?php wp_head(); ?>
@@ -24,7 +24,7 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-78380701-1', 'auto');
+      ga('create', 'UA-80487222-1', 'auto');
       ga('send', 'pageview');
     </script>
 
