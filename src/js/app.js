@@ -184,6 +184,7 @@ function lazyCheck() {
   $('.lazy').each( function(){
     if( $(this).visible() ){
       $(this).css('background-image', 'url('+$(this).attr('data-src')+')');
+      $(this).css('border', '2px solid #fff');
       $(this).removeClass('lazy');
     }
   });

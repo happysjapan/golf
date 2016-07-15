@@ -99,7 +99,7 @@ $categories = get_terms( array(
                     </div>
                   </a>
                   <?php } else { ?>
-                    <div class="gallery--item--link member_only"></div>
+                    <a href="<?php echo get_permalink(get_page_by_path('sign-up')); ?>" class="gallery--item--link member_only"></a>
                   <?php } ?>
               </li>
               <?php $i++; $k++; } // end while
