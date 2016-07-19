@@ -9,7 +9,7 @@ get_header(); ?>
     <div class="columns small-12 medium-10 medium-offset-1">
       <div class="row">
         <?php if ( is_user_logged_in() ) { ?>
-            <a class="button button__user" href="<?php echo home_url();?>?swpm-logout=true">Log out</a>
+            <a class="button button__user" href="<?php echo wp_logout_url( home_url() ); ?>">Log out</a>
             <a class="button button__user" href="<?php home_url(); ?>?swpm_delete_account=1">Delete your account</a>
 
         <?php } ?>
