@@ -40,7 +40,8 @@
             <div class="logo--holder columns align-center small-12">
               <a href="<?php echo home_url(); ?>">
                 <h1 id="logo" class="logo">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/top/logo.png" id="logo--image" class="logo--image" alt="堀川未来夢" width="325" height="46" />
+                  <!-- <img src="<?php echo get_template_directory_uri(); ?>/images/top/logo.png" id="logo--image" class="logo--image" alt="堀川未来夢" width="325" height="46" /> -->
+                  <p class="logo--text">堀川&nbsp;未来夢</p>
                   <strong class="logo--subline">
                     - MIKUMU HORIKAWA OFFICIAL WEBSITE -
                   </strong>
