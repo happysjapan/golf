@@ -9,6 +9,7 @@
   width: 100%;
   color: $color-white;
   background-color: $body-background;
+  border-bottom: 1px solid rgba(#fff,.5);
 
   &.fixed {
     position: fixed;
@@ -54,7 +55,7 @@
     position: relative;
 
     .fixed & {
-      margin-top: 0.6rem;
+      margin-top: 0;
     }
   }
 }
@@ -87,7 +88,7 @@
 
 // logo
 .logo {
-  padding-top: 10px;
+  padding-top: 5px;
   text-align: center;
   font-size: 0;
 
@@ -99,11 +100,18 @@
       display: none;
     }
   }
+  &--text {
+    margin: 6px 0;
+    @include fts(30,30);
+    @include letter-spacing(800);
+    font-weight: bold;
+    color: #fff;
+  }
 
   &--subline {
     display: block;
     font-weight: normal;
-    margin: 1rem 0 0;
+    margin: .8rem 0 0;
     color: $color-white;
     @include fts(12,12);
     @include letter-spacing(200);
@@ -120,6 +128,10 @@
       width: 300px;
     }
 
+    &--text {
+      margin-bottom: 12px;
+      @include fts(40,40);
+    }
     &--subline {
       margin: 0.5rem 0 0;
       @include fts(14,14);

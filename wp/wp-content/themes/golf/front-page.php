@@ -19,10 +19,10 @@ global $post;
       <div class="parts_holder">
         <div class="parts_holder--inner row">
           <div class="sign_holder small-12 medium-4 columns">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/top/sign.png" alt="Mikumu Horikawa サイン" width="320"  class="sign_holder--image"/>
+            <img src="<?php echo get_template_directory_uri(); ?>/images/top/sign.png" alt="Mikumu Horikawa サイン" width="280"  class="sign_holder--image"/>
           </div>
           <div class="sign_holder small-6 medium-4 columns">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/top/message_handwritten.png" alt="日々努力してツアー優勝目指して頑張ります。" width="320"  class="sign_holder--image"/>
+            <img src="<?php echo get_template_directory_uri(); ?>/images/top/message_handwritten.png" alt="日々努力してツアー優勝目指して頑張ります。" width="280"  class="sign_holder--image"/>
           </div>
           <div class="small-6 medium-4 columns text-right align-self-bottom">
             <a href="" class="banner_charity button" title="チャリティー活動">
@@ -56,7 +56,7 @@ global $post;
     </figure>
   </div>
 
-  
+
   <div class="row">
     <div class="large-12 columns">
       <?php
