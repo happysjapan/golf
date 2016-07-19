@@ -9,7 +9,6 @@
       type="svg"
       href="<?php echo get_template_directory_uri(); ?>/images/favicon.png">
 
-
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/<?php echo golf_getCssAssets(); ?>">
     <!--
     <link rel="stylesheet" href="http://localhost:8888/HAPPYS/golf/src/css/app.css">
