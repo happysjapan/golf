@@ -11,8 +11,10 @@
 
   <div class="sign_menu columns">
     <?php if ( is_user_logged_in() ) { ?>
-      <ul class="dropdown menu sign_menu--menu align-center">
-        <li class="sign_menu--item" role="menuitem"><a class="sign_menu--link" href="<?php echo home_url();?>?swpm-logout=true">Log out</a></li>
+      <?php $user = get_currentuserinfo(); ?>
+      <h5 class="sign_menu--user">Hello, <?php echo $user->user_nicename; ?></h5>
+      <ul class="dropdown menu sign_menu--menu align-left">
+        <li class="sign_menu--item" role="menuitem"><a class="sign_menu--link" href="<?php echo wp_logout_url( home_url() ); ?>">Log out</a></li>
       </ul>
     <?php } else { ?>
       <ul class="dropdown menu sign_menu--menu align-center">
