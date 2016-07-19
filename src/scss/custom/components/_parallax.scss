@@ -25,7 +25,7 @@
 
 .cd-floating-background {
 	position: relative;
-  width: 100% !important;
+ 	width: 100% !important;
 	top: 0;
 	left: 0;
 	-webkit-transform-style: preserve-3d;
@@ -34,28 +34,52 @@
 	-o-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 	@include translateZ(0);
-
 	img {
 		position: absolute;
 		display: block;
-		width: 30%;
+		width: 22%;
 		-webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+    	backface-visibility: hidden;
 		/* fixes a Firefox bug - images not correctly rendered*/
 		background-color: rgba(#FFF, .01);
 
-		&:first-child {
-			@include translateZ(200px);
-			top: 5%;
-			left: -10%;
+	}
+	.section_news & {
+		img {
+			&:first-child {
+				width: 15%;
+				@include translateZ(200px);
+				@include opacity(.3);
+				top: 12%;
+				left: -7%;
+			}
+			&:nth-child(2) {
+				width: 17%;
+				top: 9%;
+				right: 0%;
+				float: right;
+				@include translateZ(500px);
+				@include opacity(.5);
+			}
 		}
+	}
+	.section_about & {
+		img {
+			&:first-child {
+				@include translateZ(200px);
+				@include opacity(.7);
+				top: 5%;
+				left: -10%;
+			}
 
-		&:nth-child(2) {
-			bottom: 10%;
-			right: 0;
-			width: 20%;
-			float: right;
-			@include translateZ(500px);
+			&:nth-child(2) {
+				bottom: 30%;
+				right: 3%;
+				width: 16%;
+				float: right;
+				@include translateZ(500px);
+				@include opacity(.6);
+			}
 		}
 	}
 

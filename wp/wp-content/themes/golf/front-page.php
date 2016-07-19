@@ -49,6 +49,14 @@ global $post;
 
 <!-- NEWS Section -->
 <section id="news" class="section_news section_in_top">
+  <div class="cd-background-wrapper">
+    <figure class="cd-floating-background">
+      <img class="parallax--image" src="<?php echo get_template_directory_uri(); ?>/images/ball_white.png" alt="ball white">
+      <img class="parallax--image" src="<?php echo get_template_directory_uri(); ?>/images/ball_white.png" alt="ball white 2">
+    </figure>
+  </div>
+
+  
   <div class="row">
     <div class="large-12 columns">
       <?php
