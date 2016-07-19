@@ -5,7 +5,7 @@
 get_header(); ?>
 <div class="page_wrapper section_member">
 
-  <div class="row">
+  <div class="row align-center">
     <div class="columns small-12 medium-10 medium-offset-1">
       <div class="row">
         <?php if ( is_user_logged_in() ) { ?>
