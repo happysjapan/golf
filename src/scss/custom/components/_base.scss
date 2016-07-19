@@ -2,6 +2,7 @@
 // Too remove
 body {
 	@include fts(14,20);
+	@include letter-spacing(100);
 	color: #fff;
 	height: 100%;
   	background-color: $color-navy;

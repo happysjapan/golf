@@ -106,7 +106,7 @@
     margin: 1rem 0 0;
     color: $color-white;
     @include fts(12,12);
-    @include letter-spacing(.2);
+    @include letter-spacing(200);
 
     .shown & {
         margin: 0 0 1.4rem;

@@ -17,14 +17,13 @@
     &--link {
       color: #fff;
       @include fts(14,14);
-      @include letter-spacing(0.2);
+      @include letter-spacing(200);
 
       &:hover, &:active, &:focus {
         color: $color-theme-key;
       }
     }
   }
-
 
   // Button menu
   &--button {
