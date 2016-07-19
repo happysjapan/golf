@@ -1,6 +1,7 @@
 /*
 ** Navigaiton
 */
+
 .nav {
   position: relative;
 
@@ -10,18 +11,50 @@
     flex-wrap: wrap;
 
     &--item {
+      margin: 0;
+      padding: 0 2px 4px;
       text-transform: uppercase;
       width: 50%;
     }
+    .menu & {
+      &--link {
+        padding: 10px;
+        color: #fff;
+        @include fts(14,14);
+        @include letter-spacing(200);
+        @include border-radius(2px);
+        background-color: rgba($color-white,.1);
 
-    &--link {
-      color: #fff;
-      @include fts(14,14);
-      @include letter-spacing(200);
-
-      &:hover, &:active, &:focus {
-        color: $color-theme-key;
+        &:hover, &:active, &:focus {
+          color: $color-theme-key;
+          background-color: rgba($color-white,.3);
+        }
       }
+    }
+
+    @media screen and #{breakpoint(medium)} {
+      &--item {
+        margin: 5px 5px 10px;
+        padding: 0;
+        text-transform: uppercase;
+        width: 50%;
+      }
+      .menu & {
+        &--link {
+          padding: 6px 10px;
+          color: #fff;
+          @include fts(14,14);
+          @include letter-spacing(200);
+          @include border-radius(2px);
+          background-color: rgba($color-white,.1);
+
+          &:hover, &:active, &:focus {
+            color: $color-theme-key;
+            background-color: rgba($color-white,.3);
+          }
+        }
+      }
+
     }
   }
 
@@ -85,9 +118,11 @@
 ** Sign up / Sign in
 */
 .sign_menu {
+  margin-top: 6px;
+  padding: 10px 0;
   position: relative;
   top: 0;
-  right: 0.6rem;
+  border-top: 1px solid rgba(#fff,.5);
 
   &--menu {
     -ms-flex-wrap: wrap;
@@ -99,25 +134,33 @@
   }
 
   &--link {
+    display: inline-block;
+    margin: 0 2px;
+    padding: 5px 10px;
     color: $color-white;
     @include fts(14,14);
-    @include letter-spacing(0.2);
+    @include letter-spacing(200);
+    @include border-radius(2px);
+    background-color: rgba($color-white,.1);
 
     &:hover, &:active, &:focus {
       color: $color-theme-key;
+      background-color: rgba($color-white,.3);
     }
   }
 
   &--user {
+    display: inline-block;
     padding: 0.7rem 1rem;
-    margin: 0;
     @include fts(16,16);
     @include letter-spacing(0.2);
-    border-bottom: 1px solid $color-white;
   }
 
   @media screen and #{breakpoint(medium)} {
+    padding: 0;
     position: absolute;
+    right: 0.6rem;
+    border-top: none;
 
     &--menu {
       -ms-flex-wrap: nowrap;
@@ -128,6 +171,10 @@
 
     &--item {
       width: auto;
+    }
+    &--user {
+      margin: 0 0  0.8rem;
+      border-bottom: 1px solid rgba(#fff,.5);
     }
   }
 }
