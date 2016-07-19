@@ -23,13 +23,11 @@ $categories = get_terms( array(
             <?php the_title(); ?>
           </div>
           <div class="section_article--buttons columns shrink">
-            <div class="row">
-              <div class="columns button-group">
-                <?php $post_cat = wp_get_post_terms( get_the_id() , 'gallery-cat');
-                foreach ($post_cat as $tag) { ?>
-                  <a class="button" href="<?php echo get_term_link($tag->term_id); ?>"><?php echo $tag->name; ?></a>
-                <?php } ?>
-              </div>
+            <div class="button-group">
+              <?php $post_cat = wp_get_post_terms( get_the_id() , 'gallery-cat');
+              foreach ($post_cat as $tag) { ?>
+                <a class="button" href="<?php echo get_term_link($tag->term_id); ?>"><?php echo $tag->name; ?></a>
+              <?php } ?>
             </div>
           </div>
         </h2>

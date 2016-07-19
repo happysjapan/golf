@@ -138,7 +138,7 @@
         background-image: url(../images/gallery/memberonly_image.jpg);
         background-position: center center;
         background-color: $color-bg-member;
-        background-size: initial;
+        background-size: auto;
         background-repeat: no-repeat;
 
         &:hover, &:active, &:focus {

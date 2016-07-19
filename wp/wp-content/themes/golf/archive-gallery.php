@@ -22,13 +22,11 @@ $categories = get_terms( array(
           </div>
 
           <div class="gallery--categories columns shrink">
-            <div class="row">
-              <div class="columns button-group">
-                <a class="button active" href="<?php echo get_post_type_archive_link( 'gallery' ); ?>">All</a>
-                <?php foreach ($categories as $category) { ?>
-                  <a class="button" href="<?php echo get_term_link($category->term_id); ?>"><?php echo $category->name; ?></a>
-                <?php } ?>
-              </div>
+            <div class="button-group">
+              <a class="button active" href="<?php echo get_post_type_archive_link( 'gallery' ); ?>">All</a>
+              <?php foreach ($categories as $category) { ?>
+                <a class="button" href="<?php echo get_term_link($category->term_id); ?>"><?php echo $category->name; ?></a>
+              <?php } ?>
             </div>
           </div>
         </div>

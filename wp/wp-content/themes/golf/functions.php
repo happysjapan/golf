@@ -11,7 +11,6 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 
-
 // show admin bar only for admins
 if (!current_user_can('manage_options')) {
 	add_filter('show_admin_bar', '__return_false');
