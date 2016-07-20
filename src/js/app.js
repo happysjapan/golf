@@ -90,6 +90,10 @@ $(function(){
      }
    });
 
+
+   $('#user_email').appendTo("#wpcf7-f10-o1 form");
+   $('#user_name').appendTo("#wpcf7-f10-o1 form");
+
 });
 
 
