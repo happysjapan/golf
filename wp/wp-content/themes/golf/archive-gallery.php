@@ -64,12 +64,12 @@ $categories = get_terms( array(
                     $clip_image = $clip_image['sizes']['medium'];
                   }
 
-                  $access_ctrl = SwpmAccessControl::get_instance();
+                  // $access_ctrl = SwpmAccessControl::get_instance();
                 ?>
 
                 <li class="gallery--item grid-item grid-item--width-<?php echo $grid_width; ?> grid-item--height-<?php echo $grid_height; ?>">
 
-                  <?php if ($access_ctrl->can_i_read_post($post)){ ?>
+                  <?php if (!get_field("_wpmem_block", get_the_id())){ ?>
                     <?php if( $i < 10 ){ ?>
                       <a href="<?php the_permalink(); ?>" class="gallery--item--link" style="background-image:url('<?php echo $clip_image; ?>');">
                     <?php } else { ?>

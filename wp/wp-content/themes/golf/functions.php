@@ -11,6 +11,82 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 
+/*-------------------------------------------*/
+/*	Membership
+/*-------------------------------------------*/
+add_filter( 'wpmem_login_redirect', 'my_login_redirect', 10, 2 );
+function my_login_redirect( $redirect_to, $user_id ) {
+    $url = home_url();
+    return $url;
+}
+
+add_filter( 'wpmem_reg_link_str', 'my_reg_link_str', 10, 2 );
+function my_reg_link_str( $str, $link ) {
+	return "<a class='form--link' href=\"$link\">新規登録</a>";
+}
+
+
+add_filter( 'wpmem_forgot_link_str', 'my_forgot_link_str', 10, 2 );
+function my_forgot_link_str( $str, $link ) {
+	return "<a class='form--link' href=\"$link\">パスワードをお忘れですか？</a>";
+}
+
+add_filter( 'wpmem_login_form_args', 'my_login_form_args', 10, 2 );
+function my_login_form_args( $args, $action ){
+  $rows = array(
+      'heading_before'  => '<legend class="columns small-12">',
+      'heading_after'   => '</legend>',
+      'fieldset_before' => '<div class="row">',
+      'fieldset_after'  => '</div>',
+      'row_before' => '<div class="columns small-12 medium-6">',
+      'row_after'  => '</div>',
+      'buttons_before'  => '<div class="columns small-12">',
+      'buttons_after'   => '</div>',
+      'link_before'     => '<div class="columns small-12">',
+      'link_after'      => '</div>',
+      'remember_check'  => false,
+  );
+  return $rows;
+}
+
+add_filter( 'wpmem_inc_login_args', 'my_login_args' );
+function my_login_args( $args )
+{
+  $args = array(
+    'heading'      => "Log In",
+    'button_text'  => "Log In",
+    'action'       => "login"
+);
+  return $args;
+}
+
+add_filter( 'wpmem_inc_login_inputs', 'my_login_inputs' );
+function my_login_inputs( $array )
+{
+  $default_inputs = array(
+    array(
+        'name'   => __( 'ユーザー名' ),
+        'type'   => 'text',
+        'tag'    => 'log',
+        'class'  => 'username',
+        'div'    => 'div_text'
+    ),
+    array(
+        'name'   => __( 'パスワード' ),
+        'type'   => 'password',
+        'tag'    => 'pwd',
+        'class'  => 'password',
+        'div'    => 'div_text'
+    )
+  );
+  return $default_inputs;
+}
+
+
+
+
+
+
 // show admin bar only for admins
 if (!current_user_can('manage_options')) {
 	add_filter('show_admin_bar', '__return_false');

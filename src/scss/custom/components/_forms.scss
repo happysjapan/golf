@@ -1,0 +1,62 @@
+/*
+** Login
+*/
+
+.page_wrapper {
+
+  & #wpmem_login .div_text,
+  & #wpmem_reg .button_div,
+  & #wpmem_login .button_div {
+    width: 100%;
+    text-align: left;
+  }
+
+  & #wpmem_login {
+    margin: 2rem 0 0;
+
+    & .link-text {
+      width: auto;
+      display: block;
+      margin: 1rem 0 0;
+      padding: 0;
+      text-align: left;
+      line-height: 1;
+    }
+  }
+
+  & .buttons {
+    float: right;
+  	background-color: rgba($color-theme-key,.2);
+  	color: $color-theme-key;
+  	border: 1px solid $color-theme-key;
+  	padding: 0.85em 1em;
+
+  	&:hover,&:focus,&:active,
+  	&.active {
+  		background-color: rgba($color-theme-key,.5);
+  		border: 1px solid $color-white;
+  		color: $color-white;
+  	}
+  }
+
+  & fieldset {
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+  }
+
+}
+
+
+.form {
+
+  &--link {
+    color: $color-theme-key;
+    @include fts(12);
+    line-height: 1;
+  }
+}
