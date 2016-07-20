@@ -2,20 +2,20 @@
 /*
   Template Name: Member profile
 */
-get_header(); ?>
+get_header();
+$current_user = wp_get_current_user(); ?>
 <div class="page_wrapper section_member">
 
-  <div class="row align-center">
-    <div class="columns small-12 medium-10 medium-offset-1">
-      <div class="row">
-        <?php if ( is_user_logged_in() ) { ?>
-            <a class="button button__user" href="<?php echo wp_logout_url( home_url() ); ?>">Log out</a>
-            <a class="button button__user" href="<?php home_url(); ?>?swpm_delete_account=1">Delete your account</a>
+  <div class="row">
+    <div class="columns small-12 medium-10 medium-offset-1 large-8 medium-offset-2">
+      <p>
+        Please contact us if you have any question or request. We would be happy to help!
+      </p>
 
-        <?php } ?>
-      </div>
+      <input id="user_email" type="hidden" name="your-email" value="<?php echo $current_user->user_email; ?>">
+      <input id="user_name" type="hidden" name="your-name" value="<?php echo $current_user->user_nicename; ?>">
+      <?php echo do_shortcode('[contact-form-7 id="10" title="Contact form 1"]'); ?>
     </div>
   </div>
 
-</div>
 <?php get_footer();
