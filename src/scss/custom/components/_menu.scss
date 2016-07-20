@@ -123,20 +123,24 @@
   position: relative;
   top: 0;
   border-top: 1px solid rgba(#fff,.5);
+  overflow: hidden;
 
   &--menu {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    float: left;
+    &.logout  {
+      width: 100px; 
+    }
   }
 
   &--item {
-    width: 50%;
   }
 
   &--link {
     display: inline-block;
     margin: 0 2px;
-    padding: 5px 10px;
+    padding: 0.7rem 0.5rem;
     color: $color-white;
     @include fts(14,14);
     @include letter-spacing(200);
@@ -151,9 +155,9 @@
 
   &--user {
     display: inline-block;
-    padding: 0.7rem 1rem;
     @include fts(16,16);
     @include letter-spacing(0.2);
+    float: left;
   }
 
   @media screen and #{breakpoint(medium)} {
@@ -173,8 +177,6 @@
       width: auto;
     }
     &--user {
-      margin: 0 0  0.8rem;
-      border-bottom: 1px solid rgba(#fff,.5);
     }
   }
 }
