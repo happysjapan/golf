@@ -33,7 +33,7 @@
   }
 
   &.shown {
-    background-color: rgba($body-background,0.8);
+    background-color: rgba($body-background,0.9);
     @include setTransition();
   }
 
@@ -106,6 +106,9 @@
     @include letter-spacing(800);
     font-weight: bold;
     color: #fff;
+    .logo_hidden & {
+      display: none;
+    }
   }
 
   &--subline {
@@ -117,7 +120,7 @@
     @include letter-spacing(200);
 
     .shown & {
-        margin: 0 0 1.4rem;
+        margin: 1rem 0 1rem;
     }
   }
 

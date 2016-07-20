@@ -8,11 +8,11 @@
     <link rel="icon"
       type="svg"
       href="<?php echo get_template_directory_uri(); ?>/images/favicon.png">
-    <!--
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/<?php echo golf_getCssAssets(); ?>">
-    -->
-    <link rel="stylesheet" href="http://localhost:8888/HAPPYS/golf/src/css/app.css">
 
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/<?php echo golf_getCssAssets(); ?>">
+    <!--
+    <link rel="stylesheet" href="http://localhost:8888/HAPPYS/golf/src/css/app.css">
+    -->
 
     <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -41,9 +41,9 @@
             <div class="logo--holder columns align-center small-12">
               <a href="<?php echo home_url(); ?>">
                 <h1 id="logo" class="logo">
-                  <!-- <img src="<?php echo get_template_directory_uri(); ?>/images/top/logo.png" id="logo--image" class="logo--image" alt="堀川未来夢" width="325" height="46" /> -->
-
-                  <p class="logo--text">堀川&nbsp;未来夢</p>
+                  <!-- <img src="<?php echo get_template_directory_uri(); ?>/images/top/logo.png" id="logo--image" class="logo--image" alt="堀川未来夢" width="325" height="46" /> -->              
+                  
+                  <p id="logo--image" class="logo--text">堀川&nbsp;未来夢</p>
                   <strong class="logo--subline">
                     - MIKUMU HORIKAWA OFFICIAL WEBSITE -
                   </strong>

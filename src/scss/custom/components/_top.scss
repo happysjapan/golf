@@ -95,18 +95,19 @@
 }
 .sign_holder {
 	&--image {
-		max-width: 156px;
+		display: block;
+		max-width: 180px;
 		margin: 15px 0 0 10px;
 		height: auto;
 		@media screen and #{breakpoint(medium)} {
-			max-width: 320px;
-			margin: 0;
+			max-width: 280px;
+			margin: 25px 0 0 0;
 		}
 	}
 }
 .banner_charity {
 	display: inline-block;
-	padding: 6px 5px;
+	padding: 6px;
 	font-weight: bold;
 	&.button {
 		margin: 15px 0 0 0;
@@ -118,7 +119,7 @@
 		}
 	}
 	&--image {
-		width: 22px;
+		width: 30px;
 		height: auto;
 		margin: 2px 3px 0 0;
 		float: left;
@@ -130,13 +131,13 @@
 		.text_en {
 			display: block;
 			margin: 0;
-			@include fts(18,24);
+			@include fts(22,28);
 			@include letter-spacing(120);
 		}
 		.text_ja {
 			display: block;
-			margin: 0 0 0 2px;
-			@include fts(10,12);
+			@include fts(11,14);
+			@include letter-spacing(0);
 		}
 	}
 	&:hover {
