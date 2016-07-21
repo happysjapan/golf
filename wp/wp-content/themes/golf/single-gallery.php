@@ -96,12 +96,13 @@ $categories = get_terms( array(
 
         <div class="section_media">
           <p>
-            This content is for members only.<br>
-            Please login or sign up a free account.
+            このコンテンツは会員の方専用です。<br>
+            ご登録済みの方はログインを<br />
+            まだの方は会員登録をお願いします。.
           </p>
           <div class="button-group">
-            <a class="button" href="<?php echo get_permalink(get_page_by_path('sign-up')); ?>">SIGN UP</a>
-            <a class="button" href="<?php echo get_permalink(get_page_by_path('sign-in')); ?>">SIGN IN</a>
+            <a class="button" href="<?php echo get_permalink(get_page_by_path('sign-up')); ?>">新規無料会員登録</a>
+            <a class="button" href="<?php echo get_permalink(get_page_by_path('sign-in')); ?>">ログイン</a>
           </div>
         </div>
 
