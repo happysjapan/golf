@@ -18,7 +18,7 @@
     }
     .menu & {
       &--link {
-        padding: 10px;
+        padding: 0.8rem 1rem;
         color: #fff;
         @include fts(14,14);
         @include letter-spacing(200);
@@ -41,7 +41,7 @@
       }
       .menu & {
         &--link {
-          padding: 6px 10px;
+          padding: 0.5rem 0.8rem;
           color: #fff;
           @include fts(14,14);
           @include letter-spacing(200);
@@ -137,19 +137,21 @@
   &--item {
   }
 
-  &--link {
-    display: inline-block;
-    margin: 0 2px;
-    padding: 0.7rem 0.5rem;
-    color: $color-white;
-    @include fts(14,14);
-    @include letter-spacing(200);
-    @include border-radius(2px);
-    background-color: rgba($color-white,.1);
+  .menu,.sign_menu & {
+    &--link {
+      display: inline-block;
+      margin: 0 2px;
+      padding: 0.8rem 1rem;
+      color: $color-white;
+      @include fts(14,14);
+      @include letter-spacing(200);
+      @include border-radius(2px);
+      background-color: rgba($color-white,.1);
 
-    &:hover, &:active, &:focus {
-      color: $color-theme-key;
-      background-color: rgba($color-white,.3);
+      &:hover, &:active, &:focus {
+        color: $color-theme-key;
+        background-color: rgba($color-white,.3);
+      }
     }
   }
 
@@ -176,6 +178,13 @@
     &--item {
       width: auto;
     }
+
+    .menu,.sign_menu & {
+      &--link {
+        padding: 0.5rem 0.8rem;
+      }
+    }
+
     &--user {
     }
   }
