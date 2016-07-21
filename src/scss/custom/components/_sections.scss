@@ -24,10 +24,20 @@
       color: $color-theme-key;
     }
 
+    &--holder {
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+
+      @media screen and #{breakpoint(medium)} {
+        -ms-flex: 1 1 0px;
+        flex: 1 1 0px;
+      }
+    }
+
     @media screen and #{breakpoint(medium)} {
       -ms-flex-pack: flex-start;
       justify-content: flex-start;
-
     }
   }
 }
