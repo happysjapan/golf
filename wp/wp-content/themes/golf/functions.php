@@ -102,7 +102,21 @@ function my_resetpassword_args( $args )
 }
 
 
+add_filter( 'wpmem_register_form_args', 'my_register_form_args', 10, 2 );
+function my_register_form_args( $args, $toggle )
+{
+  $args = array(
+    'heading_before'   => '',
+    'heading_after'    => '',
+  );
+  return $args;
+}
 
+add_filter( 'wpmem_register_heading', 'my_heading' );
+function my_heading( $heading ) {
+    $heading = '';
+    return $heading;
+}
 
 
 
