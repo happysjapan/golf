@@ -45,7 +45,7 @@
    		background-image: linear-gradient(rgba(#000,0),rgba(#000,0.5));
 		li {
 			display: inline-block;
-			margin: 10px 1px 0;
+			margin: 10px 1px 10px;
 			@include fts(12,12);
 			@include letter-spacing(100);
 			.fa {margin-left: 5px;}
