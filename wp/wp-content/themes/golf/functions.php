@@ -9,26 +9,10 @@ remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
-
-
-
-function disable_embeds_init() {
-
-    // Remove the REST API endpoint.
-    remove_action('rest_api_init', 'wp_oembed_register_route');
-
-    // Turn off oEmbed auto discovery.
-    // Don't filter oEmbed results.
-    remove_filter('oembed_dataparse', 'wp_filter_oembed_result', 10);
-
-    // Remove oEmbed discovery links.
-    remove_action('wp_head', 'wp_oembed_add_discovery_links');
-
-    // Remove oEmbed-specific JavaScript from the front-end and back-end.
-    remove_action('wp_head', 'wp_oembed_add_host_js');
-}
-
-add_action('init', 'disable_embeds_init', 9999);
+remove_action('rest_api_init', 'wp_oembed_register_route');
+remove_filter('oembed_dataparse', 'wp_filter_oembed_result', 10);
+remove_action('wp_head', 'wp_oembed_add_discovery_links');
+remove_action('wp_head', 'wp_oembed_add_host_js');
 
 
 /*-------------------------------------------*/
@@ -53,7 +37,7 @@ function my_forgot_link_str( $str, $link ) {
 
 add_filter( 'wpmem_username_link_str', 'my_forgot_username_str', 10, 2 );
 function my_forgot_username_str( $str, $link ) {
-	return "<a class='form--link' href=\"$link\">ユーザー名をお忘れですか？</a>";
+	return "";
 }
 
 add_filter( 'wpmem_login_form_args', 'my_login_form_args', 10, 2 );
@@ -108,7 +92,6 @@ function my_login_inputs( $array )
 }
 
 add_filter( 'wpmem_inc_resetpassword_args', 'my_resetpassword_args' );
-
 function my_resetpassword_args( $args )
 {
   $args = array(
@@ -117,6 +100,13 @@ function my_resetpassword_args( $args )
   );
   return $args;
 }
+
+
+
+
+
+
+
 
 
 

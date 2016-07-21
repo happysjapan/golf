@@ -2,6 +2,7 @@
 get_header(); ?>
 
 <?php
+$user_is_log = is_user_logged_in();
 $queried_object = get_queried_object();
 
 $categories = get_terms( array(
@@ -15,7 +16,7 @@ $categories = get_terms( array(
     <div class="row">
       <div class="columns large-12">
         <div class="row align-middle">
-          <div class="columns">
+          <div class="columns section_default--archive_title--holder">
             <h2 class="section_default--archive_title row align-bottom">
               <div class="columns shrink">
                 Gallery
@@ -68,12 +69,11 @@ $categories = get_terms( array(
                   $description = get_field("gallery_description", get_the_id());
                   $gallery_video_media = get_field("gallery_video_media", get_the_id());
 
-                  $access_ctrl = SwpmAccessControl::get_instance();
                 ?>
 
                 <li class="gallery--item grid-item grid-item--width-<?php echo $grid_width; ?> grid-item--height-<?php echo $grid_height; ?>">
 
-                  <?php if ($access_ctrl->can_i_read_post($post)){ ?>
+                  <?php if ( !get_field("_wpmem_block", get_the_id()) || $user_is_log ){ ?>
                     <?php if( $i < 10 ){ ?>
                       <a href="<?php the_permalink(); ?>" class="gallery--item--link" style="background-image:url('<?php echo $clip_image['url']; ?>');">
                     <?php } else { ?>
