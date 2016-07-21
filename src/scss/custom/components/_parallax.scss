@@ -4,8 +4,9 @@
 .cd-background-wrapper {
 	overflow: hidden;
 	position: absolute;
-  height: 100%;
-  width: 100%;
+	top: 0;
+	height: 100%;
+	width: 100%;
 
 	-webkit-perspective: 4000px;
 	-moz-perspective: 4000px;
@@ -26,6 +27,9 @@
 .cd-floating-background {
 	position: relative;
  	width: 100% !important;
+ 	height: 100%;
+ 	max-width: 1200px;
+ 	margin: 0 auto;
 	top: 0;
 	left: 0;
 	-webkit-transform-style: preserve-3d;
@@ -37,7 +41,7 @@
 	img {
 		position: absolute;
 		display: block;
-		width: 22%;
+		max-width: 200px;
 		-webkit-backface-visibility: hidden;
     	backface-visibility: hidden;
 		/* fixes a Firefox bug - images not correctly rendered*/
@@ -47,16 +51,16 @@
 	.section_news & {
 		img {
 			&:first-child {
-				width: 15%;
+				width: 25%;
 				@include translateZ(200px);
 				@include opacity(.3);
-				top: 12%;
-				left: -7%;
+				top: 13%;
+				left: 0%;
 			}
 			&:nth-child(2) {
-				width: 17%;
-				top: 9%;
-				right: 0%;
+				width: 22%;
+				bottom: 6%;
+				right: -2%;
 				float: right;
 				@include translateZ(500px);
 				@include opacity(.5);
@@ -68,19 +72,53 @@
 			&:first-child {
 				@include translateZ(200px);
 				@include opacity(.7);
-				top: 5%;
-				left: -10%;
+				width: 26%;		
+				top: 4%;
+				left: -6%;
 			}
 
 			&:nth-child(2) {
-				bottom: 30%;
-				right: 3%;
-				width: 16%;
+				bottom: 10%;
+				right: -2%;
+				width: 22%;
 				float: right;
 				@include translateZ(500px);
 				@include opacity(.6);
 			}
 		}
+	}
+
+	@media screen and #{breakpoint(medium)} {
+		.section_news & {
+			img {
+				&:first-child {
+					width: 15%;
+					top: 3%;
+					left: -7%;
+				}
+				&:nth-child(2) {
+					width: 17%;
+					bottom: 6%;
+					right: -6%;
+				}
+			}
+		}
+		.section_about & {
+			img {
+				&:first-child {
+					width: 22%;
+					top: 10%;
+					left: -6%;
+				}
+
+				&:nth-child(2) {
+					bottom: 10%;
+					right: -6%;
+					width: 16%;
+				}
+			}
+		}
+
 	}
 
 	&.is-absolute {

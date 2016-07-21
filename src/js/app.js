@@ -259,7 +259,7 @@ jQuery(document).ready(function($){
 			});
 		} else {
 			$('.cd-background-wrapper').attr('style', '');
-			$('.cd-floating-background').attr('style', '').removeClass('is-absolute');
+			// $('.cd-floating-background').attr('style', '').removeClass('is-absolute');
 		}
 	});
 
@@ -272,7 +272,7 @@ jQuery(document).ready(function($){
 			newTop = (wrapperHeight - newImageHeight)/2;
 
 		//set dimentions and position of the .cd-background-wrapper
-		$('.cd-floating-background').addClass('is-absolute');
+		// $('.cd-floating-background').addClass('is-absolute');
 	}
 
 	function moveBackground(event) {
