@@ -1,7 +1,6 @@
 <?php
 get_header();
 global $post;
-$access_ctrl = SwpmAccessControl::get_instance();
 $gallery_video_media = get_field("gallery_video_media");
 $gallery_description = get_field("gallery_description");
 
@@ -17,24 +16,26 @@ $categories = get_terms( array(
   <div class="row">
     <div class="columns small-12 medium-10 medium-offset-1 large-8 large-offset-2">
 
-      <header class="section_article--header">
-        <h2 class="section_article--title row align-bottom">
-          <div class="columns">
-            <?php the_title(); ?>
-          </div>
-          <div class="section_article--buttons columns shrink">
-            <div class="button-group">
-              <?php $post_cat = wp_get_post_terms( get_the_id() , 'gallery-cat');
-              foreach ($post_cat as $tag) { ?>
-                <a class="button" href="<?php echo get_term_link($tag->term_id); ?>"><?php echo $tag->name; ?></a>
-              <?php } ?>
-            </div>
-          </div>
-        </h2>
-        <time class="section_article--date"><?php echo get_the_date('Y-m-d'); ?></time>
-      </header>
+      <?php if( !get_field("_wpmem_block", get_the_id()) ){ ?>
 
-      <?php if( have_rows('gallery_slider') && $access_ctrl->can_i_read_post($post) ){ ?>
+        <header class="section_article--header">
+          <h2 class="section_article--title row align-bottom">
+            <div class="columns">
+              <?php the_title(); ?>
+            </div>
+            <div class="section_article--buttons columns shrink">
+              <div class="button-group">
+                <?php $post_cat = wp_get_post_terms( get_the_id() , 'gallery-cat');
+                foreach ($post_cat as $tag) { ?>
+                  <a class="button" href="<?php echo get_term_link($tag->term_id); ?>"><?php echo $tag->name; ?></a>
+                <?php } ?>
+              </div>
+            </div>
+          </h2>
+          <time class="section_article--date"><?php echo get_the_date('Y-m-d'); ?></time>
+        </header>
+
+        <?php if( have_rows('gallery_slider') ){ ?>
         <div class="section_media">
           <div class="section_slider section_gallery">
             <div class="gallery_orbit orbit" role="region" aria-label="Favorite Cat Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
@@ -89,6 +90,21 @@ $categories = get_terms( array(
           </div>
         </div>
       </section>
+
+      <?php	} else { ?>
+
+        <div class="section_media">
+          <p>
+            This content is for members only.<br>
+            Please login or sign up a free account.
+          </p>
+          <div class="button-group">
+            <a class="button" href="<?php echo get_permalink(get_page_by_path('sign-up')); ?>">SIGN UP</a>
+            <a class="button" href="<?php echo get_permalink(get_page_by_path('sign-in')); ?>">SIGN IN</a>
+          </div>
+        </div>
+
+      <?php	} ?>
 
     </div>
   </div>
