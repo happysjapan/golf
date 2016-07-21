@@ -1,6 +1,7 @@
 <?php
 get_header();
 global $post;
+$user_is_log = is_user_logged_in();
 $gallery_video_media = get_field("gallery_video_media");
 $gallery_description = get_field("gallery_description");
 
@@ -16,7 +17,7 @@ $categories = get_terms( array(
   <div class="row">
     <div class="columns small-12 medium-10 medium-offset-1 large-8 large-offset-2">
 
-      <?php if( !get_field("_wpmem_block", get_the_id()) ){ ?>
+      <?php if( !get_field("_wpmem_block", get_the_id()) || $user_is_log ){ ?>
 
         <header class="section_article--header">
           <h2 class="section_article--title row align-bottom">
