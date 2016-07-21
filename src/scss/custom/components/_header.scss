@@ -17,10 +17,10 @@
   }
 
   &.hidden {
-    top: -71px;
+    top: -250px;
 
     & + .page_wrapper {
-      margin-top: 71px;
+      margin-top: -250px;
     }
 
     @media screen and #{breakpoint(medium)} {
