@@ -3,10 +3,24 @@ get_header();
 
 if( isset($_GET['y']) && $_GET['y'] != '' ) {
   $displayed_year = htmlspecialchars($_GET['y']).'年';
+  function filter_where($where = '') {
+    $year = htmlspecialchars($_GET['y']);
+    $year_start = $year.'0101';
+    $year_end = $year.'1231';
+    $where .= " AND post_date >= '$year_start' AND post_date <= '$year_end'";
+    return $where;
+  }
 }
 else {
   $displayed_year = date("Y").'年';
+  function filter_where($where = '') {
+    $year = date("Y");
+    $year_start = $year.'0101';
+    $where .= " AND post_date >= '$year_start'";
+    return $where;
+  }
 }
+add_filter('posts_where', 'filter_where');
 
 $custom_args = array(
   'posts_per_page' => -1,
@@ -54,10 +68,12 @@ $wp_query = new WP_Query($custom_args);
           ";
           $years = $wpdb->get_col($query);
           ?>
+
+
           <h3 class="aside--title">Archives</h3>
           <ul class="aside--list">
           <?php foreach($years as $year) : ?>
-            <li class="aside--list_item"><a href="<?php echo get_post_type_archive_link( 'post' ); ?>?y=<?php echo $year; ?>" class="aside--link"><?php echo $year; ?></a></li>
+            <li class="aside--list_item"><a href="<?php echo get_category_link( get_category_by_slug('blog')->term_id ); ?>?y=<?php echo $year; ?>" class="aside--link"><?php echo $year; ?></a></li>
           <?php endforeach; ?>
           </ul>
         </aside>

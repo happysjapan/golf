@@ -49,15 +49,13 @@ $wp_query = new WP_Query($custom_args);
           </h2>
 
           <ul class="news row">
-            <?php
-            $i = 0;
-
-              if ( $wp_query->have_posts() ) {
-              	while ( $wp_query->have_posts() ) {
-              		the_post(); ?>
-                    <?php get_template_part( 'includes/news', 'panel' ); ?>
-                <?php } // end while
-              } // end if ?>
+          <?php
+            if ( $wp_query->have_posts() ) {
+            	while ( $wp_query->have_posts() ) {
+            		the_post(); ?>
+                  <?php get_template_part( 'includes/news', 'panel' ); ?>
+              <?php } // end while
+            } // end if ?>
           </ul>
 
         </div>
