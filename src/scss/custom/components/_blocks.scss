@@ -169,7 +169,7 @@
 	&--panel {
 		padding: 1rem 1rem 1.5rem;
 		text-align: center;
-		background-color: rgba($body-background,.4);
+		background-color: rgba($body-background,.5);
 		border: 1px solid #fff;
 		&--title {
 			margin-bottom: 30px;
@@ -194,7 +194,41 @@
 			text-align: left;
 			@include fts(13);
 		  	.in_the_bag & {
-				max-width: 640px;
+		  		.gear_holder {
+		  			.callout {
+			  			color: #fff;
+						background-color: rgba($color-theme-key,.2);
+						border: 1px solid $color-theme-key;
+					}
+					&--title {
+						&--name {
+							font-weight: bold;
+						}
+						&--model {
+							margin-bottom: 0;
+						}
+					}
+
+		  			hr {
+		  				margin: .8rem 0;
+		  				border-color: $color-theme-key;
+		  			}
+		  		}
+		  		.gear_item {
+		  			margin: 0 0 .1rem;
+		  			padding: .3rem;
+					@include fts(14);
+					background-color: rgba($body-background,.15);
+		  			&--title {
+						display: inline-block;
+						margin-bottom: 0;
+		  				padding: 0 .2rem;
+		  			}
+		  			&--text {
+						display: inline-block;
+		  				padding: 0 .2rem;
+		  			}
+		  		}
 		  	}
 			.name_holder {margin: 10px 0;}
 			.name {

@@ -168,18 +168,58 @@ global $post;
           <h4 class="about_content--panel--title">IN THE BAG</h4>
           <div class="about_content--panel--description">
               <div class="row">
-                <dl class="small-12 columns profile_items profile_items_list">
-                  <dt>番手</dt><dd><?php echo get_field('bag_number'); ?></dd>
-                  <dt>モデル</dt><dd><?php echo get_field('bag_model'); ?></dd>
-                  <dt>シャフト</dt><dd><?php echo get_field('bag_shaft'); ?></dd>
-                  <dt>ロフト</dt><dd><?php echo get_field('bag_loft'); ?></dd>
-                  <dt>長さ</dt><dd><?php echo get_field('bag_length'); ?></dd>
-                  <dt>フレックス</dt><dd><?php echo get_field('bag_flex'); ?></dd>
-                </dl>
+                <?php if( have_rows('bag_gear') ): ?>
+                    <ul class="row">
+                    <?php while( have_rows('bag_gear') ): the_row(); 
+
+                          // vars
+                          $grid = get_sub_field('gear_grid');
+                          $model = get_sub_field('gear_model');
+                          $shuft = get_sub_field('gear_shuft');
+                          $loft = get_sub_field('gear_loft');
+                          $length = get_sub_field('gear_length');
+                          $flex = get_sub_field('gear_flex');
+                    ?>
+
+                    <li class="gear_holder columns small-12 medium-6 large-4">
+                      <div class="callout">
+                        <div class="gear_holder--title">
+                          <h5 class="gear_holder--title--name"><?php echo $grid; ?></h5>
+                          <p class="gear_holder--title--model"><?php echo $model; ?></p>
+                        </div>
+                        <hr />
+                        <div class="gear_holder--detail">
+                          <dl class="gear_item row">
+                            <dt class="gear_item--title columns small-5">シャフト</dt>
+                            <dd class="gear_item--text columns"><?php echo $shuft; ?></dd>
+                          </dl>
+                          <dl class="gear_item row">
+                            <dt class="gear_item--title columns small-5">ロフト</dt>
+                            <dd class="gear_item--text columns"><?php echo $loft; ?></dd>
+                          </dl>
+                          <dl class="gear_item row">
+                            <dt class="gear_item--title columns small-5">長さ</dt>
+                            <dd class="gear_item--text columns"><?php echo $length; ?></dd>
+                          </dl>
+                          <dl class="gear_item row">
+                            <dt class="gear_item--title columns small-5">フレックス</dt>
+                            <dd class="gear_item--text columns"><?php echo $flex; ?></dd>
+                          </dl>
+                        </div>
+                      </div>
+                    </li>
+
+
+                  <?php endwhile; ?>
+                  </ul>
+                <?php endif; ?>
+
               </div>
           </div>
         </div>
+
       </div>
+
     </div>
   </div>
 </section>
