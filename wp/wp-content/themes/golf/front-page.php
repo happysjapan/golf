@@ -23,7 +23,7 @@ global $post;
             <img src="<?php echo get_template_directory_uri(); ?>/images/top/sign.png" alt="Mikumu Horikawa サイン" width="280"  class="sign_holder--image"/>
           </div>
           <div class="small-6 columns text-right align-self-bottom">
-            <a href="" class="banner_charity button" title="チャリティー活動">
+            <a href="<?php echo get_permalink(get_page_by_path('charity')); ?>" class="banner_charity button" title="チャリティー活動">
               <img src="<?php echo get_template_directory_uri(); ?>/images/top/charity_ribbon.png" alt="チャリティー活動" width="41" height="50" class="banner_charity--image" />
               <div class="banner_charity--texts">
                 <p class="text_en">CHARITY</p>
@@ -169,7 +169,7 @@ global $post;
           <div class="about_content--panel--description">
             <?php if( have_rows('bag_gear') ): ?>
                 <ul class="row">
-                <?php while( have_rows('bag_gear') ): the_row(); 
+                <?php while( have_rows('bag_gear') ): the_row();
 
                       // vars
                       $grid = get_sub_field('gear_grid');
