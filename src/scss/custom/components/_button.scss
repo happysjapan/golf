@@ -55,3 +55,16 @@
 	}
 
 }
+.wpcf7-form-control {
+	background-color: rgba($color-theme-key,.2);
+	color: $color-theme-key;
+	border: 1px solid $color-theme-key;
+	&:focus {
+		background-color: rgba($color-theme-key,.4);
+		color: $color-theme-key;
+		border: 1px solid $color-theme-key;
+	}
+}
+.wpcf7-submit{
+	@extend .button;
+}
