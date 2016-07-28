@@ -9,6 +9,12 @@
 		background-color: rgba($body-background,1);
 	}
 }
+.footer-menu {
+	&--item {
+		display: inline-block;
+		margin: 0 10px;
+	}
+}
 .scroll_top {
 	position: absolute;
 	top: -32px;

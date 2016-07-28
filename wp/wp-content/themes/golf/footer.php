@@ -1,7 +1,12 @@
 <!-- Footer Section -->
 <footer class="footer">
   <div class="footer--inner row text-center">
-    <p class="columns align-center small-12">運営会社 contact</p>
+		<div class="small-12 columns">
+	  	<ul class="footer-menu">
+	  		<li class="footer-menu--item"><a href="http://happys.co.jp/" title="運営会社">運営会社</a></li>
+	  		<li class="footer-menu--item"><a href="/contact" title="contact">contact</a></li>
+	  	</ul>
+  	</div>
     <p class="columns align-center small-12">Copyright © 株式会社ハッピーズ All Rights Reserved.</p>
     <div class="scroll_top">
       <a href="" class="button" id="scroll_top"><i class="fa fa-angle-up"></i></a>
