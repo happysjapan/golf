@@ -19,7 +19,6 @@ global $post;
       <div class="parts_holder">
         <div class="parts_holder--inner row">
           <div class="sign_holder small-6 columns">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/top/message_handwritten.png" alt="日々努力してツアー優勝目指して頑張ります。" width="280"  class="sign_holder--image"/>
             <img src="<?php echo get_template_directory_uri(); ?>/images/top/sign.png" alt="Mikumu Horikawa サイン" width="280"  class="sign_holder--image"/>
           </div>
           <div class="small-6 columns text-right align-self-bottom">
@@ -151,10 +150,6 @@ global $post;
                     <dt>今年の成績（シーズンスタート）</dt><dd><?php echo get_field('profile_result_thisyear'); ?></dd>
                   <?php } ?>
                 </dl>
-                <!-- <dl class="small-12 medium-8 columns profile_items profile_items_biography">
-                  <dt>バイオグラフィー</dt>
-                  <dd>既にゴルフを始めていた中学時代はテニス部に入った。力をつけたのは大学進学後。筋力トレーニングに力を入れ、体重は64kgから78kgまで増加した。176cmと背丈は標準だが、がっしりとした体格をしている。ルーキーイヤーとなった2015年のツアー外競技「ネスレ日本マッチプレー選手権 レクサス杯」の１回戦で石川遼を破り、一躍注目を浴びる存在に。「石川遼くん」と他人行儀に呼んでいるが、学年は１つしか違わない。シーズン終盤の「ブリヂストンオープン」で２位になるなど初シードを獲得した。アマチュア時代の2012、13年に国体で２連覇を達成している。</dd>
-                </dl> -->
               </div>
             </div>
         </div>
@@ -162,6 +157,8 @@ global $post;
           <h4 class="about_content--panel--title">MESSAGE</h4>
           <div class="about_content--panel--description">
             <p><?php echo get_field('message'); ?></p>
+
+            <div class="text-right"><img src="<?php echo get_template_directory_uri(); ?>/images/top/message_handwritten.png" alt="日々努力してツアー優勝目指して頑張ります。" width="280"/></div>
           </div>
         </div>
         <div class="tabs-panel about_content--panel in_the_bag" id="panel3">
