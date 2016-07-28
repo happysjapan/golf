@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mikumu Horikawa 公式サイト</title>
     <link rel="icon"
-      type="svg"
-      href="<?php echo get_template_directory_uri(); ?>/images/favicon.png">
+      href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
 
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/<?php echo golf_getCssAssets(); ?>">
     <!--
