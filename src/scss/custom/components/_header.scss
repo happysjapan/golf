@@ -13,7 +13,7 @@
 
   &.fixed {
     position: fixed;
-    background-color: rgba($body-background,0.3);
+    background-color: rgba($body-background,0.6);
   }
 
   &.hidden {
@@ -88,7 +88,7 @@
 
 // logo
 .logo {
-  padding-top: 5px;
+  padding-top: .8rem;
   text-align: center;
   font-size: 0;
 
@@ -101,9 +101,10 @@
     }
   }
   &--text {
-    margin: 6px 0;
+    display: block;
+    margin-bottom: .8rem;
     @include fts(30,30);
-    @include letter-spacing(800);
+    @include letter-spacing(600);
     font-weight: bold;
     color: #fff;
     .logo_hidden & {
@@ -114,13 +115,13 @@
   &--subline {
     display: block;
     font-weight: normal;
-    margin: .8rem 0 0;
+    margin: 0 0 .8rem;
     color: $color-white;
-    @include fts(12,12);
-    @include letter-spacing(200);
+    @include fts(11,11);
+    @include letter-spacing(100);
 
     .shown & {
-        margin: 1rem 0 1rem;
+      margin: .4rem 0 1rem;
     }
   }
 
@@ -132,12 +133,13 @@
     }
 
     &--text {
-      margin-bottom: 12px;
       @include fts(40,40);
+      @include letter-spacing(800);
     }
     &--subline {
-      margin: 0.5rem 0 0;
       @include fts(14,14);
+      @include letter-spacing(200);
+      margin: 1rem 0 .5rem;
     }
   }
 }
