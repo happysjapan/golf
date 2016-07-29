@@ -33,7 +33,7 @@
   }
 
   &.shown {
-    background-color: rgba($body-background,0.9);
+    background-color: rgba($body-background,1);
     @include setTransition();
   }
 
