@@ -19,11 +19,10 @@ global $post;
       <div class="parts_holder">
         <div class="parts_holder--inner row">
           <div class="sign_holder small-6 columns">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/top/message_handwritten.png" alt="日々努力してツアー優勝目指して頑張ります。" width="280"  class="sign_holder--image"/>
             <img src="<?php echo get_template_directory_uri(); ?>/images/top/sign.png" alt="Mikumu Horikawa サイン" width="280"  class="sign_holder--image"/>
           </div>
           <div class="small-6 columns text-right align-self-bottom">
-            <a href="<?php echo get_permalink(get_page_by_path('charity')); ?>" class="banner_charity button" title="チャリティー活動">
+            <a href="/charity" class="banner_charity button" title="チャリティー活動">
               <img src="<?php echo get_template_directory_uri(); ?>/images/top/charity_ribbon.png" alt="チャリティー活動" width="41" height="50" class="banner_charity--image" />
               <div class="banner_charity--texts">
                 <p class="text_en">CHARITY</p>
@@ -128,7 +127,7 @@ global $post;
             <div class="about_content--panel--description">
               <h5 class="name_holder"><p class="name">堀川未来夢</p><p class="name_en">Mikumu Horikawa</p></h5>
               <div class="row">
-                <dl class="small-12 medium-3 columns profile_items profile_items_list">
+                <dl class="small-12 medium-4 columns profile_items profile_items_list">
                   <?php
                   $birthday = strtotime(get_field('profile_birthday'));
                   ?>
@@ -139,7 +138,7 @@ global $post;
                   <dt>体重</dt><dd><?php echo get_field('profile_weight'); ?></dd>
                   <dt>経歴</dt><dd><?php echo get_field('profile_school'); ?></dd>
                 </dl>
-                <dl class="small-12 medium-9 columns profile_items profile_items_biography">
+                <dl class="small-12 medium-8 columns profile_items profile_items_biography">
                   <dt>Biography</dt><dd><?php echo get_field('profile_trigger'); ?></dd>
                   <?php if (get_field('profile_result_student')) { ?>
                     <dt>中学時代、高校、大学時代の成績</dt><dd><?php echo get_field('profile_result_student'); ?></dd>
@@ -151,10 +150,6 @@ global $post;
                     <dt>今年の成績（シーズンスタート）</dt><dd><?php echo get_field('profile_result_thisyear'); ?></dd>
                   <?php } ?>
                 </dl>
-                <!-- <dl class="small-12 medium-8 columns profile_items profile_items_biography">
-                  <dt>バイオグラフィー</dt>
-                  <dd>既にゴルフを始めていた中学時代はテニス部に入った。力をつけたのは大学進学後。筋力トレーニングに力を入れ、体重は64kgから78kgまで増加した。176cmと背丈は標準だが、がっしりとした体格をしている。ルーキーイヤーとなった2015年のツアー外競技「ネスレ日本マッチプレー選手権 レクサス杯」の１回戦で石川遼を破り、一躍注目を浴びる存在に。「石川遼くん」と他人行儀に呼んでいるが、学年は１つしか違わない。シーズン終盤の「ブリヂストンオープン」で２位になるなど初シードを獲得した。アマチュア時代の2012、13年に国体で２連覇を達成している。</dd>
-                </dl> -->
               </div>
             </div>
         </div>
@@ -162,11 +157,18 @@ global $post;
           <h4 class="about_content--panel--title">MESSAGE</h4>
           <div class="about_content--panel--description">
             <p><?php echo get_field('message'); ?></p>
+
+            <div class="text-right"><img src="<?php echo get_template_directory_uri(); ?>/images/top/message_handwritten.png" alt="日々努力してツアー優勝目指して頑張ります。" width="280"/></div>
           </div>
         </div>
         <div class="tabs-panel about_content--panel in_the_bag" id="panel3">
           <h4 class="about_content--panel--title">IN THE BAG</h4>
-          <div class="about_content--panel--description">
+          <div class="about_content--panel--description row">
+            <div class="small-12 medium-6 large-4 columns image_holder">
+              <img src="<?php echo get_template_directory_uri(); ?>/images/top/about_bag_large.jpg" alt="堀川未来夢 バッグの中" class="about_list--tab--image" width="320" />
+            </div>
+
+            <div class="small-12 large-8 columns">
             <?php if( have_rows('bag_gear') ): ?>
                 <ul class="row">
                 <?php while( have_rows('bag_gear') ): the_row();
@@ -180,7 +182,7 @@ global $post;
                       $flex = get_sub_field('gear_flex');
                 ?>
 
-                <li class="gear_holder columns small-12 medium-6 large-4">
+                <li class="gear_holder columns small-12 medium-6">
                   <div class="callout">
                     <div class="gear_holder--title">
                       <h5 class="gear_holder--title--name"><?php echo $grid; ?></h5>
@@ -212,6 +214,7 @@ global $post;
               <?php endwhile; ?>
               </ul>
             <?php endif; ?>
+            </div>
           </div>
         </div>
 
@@ -271,9 +274,9 @@ global $post;
 <!-- SNS Section -->
 <section id="sns" class="section_sns section_in_top">
   <div class="row">
-    <div class="large-12 columns">
+    <div class="large-12 columns text-center">
       <h3 class="section_title">SNS</h3>
-    </div>
+      <a class="twitter-timeline" data-width="480" data-height="560" data-link-color="#01CAFE" href="https://twitter.com/mikumu1216">Tweets by mikumu1216</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
 </section>
 <!-- SNS Section -->

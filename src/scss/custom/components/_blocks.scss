@@ -194,6 +194,12 @@
 			text-align: left;
 			@include fts(13);
 		  	.in_the_bag & {
+		  		.image_holder {
+		  			display: none;
+					@media screen and #{breakpoint(large)} {
+						display: block;
+					}
+		  		}
 		  		.gear_holder {
 		  			.callout {
 			  			color: #fff;

@@ -63,6 +63,7 @@
 	}
 	@media screen and #{breakpoint(medium)} {
 		.inpage_menu {
+			padding-bottom: 20px;
 			li {
 				margin: 10px 10px 20px;
 				@include fts(14,14);
