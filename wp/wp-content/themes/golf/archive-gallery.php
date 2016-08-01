@@ -98,7 +98,23 @@ $categories = get_terms( array(
                     </div>
                   </a>
                   <?php } else { ?>
-                    <a href="<?php echo get_permalink(get_page_by_path('sign-up')); ?>" class="gallery--item--link member_only"></a>
+                    <a href="<?php echo get_permalink(get_page_by_path('sign-up')); ?>" class="gallery--item--link member_only">
+                      <div class="gallery--item--info">
+                        <div class="gallery--item--info--inner">
+                          <h3 class="gallery--item--title"><?php the_title(); ?></h3>
+                          <p class="gallery--item--description">
+                            <?php echo $description; ?>
+                          </p>
+
+                          <?php $post_cat = wp_get_post_terms( get_the_id() , 'gallery-cat');
+                          foreach ($post_cat as $tag) { ?>
+                              <span class="gallery--item--tag">
+                                <i class="fa fa-tag" aria-hidden="true"></i><?php echo $tag->name; ?>
+                              </span>
+                          <?php } ?>
+                        </div>
+                      </div>
+                    </a>
                   <?php } ?>
               </li>
               <?php $i++; $k++; } // end while
