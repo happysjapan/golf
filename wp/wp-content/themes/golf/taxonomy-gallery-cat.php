@@ -45,29 +45,19 @@ $categories = get_terms( array(
         <ul id="listing" class="gallery grid" data-masonry='{ "itemSelector": ".grid-item" }'>
 
           <?php
-          $custom_args = array(
-            'post_type' => 'gallery',
-            'orderby' => 'date',
-            'order'			     => 'DESC',
-            'posts_per_page' => -1
-          );
-          $post_array = get_posts( $custom_args );
-
           $lenght = count($post_array);
           $k = 0;
           $i = 0;
 
-
-              foreach ($post_array as $post) { ?>
-
-                <?php
-                  $clip_image = get_field("gallery_clip_image", get_the_id());
-                  $grid_width = get_field("gallery_grid_width", get_the_id());
-                  $grid_height = get_field("gallery_grid_height", get_the_id());
-                  $description = get_field("gallery_description", get_the_id());
-                  $gallery_video_media = get_field("gallery_video_media", get_the_id());
-
-                ?>
+          if ( have_posts() ) {
+            while ( have_posts() ) {
+              the_post();
+              $clip_image = get_field("gallery_clip_image", get_the_id());
+              $grid_width = get_field("gallery_grid_width", get_the_id());
+              $grid_height = get_field("gallery_grid_height", get_the_id());
+              $description = get_field("gallery_description", get_the_id());
+              $gallery_video_media = get_field("gallery_video_media", get_the_id());
+            ?>
 
                 <li class="gallery--item grid-item grid-item--width-<?php echo $grid_width; ?> grid-item--height-<?php echo $grid_height; ?>">
 
@@ -99,10 +89,27 @@ $categories = get_terms( array(
                     </div>
                   </a>
                   <?php } else { ?>
-                    <div class="gallery--item--link member_only"></div>
+                    <a href="<?php echo get_permalink(get_page_by_path('sign-up')); ?>" class="gallery--item--link member_only">
+                      <div class="gallery--item--info">
+                        <div class="gallery--item--info--inner">
+                          <h3 class="gallery--item--title"><?php the_title(); ?></h3>
+                          <p class="gallery--item--description">
+                            <?php echo $description; ?>
+                          </p>
+
+                          <?php $post_cat = wp_get_post_terms( get_the_id() , 'gallery-cat');
+                          foreach ($post_cat as $tag) { ?>
+                              <span class="gallery--item--tag">
+                                <i class="fa fa-tag" aria-hidden="true"></i><?php echo $tag->name; ?>
+                              </span>
+                          <?php } ?>
+                        </div>
+                      </div>
+                    </a>
                   <?php } ?>
               </li>
-              <?php $i++; $k++; } // end while ?>
+              <?php $i++; $k++; } // end while
+            } // end if ?>
 
         </ul>
 
