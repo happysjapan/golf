@@ -58,9 +58,7 @@ $categories = get_terms( array(
           $i = 0;
 
 
-            if ( have_posts() ) {
-            	while ( have_posts() ) {
-            		the_post(); ?>
+              foreach ($post_array as $post) { ?>
 
                 <?php
                   $clip_image = get_field("gallery_clip_image", get_the_id());
@@ -104,8 +102,7 @@ $categories = get_terms( array(
                     <div class="gallery--item--link member_only"></div>
                   <?php } ?>
               </li>
-              <?php $i++; $k++; } // end while
-            } // end if ?>
+              <?php $i++; $k++; } // end while ?>
 
         </ul>
 
