@@ -38,7 +38,7 @@ $wp_query = new WP_Query($custom_args);
         <div class="columns small-12">
           <h2 class="section_default--archive_title row align-bottom">
             <div class="columns shrink">
-              Blog
+              Voice
             </div>
             <strong class="columns shrink"><?php echo $displayed_year; ?></strong>
           </h2>
