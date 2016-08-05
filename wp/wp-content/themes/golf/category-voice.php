@@ -51,7 +51,7 @@ $wp_query = new WP_Query($custom_args);
               if ( $wp_query->have_posts() ) {
               	while ( $wp_query->have_posts() ) {
               		the_post(); ?>
-                    <?php get_template_part( 'includes/blog', 'panel' ); ?>
+                    <?php get_template_part( 'includes/voice', 'panel' ); ?>
                 <?php } // end while
                 wp_reset_postdata();
               } // end if ?>
