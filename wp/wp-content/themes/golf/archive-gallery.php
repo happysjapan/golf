@@ -48,9 +48,7 @@ $categories = get_terms( array(
           $i = 0;
 
 
-            if ( have_posts() ) {
-            	while ( have_posts() ) {
-            		the_post(); ?>
+              foreach ($post_array as $post) { ?>
 
                 <?php
                   $clip_image = get_field("gallery_clip_image", get_the_id());
@@ -64,8 +62,6 @@ $categories = get_terms( array(
                   } else {
                     $clip_image = $clip_image['sizes']['medium'];
                   }
-
-                  // $access_ctrl = SwpmAccessControl::get_instance();
                 ?>
 
                 <li class="gallery--item grid-item grid-item--width-<?php echo $grid_width; ?> grid-item--height-<?php echo $grid_height; ?>">
@@ -117,8 +113,7 @@ $categories = get_terms( array(
                     </a>
                   <?php } ?>
               </li>
-              <?php $i++; $k++; } // end while
-            } // end if ?>
+              <?php $i++; $k++; } // end while ?>
 
         </ul>
 
