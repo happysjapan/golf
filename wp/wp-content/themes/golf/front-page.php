@@ -277,6 +277,7 @@ global $post;
     <div class="large-12 columns text-center">
       <h3 class="section_title">SNS</h3>
       <a class="twitter-timeline" data-width="480" data-height="560" data-link-color="#01CAFE" href="https://twitter.com/mikumu1216">Tweets by mikumu1216</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
   </div>
 </section>
 <!-- SNS Section -->
